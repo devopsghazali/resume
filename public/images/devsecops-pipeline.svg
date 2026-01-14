@@ -1,0 +1,54 @@
+<svg width="900" height="220" viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .box { fill:#0e1322; stroke:#22d3ee; stroke-width:1.2; rx:10; }
+    .text { fill:#e5e7eb; font-size:13px; font-family:Arial, sans-serif; text-anchor:middle; }
+    .arrow { stroke:#22d3ee; stroke-width:1.5; marker-end:url(#arrow); }
+  </style>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#22d3ee"/>
+    </marker>
+  </defs>
+
+  <!-- ROW 1 -->
+  <rect x="20" y="40" width="120" height="45" class="box"/>
+  <text x="80" y="68" class="text">Git Commit</text>
+
+  <rect x="170" y="40" width="120" height="45" class="box"/>
+  <text x="230" y="68" class="text">GitHub Webhook</text>
+
+  <rect x="320" y="40" width="120" height="45" class="box"/>
+  <text x="380" y="68" class="text">Jenkins CI</text>
+
+  <rect x="470" y="40" width="120" height="45" class="box"/>
+  <text x="530" y="68" class="text">Maven Build</text>
+
+  <rect x="620" y="40" width="140" height="45" class="box"/>
+  <text x="690" y="68" class="text">Security Scans</text>
+
+  <!-- ARROWS ROW 1 -->
+  <line x1="140" y1="63" x2="170" y2="63" class="arrow"/>
+  <line x1="290" y1="63" x2="320" y2="63" class="arrow"/>
+  <line x1="440" y1="63" x2="470" y2="63" class="arrow"/>
+  <line x1="590" y1="63" x2="620" y2="63" class="arrow"/>
+
+  <!-- ROW 2 -->
+  <rect x="80" y="130" width="140" height="45" class="box"/>
+  <text x="150" y="158" class="text">Docker Image</text>
+
+  <rect x="260" y="130" width="160" height="45" class="box"/>
+  <text x="340" y="158" class="text">GitOps Repo Update</text>
+
+  <rect x="470" y="130" width="120" height="45" class="box"/>
+  <text x="530" y="158" class="text">ArgoCD</text>
+
+  <rect x="620" y="130" width="180" height="45" class="box"/>
+  <text x="710" y="158" class="text">Kubernetes Deploy</text>
+
+  <!-- ARROWS ROW 2 -->
+  <line x1="690" y1="85" x2="150" y2="130" class="arrow"/>
+  <line x1="220" y1="153" x2="260" y2="153" class="arrow"/>
+  <line x1="420" y1="153" x2="470" y2="153" class="arrow"/>
+  <line x1="590" y1="153" x2="620" y2="153" class="arrow"/>
+</svg>
