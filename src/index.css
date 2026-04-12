@@ -251,6 +251,15 @@ button.nav-orbit {
   animation: fade-up 700ms ease-out both;
 }
 
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 .stagger-card:nth-child(1) {
   animation-delay: 0ms;
 }
