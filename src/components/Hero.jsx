@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import About from "../pages/About.jsx";
 import ProjectsSection from "./ProjectsSection.jsx";
 import DevOpsInfinity from "./DevOpsInfinity.jsx";
 
@@ -49,7 +50,7 @@ const Hero = () => {
 
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
-                to="/about"
+                to="/#about"
                 className="px-6 py-3 bg-cyan-500 text-black font-medium rounded-md hover:bg-cyan-400 transition inline-flex items-center"
               >
                 About
@@ -71,6 +72,7 @@ const Hero = () => {
           </div>
         </div>
       </section>
+      <About />
       <ProjectsSection />
     </>
   );

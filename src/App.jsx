@@ -3,7 +3,6 @@ import { useEffect } from "react";
 
 import Navbar from "./components/Navbar.jsx";
 import Home from "./components/Hero.jsx";
-import About from "./pages/About.jsx";
 import Articles from "./pages/Articles.jsx";
 import Problems from "./pages/Problems.jsx";
 import Contact from "./pages/Contact.jsx";
@@ -46,7 +45,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<Home />} />
           <Route path="/articles" element={<Articles />} />
           <Route path="/articles/:slug" element={<ArticleDetails />} />
           <Route path="/problems" element={<Problems />} />
