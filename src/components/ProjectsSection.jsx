@@ -2,7 +2,6 @@ import { useRef } from "react";
 import ProjectCard from "./ProjectCard";
 import { projects } from "../data/projects";
 import useReveal from "../hooks/useReveal";
-import "./index.css";
 
 const ProjectsSection = () => {
   const scrollRef = useRef(null);

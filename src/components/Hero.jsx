@@ -20,6 +20,19 @@ const Hero = () => {
     }
   }, [index, fullText]);
 
+  const handleDownloadCv = async () => {
+    const response = await fetch("/cv/devops-ghazali-cv.pdf");
+    const blob = await response.blob();
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "Devops-Ghazali-CV.pdf";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    window.URL.revokeObjectURL(url);
+  };
+
   return (
     <>
       <section className="relative w-full min-h-screen bg-[#0b0f1a] overflow-hidden">
@@ -56,13 +69,13 @@ const Hero = () => {
                 About
               </Link>
 
-              <a
-                href="/cv/devops-ghazali-cv.pdf"
-                download
+              <button
+                type="button"
+                onClick={handleDownloadCv}
                 className="px-6 py-3 border border-cyan-400/30 text-cyan-100 rounded-md bg-cyan-500/10 hover:bg-cyan-500/20 transition inline-flex items-center"
               >
                 Download CV
-              </a>
+              </button>
             </div>
 
           </div>
