@@ -143,28 +143,30 @@ const ProjectNotes = () => {
           </table>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-4 mb-8">
-          <div className="rounded-xl border border-white/10 bg-[#101628] p-4">
-            <h3 className="text-cyan-300 font-semibold mb-2">System Architecture</h3>
-            <img src={doc.diagrams.systemArchitecture} alt="System architecture" className="w-full h-[180px] object-contain bg-black/20 rounded" />
+        {doc.diagrams && (
+          <div className="grid md:grid-cols-2 gap-4 mb-8">
+            <div className="rounded-xl border border-white/10 bg-[#101628] p-4">
+              <h3 className="text-cyan-300 font-semibold mb-2">System Architecture</h3>
+              <img src={doc.diagrams.systemArchitecture} alt="System architecture" className="w-full h-[180px] object-contain bg-black/20 rounded" />
+            </div>
+            <div className="rounded-xl border border-white/10 bg-[#101628] p-4">
+              <h3 className="text-cyan-300 font-semibold mb-2">Metrics Pipeline</h3>
+              <img src={doc.diagrams.metricsPipeline} alt="Metrics pipeline" className="w-full h-[180px] object-contain bg-black/20 rounded" />
+            </div>
+            <div className="rounded-xl border border-white/10 bg-[#101628] p-4">
+              <h3 className="text-cyan-300 font-semibold mb-2">Logs Pipeline</h3>
+              <img src={doc.diagrams.logsPipeline} alt="Logs pipeline" className="w-full h-[180px] object-contain bg-black/20 rounded" />
+            </div>
+            <div className="rounded-xl border border-white/10 bg-[#101628] p-4">
+              <h3 className="text-cyan-300 font-semibold mb-2">Alert Pipeline</h3>
+              <img src={doc.diagrams.alertPipeline} alt="Alert pipeline" className="w-full h-[180px] object-contain bg-black/20 rounded" />
+            </div>
+            <div className="rounded-xl border border-white/10 bg-[#101628] p-4 md:col-span-2">
+              <h3 className="text-cyan-300 font-semibold mb-2">Incident Response Flow</h3>
+              <img src={doc.diagrams.incidentResponse} alt="Incident response flow" className="w-full h-[200px] object-contain bg-black/20 rounded" />
+            </div>
           </div>
-          <div className="rounded-xl border border-white/10 bg-[#101628] p-4">
-            <h3 className="text-cyan-300 font-semibold mb-2">Metrics Pipeline</h3>
-            <img src={doc.diagrams.metricsPipeline} alt="Metrics pipeline" className="w-full h-[180px] object-contain bg-black/20 rounded" />
-          </div>
-          <div className="rounded-xl border border-white/10 bg-[#101628] p-4">
-            <h3 className="text-cyan-300 font-semibold mb-2">Logs Pipeline</h3>
-            <img src={doc.diagrams.logsPipeline} alt="Logs pipeline" className="w-full h-[180px] object-contain bg-black/20 rounded" />
-          </div>
-          <div className="rounded-xl border border-white/10 bg-[#101628] p-4">
-            <h3 className="text-cyan-300 font-semibold mb-2">Alert Pipeline</h3>
-            <img src={doc.diagrams.alertPipeline} alt="Alert pipeline" className="w-full h-[180px] object-contain bg-black/20 rounded" />
-          </div>
-          <div className="rounded-xl border border-white/10 bg-[#101628] p-4 md:col-span-2">
-            <h3 className="text-cyan-300 font-semibold mb-2">Incident Response Flow</h3>
-            <img src={doc.diagrams.incidentResponse} alt="Incident response flow" className="w-full h-[200px] object-contain bg-black/20 rounded" />
-          </div>
-        </div>
+        )}
 
         <div className="grid lg:grid-cols-3 gap-4 mb-8">
           <div className="rounded-xl border border-white/10 bg-[#101628] p-5">

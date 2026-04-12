@@ -104,49 +104,55 @@ export const projectDocs = {
   },
   2: {
     summary: {
-      what: "Blue-green release pipeline for zero-downtime Kubernetes deployments.",
-      why: "To reduce release risk by validating new version before traffic cutover.",
-      how: "Deploy to inactive color, run tests, switch ingress, monitor SLO, auto-rollback on breach.",
-      internalWorking: "Traffic is routed through ingress alias. Inactive environment receives new release and validation probes. Only after healthy status and smoke checks pass does cutover occur.",
-      bestPractices: ["Keep both color environments operationally symmetrical.", "Automate pre- and post-cutover checks.", "Define objective rollback triggers from SLO thresholds."],
-      commonMistakes: ["Using manual cutover without health verification.", "Not validating background workers along with API.", "Ignoring database backward compatibility during rollout."]
+      what: "A simple container delivery project that teaches how to build a Docker image, scan it, and publish only trusted releases.",
+      why: "To practice a safe release flow where vulnerable images are blocked before they are published.",
+      how: "A Python demo app is containerized, GitHub Actions builds the image, Trivy checks it, and only approved releases are pushed.",
+      internalWorking: "Code changes trigger the workflow, the image is built, the scan step validates the artifact, and the publish step only runs when the gate passes.",
+      bestPractices: ["Keep the app small so the pipeline stays easy to understand.", "Scan before publish so vulnerable images never become release artifacts.", "Pin base images and avoid mutable tags like latest."],
+      commonMistakes: ["Publishing the image before the scan gate passes.", "Using mutable tags instead of versioned release tags.", "Making the demo app too complex for a teaching repo."]
     },
-    architectureOverview: "Release controller coordinates CI/CD, ingress switching, and observability checks. Blue and green environments are independently healthy and switchable.",
+    architectureOverview: "The repo is intentionally small: a Python demo service, a Dockerfile, a GitHub Actions workflow, and a scan script. That keeps the pipeline easy to explain in interviews and easy to practice locally.",
     components: [
-      { name: "GitHub Actions", role: "Build and deploy orchestrator.", internalWorking: "Workflow stages include build, push, deploy-inactive, test, switch, verify." },
-      { name: "Ingress Controller", role: "Traffic switch between blue and green.", internalWorking: "Ingress backend target points to active service and is patched on cutover." },
-      { name: "SLO Monitor", role: "Post-release guardrail.", internalWorking: "Error/latency windows are evaluated for rollback decision." }
+      { name: "GitHub Actions", role: "Build and release orchestrator.", internalWorking: "Workflow checks out the code, builds the image, runs the gate, and publishes only approved output." },
+      { name: "Dockerfile", role: "Image recipe.", internalWorking: "Packages the Python demo app into a runnable container image." },
+      { name: "Trivy Scan Step", role: "Security gate before publish.", internalWorking: "Checks the image for known vulnerabilities before release." },
+      { name: "Container Registry", role: "Release storage.", internalWorking: "Holds the trusted image tag after the publish step completes." }
     ],
     deploymentSteps: [
-      { step: "Prepare Inactive Environment", what: "Deploy new build to inactive color namespace.", why: "Prevents exposing unverified release to users.", how: "CI/CD selects non-live target and applies manifests.", internalWorking: "Release metadata records active/inactive color and target revision.", bestPractices: "Keep env variables and dependencies identical across colors.", commonMistakes: "Configuration drift between blue and green." },
-      { step: "Validation and Cutover", what: "Run smoke tests then switch ingress.", why: "Ensures functional correctness before traffic transition.", how: "Automated checks gate ingress patch operation.", internalWorking: "Canary synthetic requests confirm key flows before full cutover.", bestPractices: "Use idempotent switch scripts and transaction-safe DB changes.", commonMistakes: "Switching traffic before readiness and dependency checks." },
-      { step: "Post-cutover Monitoring", what: "Observe error and latency burn rates.", why: "Detect hidden regressions quickly.", how: "Dashboard and alert policies evaluate SLO windows.", internalWorking: "If breach sustained for threshold window, rollback job triggers.", bestPractices: "Monitor business KPIs alongside technical metrics.", commonMistakes: "Only checking infrastructure health, ignoring user journey failures." }
+      { step: "Run the Demo App", what: "Keep a tiny Python service as the example workload.", why: "A small app makes the container workflow easier to follow.", how: "Start the service locally and verify the health endpoints.", internalWorking: "The app gives the Docker build something real to package.", bestPractices: "Keep the example service simple and readable.", commonMistakes: "Overbuilding the demo app before the pipeline is clear." },
+      { step: "Build and Scan the Image", what: "Create the Docker image and run a vulnerability scan.", why: "Images should be checked before they are treated as trusted releases.", how: "The workflow builds the image and calls the scan script.", internalWorking: "The scan step blocks the publish path if the image fails security checks.", bestPractices: "Fail fast on scan results and keep base images updated.", commonMistakes: "Skipping the scan or treating it as optional." },
+      { step: "Publish the Approved Release", what: "Push only the trusted tag to the registry.", why: "The published artifact should match what passed the gates.", how: "GitHub Actions pushes the approved image tag after the checks pass.", internalWorking: "Registry push happens only after the build and scan stages succeed.", bestPractices: "Use versioned image tags and keep release metadata clear.", commonMistakes: "Publishing mutable tags without traceability." }
     ],
     observability: {
-      metrics: "Compare blue vs green request latency, success ratio, and resource trends.",
-      logs: "Capture ingress access logs and application logs with color labels for correlation.",
-      alerts: "Cutover alerts include deployment id, color, and owning service.",
-      alertLifecycle: "Threshold breach triggers alert, on-call validates regression scope, rollback decision is executed, then post-recovery verification.",
-      incidentLifecycle: "Incident commander opens timeline, runbook executed, rollback/corrective deploy applied, retrospective documents release risk learnings."
+      metrics: "Workflow success rate, build duration, and scan result trends show whether the release path stays healthy.",
+      logs: "GitHub Actions logs, scan output, and container startup logs give the main troubleshooting trail.",
+      alerts: "Workflow failure notifications and scan gate failures tell you when a release should stop.",
+      alertLifecycle: "Build or scan fails -> notify -> inspect logs -> fix issue -> rerun workflow -> verify publish.",
+      incidentLifecycle: "Detect failure -> identify stage -> patch Dockerfile or workflow -> rerun pipeline -> confirm trusted release is published."
     },
     failureScenarios: [
-      { scenario: "Cutover causes elevated 5xx", symptoms: "Error rate spikes after switch", response: "Rollback to previous color, capture diff, inspect downstream dependencies", prevention: "Contract tests and dependency health checks pre-cutover" },
-      { scenario: "Inactive color fails smoke test", symptoms: "Validation endpoints fail", response: "Abort release and keep current color active", prevention: "Pre-merge integration tests and environment parity checks" }
+      { scenario: "Docker build fails", symptoms: "Image does not build or container start command exits early", response: "Fix the Dockerfile or app entrypoint, then rebuild", prevention: "Keep the service and Dockerfile minimal and test locally first" },
+      { scenario: "Vulnerability scan blocks publish", symptoms: "Trivy reports issues and the pipeline stops before push", response: "Update the base image or dependency and rerun the scan", prevention: "Scan every build and keep base images patched" }
     ],
-    scaling: ["Pre-scale inactive color before cutover to absorb full traffic.", "Use HPA policies tuned by historical traffic profiles.", "Separate background workers with independent scaling rules."],
-    security: ["Restrict ingress patch permissions to deployment automation identity.", "Use signed images and vulnerability policy at deploy gate.", "Protect production switch workflow with approval and audit logs."],
+    scaling: ["Keep Docker layers small to speed up builds.", "Use cached layers when the app changes often.", "Split build and scan logic so the workflow stays easy to maintain."],
+    security: ["Scan before publish and block vulnerable images.", "Use immutable tags for release artifacts.", "Keep registry credentials and workflow permissions minimal."],
     designDecisions: [
-      { decision: "Blue-green over in-place", rationale: "Lowest user-impact during upgrade", tradeoff: "Requires double runtime capacity" },
-      { decision: "Automated rollback", rationale: "Faster mitigation under stress", tradeoff: "Needs high-confidence alert thresholds" }
+      { decision: "Docker-first training repo", rationale: "Keeps the example focused on container delivery basics", tradeoff: "Does not model a full production deployment platform" },
+      { decision: "Scan-before-publish gate", rationale: "Prevents vulnerable images from being released", tradeoff: "Adds one more step to the pipeline" }
     ],
     runbooks: [
-      { title: "Blue-Green Cutover", objective: "Safely route production traffic to validated release.", commands: ["kubectl get deploy -n prod-blue", "kubectl get deploy -n prod-green", "kubectl patch ingress app-ing -n prod -p '<PATCH_JSON>'", "kubectl describe ingress app-ing -n prod"], verification: ["Ingress points to target service.", "Synthetic transactions pass.", "5xx and latency are within SLO bounds."] }
+      { title: "Build and Run Locally", objective: "Verify the Python service and container image on your machine.", commands: ["python app/server.py", "docker build -t devopsghazali/docker-build-scan-publish:local .", "docker run --rm -p 8080:8080 devopsghazali/docker-build-scan-publish:local", "curl http://localhost:8080/healthz"], verification: ["The app responds on port 8080.", "Health endpoint returns success.", "Container starts cleanly."] },
+      { title: "Validate the Scan Step", objective: "Make sure the vulnerability gate runs before publish.", commands: ["bash scripts/scan.sh devopsghazali/docker-build-scan-publish:local", "cat .github/workflows/docker-publish.yml"], verification: ["Scan step is present in the workflow.", "Publish happens only after the gate passes.", "Workflow logs are easy to read."] }
     ],
     troubleshooting: [
-      { issue: "Traffic still hits old color after patch", checks: ["kubectl get ingress app-ing -n prod -o yaml", "Check ingress controller logs for reload errors", "Validate DNS and caching layers"], fix: "Reapply ingress patch, flush stale cache, and verify service selectors." }
+      { issue: "Container does not start", checks: ["Check app/server.py startup command", "Inspect Dockerfile CMD/ENTRYPOINT", "Run the image locally with docker run"], fix: "Fix the entrypoint or port mapping and rebuild the image." },
+      { issue: "Scan step fails the workflow", checks: ["Inspect Trivy output in GitHub Actions logs", "Check base image versions", "Review dependency or OS package CVEs"], fix: "Patch the vulnerable layer and rerun the pipeline." }
     ],
-    alertMatrix: sharedAlertMatrix,
-    diagrams: projectDiagrams[2]
+    alertMatrix: [
+      { severity: "P1", trigger: "Vulnerable image would be published", target: "Stop publish immediately and patch the image" },
+      { severity: "P2", trigger: "Build or scan stage fails", target: "Fix the failure and rerun the workflow" },
+      { severity: "P3", trigger: "Docs or workflow polish issue", target: "Update in the next iteration" },
+    ]
   },
   3: {
     summary: {
