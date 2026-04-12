@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import useReveal from "../hooks/useReveal";
 
 const About = () => {
@@ -42,17 +41,6 @@ const About = () => {
             I built my foundation in Linux, networking, operating systems, and system fundamentals, and then worked with tools and workflows such as Docker, GitHub, GitLab, Kubernetes, Argo CD, Terraform, Prometheus, Grafana, Jira, Git, Jenkins, and Ansible. Learning in public and building real projects is still the way I keep moving forward.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <span className="rounded-full border border-cyan-400/20 bg-cyan-500/10 px-4 py-2 text-xs uppercase tracking-[0.2em] text-cyan-200">
-              Contact
-            </span>
-            <Link
-              to="/contact"
-              className="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm text-white transition hover:border-cyan-300/50 hover:bg-white/10"
-            >
-              Open Contact
-            </Link>
-          </div>
         </div>
       </div>
     </section>
