@@ -1,10 +1,10 @@
 %PDF-1.4
 1 0 obj << /Type /Catalog /Pages 2 0 R >> endobj
 2 0 obj << /Type /Pages /Kids [3 0 R] /Count 1 >> endobj
-3 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >> endobj
+3 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R /Annots [7 0 R 8 0 R 9 0 R 10 0 R 11 0 R 12 0 R] >> endobj
 4 0 obj << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> endobj
 5 0 obj << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >> endobj
-6 0 obj << /Length 6771 >> stream
+6 0 obj << /Length 7534 >> stream
 BT
 1 1 1 rg
 0 0 595 842 re f
@@ -198,115 +198,139 @@ BT
 /F1 8.7 Tf
 1 0 0 1 250 639.0 Tm
 (Kubernetes.) Tj
+0.110 0.480 0.930 rg
+/F1 8.3 Tf
+1 0 0 1 250 623.875 Tm
+(Repo: https://github.com/devopsghazali/aws-devsecops-gitops-release) Tj
 0.080 0.110 0.160 rg
 /F2 9.7 Tf
-1 0 0 1 250 619.875 Tm
+1 0 0 1 250 605.875 Tm
 (Docker Build, Scan, and Publish Pipeline) Tj
 0.160 0.180 0.220 rg
 /F1 8.7 Tf
-1 0 0 1 250 607.875 Tm
+1 0 0 1 250 593.875 Tm
 (Blue-green container release with image) Tj
 0.160 0.180 0.220 rg
 /F1 8.7 Tf
-1 0 0 1 250 597.375 Tm
+1 0 0 1 250 583.375 Tm
 (scanning, smoke checks, and traffic-safe) Tj
 0.160 0.180 0.220 rg
 /F1 8.7 Tf
-1 0 0 1 250 586.875 Tm
+1 0 0 1 250 572.875 Tm
 (promotion.) Tj
+0.110 0.480 0.930 rg
+/F1 8.3 Tf
+1 0 0 1 250 557.75 Tm
+(Repo: https://github.com/devopsghazali/docker-build-scan-publish) Tj
 0.080 0.110 0.160 rg
 /F2 9.7 Tf
-1 0 0 1 250 567.75 Tm
+1 0 0 1 250 539.75 Tm
 (Kubernetes Observability Stack) Tj
 0.160 0.180 0.220 rg
 /F1 8.7 Tf
-1 0 0 1 250 555.75 Tm
+1 0 0 1 250 527.75 Tm
 (Prometheus, Grafana, and Alertmanager for) Tj
 0.160 0.180 0.220 rg
 /F1 8.7 Tf
-1 0 0 1 250 545.25 Tm
+1 0 0 1 250 517.25 Tm
 (cluster visibility, dashboards, and alert) Tj
 0.160 0.180 0.220 rg
 /F1 8.7 Tf
-1 0 0 1 250 534.75 Tm
+1 0 0 1 250 506.75 Tm
 (validation.) Tj
+0.110 0.480 0.930 rg
+/F1 8.3 Tf
+1 0 0 1 250 491.625 Tm
+(Repo: https://github.com/devopsghazali/kubernetes-observability-stack) Tj
 0.080 0.110 0.160 rg
 /F2 9.7 Tf
-1 0 0 1 250 515.625 Tm
+1 0 0 1 250 473.625 Tm
 (Terraform Multi-Environment AWS Baseline) Tj
 0.160 0.180 0.220 rg
 /F1 8.7 Tf
-1 0 0 1 250 503.625 Tm
+1 0 0 1 250 461.625 Tm
 (Reusable modules for dev, staging, and prod) Tj
 0.160 0.180 0.220 rg
 /F1 8.7 Tf
-1 0 0 1 250 493.125 Tm
+1 0 0 1 250 451.125 Tm
 (with state-managed provisioning and safe) Tj
 0.160 0.180 0.220 rg
 /F1 8.7 Tf
-1 0 0 1 250 482.625 Tm
+1 0 0 1 250 440.625 Tm
 (apply flow.) Tj
+0.110 0.480 0.930 rg
+/F1 8.3 Tf
+1 0 0 1 250 425.5 Tm
+(Repo: https://github.com/devopsghazali/terraform-multi-env-aws-baseline) Tj
 0.080 0.110 0.160 rg
 /F2 9.7 Tf
-1 0 0 1 250 463.5 Tm
+1 0 0 1 250 407.5 Tm
 (GitOps Kubernetes Hardening and Policy Control) Tj
 0.160 0.180 0.220 rg
 /F1 8.7 Tf
-1 0 0 1 250 451.5 Tm
+1 0 0 1 250 395.5 Tm
 (Kyverno, OPA Gatekeeper, Sealed Secrets, and) Tj
 0.160 0.180 0.220 rg
 /F1 8.7 Tf
-1 0 0 1 250 441.0 Tm
+1 0 0 1 250 385.0 Tm
 (CI policy checks for secure-by-default) Tj
 0.160 0.180 0.220 rg
 /F1 8.7 Tf
-1 0 0 1 250 430.5 Tm
+1 0 0 1 250 374.5 Tm
 (delivery.) Tj
+0.110 0.480 0.930 rg
+/F1 8.3 Tf
+1 0 0 1 250 359.375 Tm
+(Repo: https://github.com/devopsghazali/gitops-kubernetes-hardening) Tj
 0.080 0.110 0.160 rg
 /F2 9.7 Tf
-1 0 0 1 250 411.375 Tm
+1 0 0 1 250 341.375 Tm
 (Kubernetes Canary Rollout with Metrics Promotion) Tj
 0.160 0.180 0.220 rg
 /F1 8.7 Tf
-1 0 0 1 250 399.375 Tm
+1 0 0 1 250 329.375 Tm
 (Stable/canary promotion driven by health) Tj
 0.160 0.180 0.220 rg
 /F1 8.7 Tf
-1 0 0 1 250 388.875 Tm
+1 0 0 1 250 318.875 Tm
 (checks, metrics, and immediate rollback on) Tj
 0.160 0.180 0.220 rg
 /F1 8.7 Tf
-1 0 0 1 250 378.375 Tm
+1 0 0 1 250 308.375 Tm
 (regression.) Tj
+0.110 0.480 0.930 rg
+/F1 8.3 Tf
+1 0 0 1 250 293.25 Tm
+(Repo: https://github.com/devopsghazali/kubernetes-canary-rollout) Tj
 0.110 0.820 0.890 rg
-250 354.25 305 2.5 re f
+250 270.25 305 2.5 re f
 0.080 0.110 0.160 rg
 /F2 12 Tf
-1 0 0 1 250 357.25 Tm
+1 0 0 1 250 273.25 Tm
 (Highlights) Tj
 0.160 0.180 0.220 rg
 /F1 8.8 Tf
-1 0 0 1 250 339.25 Tm
+1 0 0 1 250 255.25 Tm
 (- Impact + tools + real work, not generic) Tj
 0.160 0.180 0.220 rg
 /F1 8.8 Tf
-1 0 0 1 250 328.75 Tm
+1 0 0 1 250 244.75 Tm
 (story bullets.) Tj
 0.160 0.180 0.220 rg
 /F1 8.8 Tf
-1 0 0 1 250 313.625 Tm
+1 0 0 1 250 229.625 Tm
 (- Focuses on release safety, observability,) Tj
 0.160 0.180 0.220 rg
 /F1 8.8 Tf
-1 0 0 1 250 303.125 Tm
+1 0 0 1 250 219.125 Tm
 (and system design.) Tj
 0.160 0.180 0.220 rg
 /F1 8.8 Tf
-1 0 0 1 250 288.0 Tm
+1 0 0 1 250 204.0 Tm
 (- Every project has a GitHub repo linked from) Tj
 0.160 0.180 0.220 rg
 /F1 8.8 Tf
-1 0 0 1 250 277.5 Tm
+1 0 0 1 250 193.5 Tm
 (the portfolio.) Tj
 0.11 0.82 0.89 rg
 40 34 515 1.5 re f
@@ -316,16 +340,28 @@ BT
 (Portfolio-driven DevOps resume | One page | Built from practical projects and real repo links) Tj
 ET
 endstream endobj
+7 0 obj << /Type /Annot /Subtype /Link /Border [0 0 0] /Rect [250 621.875 490 633.875] /A << /S /URI /URI (https://github.com/devopsghazali/aws-devsecops-gitops-release) >> >> endobj
+8 0 obj << /Type /Annot /Subtype /Link /Border [0 0 0] /Rect [250 555.75 490 567.75] /A << /S /URI /URI (https://github.com/devopsghazali/docker-build-scan-publish) >> >> endobj
+9 0 obj << /Type /Annot /Subtype /Link /Border [0 0 0] /Rect [250 489.625 490 501.625] /A << /S /URI /URI (https://github.com/devopsghazali/kubernetes-observability-stack) >> >> endobj
+10 0 obj << /Type /Annot /Subtype /Link /Border [0 0 0] /Rect [250 423.5 490 435.5] /A << /S /URI /URI (https://github.com/devopsghazali/terraform-multi-env-aws-baseline) >> >> endobj
+11 0 obj << /Type /Annot /Subtype /Link /Border [0 0 0] /Rect [250 357.375 490 369.375] /A << /S /URI /URI (https://github.com/devopsghazali/gitops-kubernetes-hardening) >> >> endobj
+12 0 obj << /Type /Annot /Subtype /Link /Border [0 0 0] /Rect [250 291.25 490 303.25] /A << /S /URI /URI (https://github.com/devopsghazali/kubernetes-canary-rollout) >> >> endobj
 xref
-0 7
+0 13
 0000000000 65535 f 
 0000000009 00000 n 
 0000000058 00000 n 
 0000000115 00000 n 
-0000000251 00000 n 
-0000000321 00000 n 
-0000000396 00000 n 
+0000000300 00000 n 
+0000000370 00000 n 
+0000000445 00000 n 
+0000008031 00000 n 
+0000008214 00000 n 
+0000008392 00000 n 
+0000008577 00000 n 
+0000008761 00000 n 
+0000008944 00000 n 
 trailer << /Size 7 /Root 1 0 R >>
 startxref
-7219
+9123
 %%EOF

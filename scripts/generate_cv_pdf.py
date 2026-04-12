@@ -40,6 +40,7 @@ def make_pdf(output: Path) -> None:
     left_w = 190
     right_x = 250
     right_w = width - right_x - margin
+    page_annotations = []
 
     lines = []
 
@@ -140,34 +141,51 @@ def make_pdf(output: Path) -> None:
         (
             "AWS DevSecOps GitOps Release Pipeline",
             "Jenkins CI, Docker build, SonarQube and Trivy checks, then Argo CD GitOps deploy to Kubernetes.",
+            "https://github.com/devopsghazali/aws-devsecops-gitops-release",
         ),
         (
             "Docker Build, Scan, and Publish Pipeline",
             "Blue-green container release with image scanning, smoke checks, and traffic-safe promotion.",
+            "https://github.com/devopsghazali/docker-build-scan-publish",
         ),
         (
             "Kubernetes Observability Stack",
             "Prometheus, Grafana, and Alertmanager for cluster visibility, dashboards, and alert validation.",
+            "https://github.com/devopsghazali/kubernetes-observability-stack",
         ),
         (
             "Terraform Multi-Environment AWS Baseline",
             "Reusable modules for dev, staging, and prod with state-managed provisioning and safe apply flow.",
+            "https://github.com/devopsghazali/terraform-multi-env-aws-baseline",
         ),
         (
             "GitOps Kubernetes Hardening and Policy Control",
             "Kyverno, OPA Gatekeeper, Sealed Secrets, and CI policy checks for secure-by-default delivery.",
+            "https://github.com/devopsghazali/gitops-kubernetes-hardening",
         ),
         (
             "Kubernetes Canary Rollout with Metrics Promotion",
             "Stable/canary promotion driven by health checks, metrics, and immediate rollback on regression.",
+            "https://github.com/devopsghazali/kubernetes-canary-rollout",
         ),
     ]
 
-    for title, body in project_blocks:
+    for title, body, repo_url in project_blocks:
         add_text(lines, "F2", 9.7, right_x, ry, title, color=(0.08, 0.11, 0.16))
         ry -= 12
         ry = add_wrapped(lines, "F1", 8.7, right_x, ry, body, width_chars=45, line_height=10.5)
-        ry -= 6
+        repo_y = ry - 2
+        add_text(lines, "F1", 8.3, right_x, repo_y, f"Repo: {repo_url}", color=(0.11, 0.48, 0.93))
+        page_annotations.append(
+            (
+                right_x,
+                repo_y - 2,
+                right_x + 240,
+                repo_y + 10,
+                repo_url,
+            )
+        )
+        ry = repo_y - 18
 
     ry -= 2
     add_section_title(lines, "Highlights", right_x, ry, right_w)
@@ -195,8 +213,9 @@ def make_pdf(output: Path) -> None:
     objects = []
     objects.append(b"1 0 obj << /Type /Catalog /Pages 2 0 R >> endobj\n")
     objects.append(b"2 0 obj << /Type /Pages /Kids [3 0 R] /Count 1 >> endobj\n")
+    annots_ref = " ".join(f"{7 + i} 0 R" for i in range(len(page_annotations)))
     objects.append(
-        f"3 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 {width} {height}] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >> endobj\n".encode(
+        f"3 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 {width} {height}] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R /Annots [{annots_ref}] >> endobj\n".encode(
             "utf-8"
         )
     )
@@ -207,6 +226,13 @@ def make_pdf(output: Path) -> None:
         + content_stream
         + b"\nendstream endobj\n"
     )
+    for index, (x1, y1, x2, y2, repo_url) in enumerate(page_annotations, start=7):
+        objects.append(
+            (
+                f'{index} 0 obj << /Type /Annot /Subtype /Link /Border [0 0 0] '
+                f'/Rect [{x1} {y1} {x2} {y2}] /A << /S /URI /URI ({pdf_escape(repo_url)}) >> >> endobj\n'
+            ).encode("utf-8")
+        )
 
     pdf = bytearray()
     pdf.extend(b"%PDF-1.4\n")

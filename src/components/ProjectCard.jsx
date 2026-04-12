@@ -14,6 +14,11 @@ const ProjectCard = ({ project }) => {
     navigate(`/projects/${project.id}/notes`);
   };
 
+  const openRepository = (event) => {
+    event.stopPropagation();
+    window.open(project.links[0].url, "_blank", "noreferrer");
+  };
+
   return (
     <>
       <button
@@ -50,9 +55,13 @@ const ProjectCard = ({ project }) => {
               </h3>
               <p className="text-sm text-gray-400 leading-relaxed">{project.description}</p>
             </div>
-            <span className="text-[11px] text-gray-400 shrink-0 pt-1">
-              {project.links.length} repo link{project.links.length > 1 ? "s" : ""}
-            </span>
+            <button
+              type="button"
+              onClick={openRepository}
+              className="shrink-0 rounded-full border border-cyan-400/25 bg-cyan-500/10 px-3 py-1 text-[11px] font-medium text-cyan-100 transition hover:border-cyan-300/60 hover:bg-cyan-500/20"
+            >
+              Repo
+            </button>
           </div>
 
           <div className="flex flex-wrap gap-2">
@@ -74,7 +83,7 @@ const ProjectCard = ({ project }) => {
       </button>
 
       {open && (
-        <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 bg-[#0b0f1a]/55 backdrop-blur-md flex items-center justify-center p-4">
           <div className="bg-[#0e1322] rounded-2xl p-6 max-w-2xl w-full relative border border-white/10 shadow-2xl shadow-cyan-900/20">
             <button
               onClick={closeModal}
