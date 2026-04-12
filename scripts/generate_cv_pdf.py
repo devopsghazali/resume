@@ -121,18 +121,6 @@ def make_pdf(output: Path) -> None:
         line_height=11,
     )
 
-    y -= 8
-    add_section_title(lines, "Build Style", left_x, y, left_w)
-    y -= 18
-    style_points = [
-        "Learn fundamentals once, then apply them through real projects.",
-        "Prefer automation, repeatability, and rollback-first thinking.",
-        "Keep explanations simple, practical, and interview ready.",
-    ]
-    for point in style_points:
-        add_wrapped(lines, "F1", 8.7, left_x, y, f"- {point}", width_chars=34, line_height=11)
-        y -= 11 * (1 + len(wrap(point, 34)))
-
     ry = 690
     add_section_title(lines, "Projects", right_x, ry, right_w)
     ry -= 18
@@ -186,18 +174,6 @@ def make_pdf(output: Path) -> None:
             )
         )
         ry = repo_y - 18
-
-    ry -= 2
-    add_section_title(lines, "Highlights", right_x, ry, right_w)
-    ry -= 18
-    highlight_points = [
-        "Impact + tools + real work, not generic story bullets.",
-        "Focuses on release safety, observability, and system design.",
-        "Every project has a GitHub repo linked from the portfolio.",
-    ]
-    for point in highlight_points:
-        ry = add_wrapped(lines, "F1", 8.8, right_x, ry, f"- {point}", width_chars=45, line_height=10.5)
-        ry -= 2
 
     # Footer
     lines.append("0.11 0.82 0.89 rg")

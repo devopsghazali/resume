@@ -4,7 +4,7 @@
 3 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R /Annots [7 0 R 8 0 R 9 0 R 10 0 R 11 0 R 12 0 R] >> endobj
 4 0 obj << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> endobj
 5 0 obj << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >> endobj
-6 0 obj << /Length 7534 >> stream
+6 0 obj << /Length 6184 >> stream
 BT
 1 1 1 rg
 0 0 595 842 re f
@@ -143,40 +143,6 @@ BT
 1 0 0 1 40 277.25 Tm
 (from February 2025 onward.) Tj
 0.110 0.820 0.890 rg
-40 252.5 190 2.5 re f
-0.080 0.110 0.160 rg
-/F2 12 Tf
-1 0 0 1 40 255.5 Tm
-(Build Style) Tj
-0.160 0.180 0.220 rg
-/F1 8.7 Tf
-1 0 0 1 40 237.5 Tm
-(- Learn fundamentals once, then) Tj
-0.160 0.180 0.220 rg
-/F1 8.7 Tf
-1 0 0 1 40 226.5 Tm
-(apply them through real projects.) Tj
-0.160 0.180 0.220 rg
-/F1 8.7 Tf
-1 0 0 1 40 204.5 Tm
-(- Prefer automation,) Tj
-0.160 0.180 0.220 rg
-/F1 8.7 Tf
-1 0 0 1 40 193.5 Tm
-(repeatability, and rollback-first) Tj
-0.160 0.180 0.220 rg
-/F1 8.7 Tf
-1 0 0 1 40 182.5 Tm
-(thinking.) Tj
-0.160 0.180 0.220 rg
-/F1 8.7 Tf
-1 0 0 1 40 171.5 Tm
-(- Keep explanations simple,) Tj
-0.160 0.180 0.220 rg
-/F1 8.7 Tf
-1 0 0 1 40 160.5 Tm
-(practical, and interview ready.) Tj
-0.110 0.820 0.890 rg
 250 687 305 2.5 re f
 0.080 0.110 0.160 rg
 /F2 12 Tf
@@ -302,36 +268,6 @@ BT
 /F1 8.3 Tf
 1 0 0 1 250 293.25 Tm
 (Repo: https://github.com/devopsghazali/kubernetes-canary-rollout) Tj
-0.110 0.820 0.890 rg
-250 270.25 305 2.5 re f
-0.080 0.110 0.160 rg
-/F2 12 Tf
-1 0 0 1 250 273.25 Tm
-(Highlights) Tj
-0.160 0.180 0.220 rg
-/F1 8.8 Tf
-1 0 0 1 250 255.25 Tm
-(- Impact + tools + real work, not generic) Tj
-0.160 0.180 0.220 rg
-/F1 8.8 Tf
-1 0 0 1 250 244.75 Tm
-(story bullets.) Tj
-0.160 0.180 0.220 rg
-/F1 8.8 Tf
-1 0 0 1 250 229.625 Tm
-(- Focuses on release safety, observability,) Tj
-0.160 0.180 0.220 rg
-/F1 8.8 Tf
-1 0 0 1 250 219.125 Tm
-(and system design.) Tj
-0.160 0.180 0.220 rg
-/F1 8.8 Tf
-1 0 0 1 250 204.0 Tm
-(- Every project has a GitHub repo linked from) Tj
-0.160 0.180 0.220 rg
-/F1 8.8 Tf
-1 0 0 1 250 193.5 Tm
-(the portfolio.) Tj
 0.11 0.82 0.89 rg
 40 34 515 1.5 re f
 0.300 0.350 0.420 rg
@@ -355,13 +291,13 @@ xref
 0000000300 00000 n 
 0000000370 00000 n 
 0000000445 00000 n 
-0000008031 00000 n 
-0000008214 00000 n 
-0000008392 00000 n 
-0000008577 00000 n 
-0000008761 00000 n 
-0000008944 00000 n 
+0000006681 00000 n 
+0000006864 00000 n 
+0000007042 00000 n 
+0000007227 00000 n 
+0000007411 00000 n 
+0000007594 00000 n 
 trailer << /Size 7 /Root 1 0 R >>
 startxref
-9123
+7773
 %%EOF
