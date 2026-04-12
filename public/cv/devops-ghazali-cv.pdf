@@ -4,83 +4,316 @@
 3 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >> endobj
 4 0 obj << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> endobj
 5 0 obj << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >> endobj
-6 0 obj << /Length 2200 >> stream
+6 0 obj << /Length 6771 >> stream
 BT
-/F2 20 Tf
-1 0 0 1 40 792 Tm
-(DevOps Ghazali) Tj
+1 1 1 rg
+0 0 595 842 re f
+0.063 0.082 0.129 rg
+0 724 595 118 re f
+0.114 0.827 0.922 rg
+0 720 595 4 re f
+1.000 1.000 1.000 rg
+/F2 22 Tf
+1 0 0 1 40 780 Tm
+(Hasnain Ghazali) Tj
+0.760 0.880 0.950 rg
 /F1 11 Tf
-1 0 0 1 40 772 Tm
-(DevOps / Cloud / Platform Engineering) Tj
-/F1 10 Tf
-1 0 0 1 40 754 Tm
-(Email: devopsghazali@gmail.com    GitHub: github.com/devopsghazali    LinkedIn: linkedin.com/in/devops-hasnain) Tj
+1 0 0 1 40 762 Tm
+(DevOps Engineer | Kubernetes | Terraform | GitOps) Tj
+0.930 0.960 0.990 rg
+/F1 9.2 Tf
+1 0 0 1 40 744 Tm
+(devopsghazali@gmail.com  |  github.com/devopsghazali  |  linkedin.com/in/devops-hasnain) Tj
+0.820 0.890 0.950 rg
+/F1 8.8 Tf
+1 0 0 1 40 728 Tm
+(Hands-on learner building real-world DevOps projects with practical delivery, observability, and security workflows.) Tj
+0.110 0.820 0.890 rg
+40 687 190 2.5 re f
+0.080 0.110 0.160 rg
 /F2 12 Tf
-1 0 0 1 40 724 Tm
+1 0 0 1 40 690 Tm
 (Summary) Tj
-/F1 10 Tf
-1 0 0 1 40 708 Tm
-(Hands-on DevOps learner and builder focused on Kubernetes, CI/CD, Terraform, Docker, and GitOps.) Tj
-/F1 10 Tf
-1 0 0 1 40 694 Tm
-(Builds practical projects that explain release safety, observability, infrastructure automation, and security.) Tj
-/F2 12 Tf
-1 0 0 1 40 666 Tm
-(Skills) Tj
-/F1 10 Tf
-1 0 0 1 40 650 Tm
-(Cloud: AWS) Tj
-/F1 10 Tf
+0.160 0.180 0.220 rg
+/F1 9.7 Tf
+1 0 0 1 40 672 Tm
+(Hands-on DevOps builder focused on) Tj
+0.160 0.180 0.220 rg
+/F1 9.7 Tf
+1 0 0 1 40 660 Tm
+(Linux, Kubernetes, Terraform,) Tj
+0.160 0.180 0.220 rg
+/F1 9.7 Tf
+1 0 0 1 40 648 Tm
+(Docker, and GitOps. Builds) Tj
+0.160 0.180 0.220 rg
+/F1 9.7 Tf
 1 0 0 1 40 636 Tm
-(Containers: Docker, Kubernetes) Tj
-/F1 10 Tf
-1 0 0 1 40 622 Tm
-(CI/CD: Jenkins, GitHub Actions, Argo CD) Tj
-/F1 10 Tf
-1 0 0 1 40 608 Tm
-(Infrastructure: Terraform, Ansible) Tj
-/F1 10 Tf
-1 0 0 1 40 594 Tm
-(Monitoring: Prometheus, Grafana) Tj
-/F1 10 Tf
-1 0 0 1 40 580 Tm
-(Scripting: Bash, Python) Tj
+(practical, interview-ready systems) Tj
+0.160 0.180 0.220 rg
+/F1 9.7 Tf
+1 0 0 1 40 624 Tm
+(around release safety,) Tj
+0.160 0.180 0.220 rg
+/F1 9.7 Tf
+1 0 0 1 40 612 Tm
+(observability, infrastructure) Tj
+0.160 0.180 0.220 rg
+/F1 9.7 Tf
+1 0 0 1 40 600 Tm
+(automation, and secure delivery.) Tj
+0.110 0.820 0.890 rg
+40 574.0 190 2.5 re f
+0.080 0.110 0.160 rg
 /F2 12 Tf
-1 0 0 1 40 552 Tm
-(Projects) Tj
-/F1 10 Tf
-1 0 0 1 40 536 Tm
-(AWS DevSecOps GitOps Release Pipeline - Jenkins CI, Docker build, security scans, Argo CD GitOps deploy.) Tj
-/F1 10 Tf
-1 0 0 1 40 522 Tm
-(Kubernetes Canary Rollout - stable and canary deployments with metrics-based promotion and rollback.) Tj
-/F1 10 Tf
-1 0 0 1 40 508 Tm
-(Terraform Multi-Environment AWS Baseline - reusable modules for dev, staging, and prod.) Tj
-/F1 10 Tf
-1 0 0 1 40 494 Tm
-(Kubernetes Observability Stack - Prometheus, Grafana, and alerting for cluster visibility.) Tj
-/F1 10 Tf
-1 0 0 1 40 480 Tm
-(Docker Build, Scan, and Publish Pipeline - container build, scan, and trusted publish flow.) Tj
+1 0 0 1 40 577.0 Tm
+(Skills) Tj
+0.160 0.180 0.220 rg
+/F1 8.9 Tf
+1 0 0 1 40 559.0 Tm
+(Cloud: AWS) Tj
+0.160 0.180 0.220 rg
+/F1 8.9 Tf
+1 0 0 1 40 537.0 Tm
+(Containers: Docker, Kubernetes,) Tj
+0.160 0.180 0.220 rg
+/F1 8.9 Tf
+1 0 0 1 40 526.0 Tm
+(NGINX Ingress) Tj
+0.160 0.180 0.220 rg
+/F1 8.9 Tf
+1 0 0 1 40 504.0 Tm
+(CI/CD: Jenkins, GitHub Actions,) Tj
+0.160 0.180 0.220 rg
+/F1 8.9 Tf
+1 0 0 1 40 493.0 Tm
+(Argo CD) Tj
+0.160 0.180 0.220 rg
+/F1 8.9 Tf
+1 0 0 1 40 471.0 Tm
+(IaC: Terraform, Ansible) Tj
+0.160 0.180 0.220 rg
+/F1 8.9 Tf
+1 0 0 1 40 449.0 Tm
+(Monitoring: Prometheus, Grafana,) Tj
+0.160 0.180 0.220 rg
+/F1 8.9 Tf
+1 0 0 1 40 438.0 Tm
+(Alertmanager) Tj
+0.160 0.180 0.220 rg
+/F1 8.9 Tf
+1 0 0 1 40 416.0 Tm
+(Security: Kyverno, OPA Gatekeeper,) Tj
+0.160 0.180 0.220 rg
+/F1 8.9 Tf
+1 0 0 1 40 405.0 Tm
+(Sealed Secrets, Trivy) Tj
+0.160 0.180 0.220 rg
+/F1 8.9 Tf
+1 0 0 1 40 383.0 Tm
+(Systems: Linux, Networking, Git,) Tj
+0.160 0.180 0.220 rg
+/F1 8.9 Tf
+1 0 0 1 40 372.0 Tm
+(Bash) Tj
+0.110 0.820 0.890 rg
+40 341.0 190 2.5 re f
+0.080 0.110 0.160 rg
 /F2 12 Tf
-1 0 0 1 40 466 Tm
+1 0 0 1 40 344.0 Tm
 (Education) Tj
-/F1 10 Tf
-1 0 0 1 40 450 Tm
+0.160 0.180 0.220 rg
+/F1 9.2 Tf
+1 0 0 1 40 326.0 Tm
 (Bachelor's in Humanities) Tj
-/F1 10 Tf
-1 0 0 1 40 436 Tm
-(Focus shifted to real-world DevOps and systems work through hands-on projects.) Tj
+0.160 0.180 0.220 rg
+/F1 8.8 Tf
+1 0 0 1 40 310.25 Tm
+(Shifted into DevOps and systems) Tj
+0.160 0.180 0.220 rg
+/F1 8.8 Tf
+1 0 0 1 40 299.25 Tm
+(engineering through hands-on) Tj
+0.160 0.180 0.220 rg
+/F1 8.8 Tf
+1 0 0 1 40 288.25 Tm
+(projects and self-driven learning) Tj
+0.160 0.180 0.220 rg
+/F1 8.8 Tf
+1 0 0 1 40 277.25 Tm
+(from February 2025 onward.) Tj
+0.110 0.820 0.890 rg
+40 252.5 190 2.5 re f
+0.080 0.110 0.160 rg
 /F2 12 Tf
-1 0 0 1 40 408 Tm
+1 0 0 1 40 255.5 Tm
+(Build Style) Tj
+0.160 0.180 0.220 rg
+/F1 8.7 Tf
+1 0 0 1 40 237.5 Tm
+(- Learn fundamentals once, then) Tj
+0.160 0.180 0.220 rg
+/F1 8.7 Tf
+1 0 0 1 40 226.5 Tm
+(apply them through real projects.) Tj
+0.160 0.180 0.220 rg
+/F1 8.7 Tf
+1 0 0 1 40 204.5 Tm
+(- Prefer automation,) Tj
+0.160 0.180 0.220 rg
+/F1 8.7 Tf
+1 0 0 1 40 193.5 Tm
+(repeatability, and rollback-first) Tj
+0.160 0.180 0.220 rg
+/F1 8.7 Tf
+1 0 0 1 40 182.5 Tm
+(thinking.) Tj
+0.160 0.180 0.220 rg
+/F1 8.7 Tf
+1 0 0 1 40 171.5 Tm
+(- Keep explanations simple,) Tj
+0.160 0.180 0.220 rg
+/F1 8.7 Tf
+1 0 0 1 40 160.5 Tm
+(practical, and interview ready.) Tj
+0.110 0.820 0.890 rg
+250 687 305 2.5 re f
+0.080 0.110 0.160 rg
+/F2 12 Tf
+1 0 0 1 250 690 Tm
+(Projects) Tj
+0.080 0.110 0.160 rg
+/F2 9.7 Tf
+1 0 0 1 250 672 Tm
+(AWS DevSecOps GitOps Release Pipeline) Tj
+0.160 0.180 0.220 rg
+/F1 8.7 Tf
+1 0 0 1 250 660 Tm
+(Jenkins CI, Docker build, SonarQube and Trivy) Tj
+0.160 0.180 0.220 rg
+/F1 8.7 Tf
+1 0 0 1 250 649.5 Tm
+(checks, then Argo CD GitOps deploy to) Tj
+0.160 0.180 0.220 rg
+/F1 8.7 Tf
+1 0 0 1 250 639.0 Tm
+(Kubernetes.) Tj
+0.080 0.110 0.160 rg
+/F2 9.7 Tf
+1 0 0 1 250 619.875 Tm
+(Docker Build, Scan, and Publish Pipeline) Tj
+0.160 0.180 0.220 rg
+/F1 8.7 Tf
+1 0 0 1 250 607.875 Tm
+(Blue-green container release with image) Tj
+0.160 0.180 0.220 rg
+/F1 8.7 Tf
+1 0 0 1 250 597.375 Tm
+(scanning, smoke checks, and traffic-safe) Tj
+0.160 0.180 0.220 rg
+/F1 8.7 Tf
+1 0 0 1 250 586.875 Tm
+(promotion.) Tj
+0.080 0.110 0.160 rg
+/F2 9.7 Tf
+1 0 0 1 250 567.75 Tm
+(Kubernetes Observability Stack) Tj
+0.160 0.180 0.220 rg
+/F1 8.7 Tf
+1 0 0 1 250 555.75 Tm
+(Prometheus, Grafana, and Alertmanager for) Tj
+0.160 0.180 0.220 rg
+/F1 8.7 Tf
+1 0 0 1 250 545.25 Tm
+(cluster visibility, dashboards, and alert) Tj
+0.160 0.180 0.220 rg
+/F1 8.7 Tf
+1 0 0 1 250 534.75 Tm
+(validation.) Tj
+0.080 0.110 0.160 rg
+/F2 9.7 Tf
+1 0 0 1 250 515.625 Tm
+(Terraform Multi-Environment AWS Baseline) Tj
+0.160 0.180 0.220 rg
+/F1 8.7 Tf
+1 0 0 1 250 503.625 Tm
+(Reusable modules for dev, staging, and prod) Tj
+0.160 0.180 0.220 rg
+/F1 8.7 Tf
+1 0 0 1 250 493.125 Tm
+(with state-managed provisioning and safe) Tj
+0.160 0.180 0.220 rg
+/F1 8.7 Tf
+1 0 0 1 250 482.625 Tm
+(apply flow.) Tj
+0.080 0.110 0.160 rg
+/F2 9.7 Tf
+1 0 0 1 250 463.5 Tm
+(GitOps Kubernetes Hardening and Policy Control) Tj
+0.160 0.180 0.220 rg
+/F1 8.7 Tf
+1 0 0 1 250 451.5 Tm
+(Kyverno, OPA Gatekeeper, Sealed Secrets, and) Tj
+0.160 0.180 0.220 rg
+/F1 8.7 Tf
+1 0 0 1 250 441.0 Tm
+(CI policy checks for secure-by-default) Tj
+0.160 0.180 0.220 rg
+/F1 8.7 Tf
+1 0 0 1 250 430.5 Tm
+(delivery.) Tj
+0.080 0.110 0.160 rg
+/F2 9.7 Tf
+1 0 0 1 250 411.375 Tm
+(Kubernetes Canary Rollout with Metrics Promotion) Tj
+0.160 0.180 0.220 rg
+/F1 8.7 Tf
+1 0 0 1 250 399.375 Tm
+(Stable/canary promotion driven by health) Tj
+0.160 0.180 0.220 rg
+/F1 8.7 Tf
+1 0 0 1 250 388.875 Tm
+(checks, metrics, and immediate rollback on) Tj
+0.160 0.180 0.220 rg
+/F1 8.7 Tf
+1 0 0 1 250 378.375 Tm
+(regression.) Tj
+0.110 0.820 0.890 rg
+250 354.25 305 2.5 re f
+0.080 0.110 0.160 rg
+/F2 12 Tf
+1 0 0 1 250 357.25 Tm
 (Highlights) Tj
-/F1 10 Tf
-1 0 0 1 40 392 Tm
-(Practices plan-first infrastructure changes, immutable image tagging, GitOps promotion, and fast rollback thinking.) Tj
-/F1 10 Tf
-1 0 0 1 40 378 Tm
-(Keeps learning in public and explains systems in a practical, interview-ready way.) Tj
+0.160 0.180 0.220 rg
+/F1 8.8 Tf
+1 0 0 1 250 339.25 Tm
+(- Impact + tools + real work, not generic) Tj
+0.160 0.180 0.220 rg
+/F1 8.8 Tf
+1 0 0 1 250 328.75 Tm
+(story bullets.) Tj
+0.160 0.180 0.220 rg
+/F1 8.8 Tf
+1 0 0 1 250 313.625 Tm
+(- Focuses on release safety, observability,) Tj
+0.160 0.180 0.220 rg
+/F1 8.8 Tf
+1 0 0 1 250 303.125 Tm
+(and system design.) Tj
+0.160 0.180 0.220 rg
+/F1 8.8 Tf
+1 0 0 1 250 288.0 Tm
+(- Every project has a GitHub repo linked from) Tj
+0.160 0.180 0.220 rg
+/F1 8.8 Tf
+1 0 0 1 250 277.5 Tm
+(the portfolio.) Tj
+0.11 0.82 0.89 rg
+40 34 515 1.5 re f
+0.300 0.350 0.420 rg
+/F1 8.2 Tf
+1 0 0 1 40 20 Tm
+(Portfolio-driven DevOps resume | One page | Built from practical projects and real repo links) Tj
 ET
 endstream endobj
 xref
@@ -94,5 +327,5 @@ xref
 0000000396 00000 n 
 trailer << /Size 7 /Root 1 0 R >>
 startxref
-2648
+7219
 %%EOF
