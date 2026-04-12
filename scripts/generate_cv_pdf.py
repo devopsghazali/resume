@@ -95,12 +95,14 @@ def make_pdf(output: Path) -> None:
     y -= 18
     skills = [
         "Cloud: AWS",
-        "Containers: Docker, Kubernetes, NGINX Ingress",
-        "CI/CD: Jenkins, GitHub Actions, Argo CD",
+        "Containers: Docker, Kubernetes, NGINX Ingress, Argo CD",
+        "CI/CD: Jenkins, GitHub Actions",
         "IaC: Terraform, Ansible",
         "Monitoring: Prometheus, Grafana, Alertmanager",
         "Security: Kyverno, OPA Gatekeeper, Sealed Secrets, Trivy",
-        "Systems: Linux, Networking, Git, Bash",
+        "Systems: Linux, Networking, Git, Bash, Shell Scripting",
+        "Languages: Python (Basic), Go (Basic)",
+        "AI: GenAI, Agentic AI",
     ]
     for skill in skills:
         add_wrapped(lines, "F1", 8.9, left_x, y, skill, width_chars=34, line_height=11)
