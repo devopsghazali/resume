@@ -57,7 +57,7 @@ export const projects = [
     title: "Docker Build, Scan, and Publish Pipeline",
     description:
       "Docker-first release pipeline with image build, vulnerability scan, registry push, and deployment-safe release checks.",
-    image: "/images/project-blue-green-release.svg",
+    image: "/images/project-docker-build-scan-publish.svg",
     stack: [
       "GitHub Actions",
       "Docker",
@@ -255,6 +255,56 @@ export const projects = [
         "Secure platform defaults and governance automation.",
         "Shift-left validation for security and compliance.",
         "Reduced operational risk through controlled, policy-driven delivery.",
+      ],
+    },
+  },
+  {
+    id: 6,
+    title: "Kubernetes Canary Rollout with Metrics Promotion",
+    description:
+      "Canary deployment project with stable/canary splits, health checks, and metrics-based promotion before full rollout.",
+    image: "/images/project-canary-rollout.svg",
+    stack: [
+      "Kubernetes",
+      "Argo Rollouts",
+      "Prometheus",
+      "Grafana",
+      "Docker",
+      "NGINX Ingress",
+    ],
+    codeSummary:
+      "A small Node.js service is deployed as stable and canary versions so promotion happens only after health and metric checks pass.",
+    details:
+      "This project demonstrates a controlled canary release flow. The stable deployment keeps serving traffic, while the canary deployment starts with a small replica count. Health checks and simple latency/error observations are used to decide whether the canary should receive more traffic. The core interview point is safe promotion: do not move fast unless the signals are good, and roll back immediately when the canary regresses.",
+    highlights: [
+      "Stable and canary deployments with separate labels.",
+      "Controlled promotion based on health and metrics.",
+      "Rollback path is immediate if the canary misbehaves.",
+      "Good interview example for progressive delivery.",
+    ],
+    links: [
+      {
+        label: "GitHub Repository",
+        url: "https://github.com/devopsghazali/kubernetes-canary-rollout",
+        note: "Stable/canary manifests, service routing, and rollout notes.",
+      },
+    ],
+    notes: {
+      goal:
+        "Teach how progressive delivery reduces blast radius and gives you a safer deployment path than all-at-once rollout.",
+      architecture:
+        "Stable deployment serves live traffic. Canary deployment receives a small share. Metrics decide whether to promote the canary or roll it back.",
+      buildAndDeploy: [
+        "Built a small Node.js service with a health endpoint.",
+        "Created stable and canary Kubernetes deployments with different replica counts.",
+        "Used a service and ingress layer to show the routing strategy.",
+        "Validated the canary with health and performance checks before promotion.",
+        "Kept the rollback path simple so the stable version can keep serving traffic.",
+      ],
+      devopsFocus: [
+        "Progressive delivery with low blast radius.",
+        "Promotion driven by health and metrics.",
+        "Production-safe release thinking.",
       ],
     },
   },

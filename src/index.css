@@ -204,6 +204,22 @@ html.theme-light .theme-switch-track {
   animation: soft-rise 700ms ease-out both;
 }
 
+.hero-accent {
+  background-image: linear-gradient(90deg, #67e8f9, #22d3ee, #c084fc, #67e8f9);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer-glow 7s ease-in-out infinite;
+}
+
+button.nav-orbit {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
 .project-card-surface {
   animation: soft-glow 6s ease-in-out infinite;
 }

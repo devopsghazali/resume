@@ -1,0 +1,19 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" rx="48" fill="#0B0F1A"/>
+  <circle cx="940" cy="170" r="180" fill="#22D3EE" fill-opacity="0.10"/>
+  <circle cx="220" cy="620" r="220" fill="#A78BFA" fill-opacity="0.10"/>
+  <rect x="110" y="120" width="980" height="560" rx="32" fill="#101628" stroke="#1F2937"/>
+  <text x="190" y="225" fill="#E2E8F0" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">Kubernetes Canary Rollout</text>
+  <text x="190" y="260" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-size="18">Stable traffic first. Small canary. Metrics decide the promotion.</text>
+  <rect x="190" y="320" width="350" height="300" rx="30" fill="#0F172A" stroke="#334155"/>
+  <rect x="660" y="320" width="350" height="300" rx="30" fill="#0F172A" stroke="#334155"/>
+  <circle cx="305" cy="410" r="50" fill="#22D3EE" fill-opacity="0.20" stroke="#22D3EE"/>
+  <circle cx="775" cy="410" r="50" fill="#A78BFA" fill-opacity="0.20" stroke="#A78BFA"/>
+  <text x="260" y="495" fill="#7DD3FC" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">Stable</text>
+  <text x="735" y="495" fill="#C4B5FD" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">Canary</text>
+  <text x="228" y="540" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-size="17">Live production traffic</text>
+  <text x="708" y="540" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-size="17">New version under observation</text>
+  <path d="M540 470H660" stroke="#94A3B8" stroke-width="6" stroke-linecap="round" stroke-dasharray="12 12"/>
+  <text x="500" y="445" fill="#E2E8F0" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">Promote if healthy</text>
+  <text x="470" y="515" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-size="14">Monitor errors, latency, and readiness</text>
+</svg>

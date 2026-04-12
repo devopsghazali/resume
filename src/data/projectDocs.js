@@ -287,6 +287,61 @@ export const projectDocs = {
     alertMatrix: sharedAlertMatrix,
     diagrams: projectDiagrams[5]
   }
+  ,
+  6: {
+    summary: {
+      what: "Canary rollout project for safer Kubernetes releases using stable and canary versions.",
+      why: "To reduce deployment risk by exposing the new version to a small slice of traffic first.",
+      how: "Keep the stable deployment live, bring up a canary deployment, monitor health and latency, and promote only when signals stay healthy.",
+      internalWorking: "The canary version receives limited exposure at first. If metrics stay healthy, traffic is shifted gradually; otherwise the stable version remains the source of truth.",
+      bestPractices: [
+        "Keep stable and canary labels explicit.",
+        "Promote only after health checks and metric checks pass.",
+        "Rollback should be fast and boring."
+      ],
+      commonMistakes: [
+        "Sending too much traffic to the canary too early.",
+        "Ignoring metrics and relying on intuition.",
+        "Coupling canary promotion with unrelated changes."
+      ]
+    },
+    architectureOverview: "Stable pods keep serving live traffic while the canary deployment is verified with a smaller footprint. Metrics and health checks decide whether the rollout continues or rolls back.",
+    components: [
+      { name: "Stable Deployment", role: "Current production version", internalWorking: "Keeps serving traffic while the canary is tested." },
+      { name: "Canary Deployment", role: "New candidate version", internalWorking: "Starts with a small replica count and limited exposure." },
+      { name: "Service + Ingress", role: "Traffic routing layer", internalWorking: "Routes users to the stable version until promotion is approved." }
+    ],
+    deploymentSteps: [
+      { step: "Deploy Stable Version", what: "Keep the live version running.", why: "The stable deployment is the safety net.", how: "Deploy the baseline app and verify readiness.", internalWorking: "Service selector points to stable pods.", bestPractices: "Keep the baseline healthy before introducing canary.", commonMistakes: "Changing too many variables at once." },
+      { step: "Introduce Canary", what: "Bring up the new version with small footprint.", why: "Limits impact if the new release has a bug.", how: "Deploy the canary with a smaller replica count and separate label.", internalWorking: "Only a small portion of traffic should reach the canary at first.", bestPractices: "Make stable and canary easy to compare.", commonMistakes: "Overloading canary before enough data is gathered." },
+      { step: "Promote or Roll Back", what: "Use health and metrics to decide the next move.", why: "Release decisions should be evidence-based.", how: "Watch error rate, latency, and pod health before promotion.", internalWorking: "Healthy canary can receive more traffic or replace stable; unhealthy canary is removed quickly.", bestPractices: "Define rollback criteria before deploying.", commonMistakes: "Waiting too long to rollback." }
+    ],
+    observability: {
+      metrics: "Track error rate, latency, and pod health during the canary window.",
+      logs: "Compare logs between stable and canary to see functional differences.",
+      alerts: "Alert on latency spikes, higher 5xx rate, and canary readiness failures.",
+      alertLifecycle: "Deploy canary -> observe metrics -> alert if abnormal -> pause or rollback -> verify recovery.",
+      incidentLifecycle: "Detect regression -> isolate canary -> restore stable traffic -> investigate -> retest."
+    },
+    failureScenarios: [
+      { scenario: "Canary shows latency spike", symptoms: "Requests slow down only on the new version", response: "Keep traffic on stable and remove canary", prevention: "Run synthetic tests before promotion" },
+      { scenario: "Canary readiness fails", symptoms: "Canary pods never become Ready", response: "Fix config or image and redeploy canary", prevention: "Keep readiness probes strict and simple" }
+    ],
+    scaling: ["Add analysis windows before increasing traffic.", "Use the same resource profile for stable and canary where possible.", "Split metrics by deployment label."],
+    security: ["Keep image tags immutable.", "Use minimal permissions for rollout automation.", "Avoid exposing canary externally before validation."],
+    designDecisions: [
+      { decision: "Canary over all-at-once", rationale: "Safer release with smaller blast radius", tradeoff: "Rollout takes longer" },
+      { decision: "Metrics-based promotion", rationale: "Evidence-driven deployment", tradeoff: "Requires monitoring maturity" }
+    ],
+    runbooks: [
+      { title: "Canary Rollback", objective: "Remove the canary quickly if metrics degrade.", commands: ["kubectl get deploy -l track=canary -n default", "kubectl delete deploy canary-rollout-canary", "kubectl rollout status deploy/canary-rollout-stable", "kubectl get svc canary-rollout"], verification: ["Stable traffic still flows.", "Canary pods are removed.", "Latency and error rate return to normal."] }
+    ],
+    troubleshooting: [
+      { issue: "Traffic split is uneven", checks: ["kubectl get ingress canary-rollout -o yaml", "Check service selectors", "Verify canary labels"], fix: "Correct selectors and reapply routing manifests." }
+    ],
+    alertMatrix: sharedAlertMatrix,
+    diagrams: projectDiagrams[2]
+  }
 };
 
 

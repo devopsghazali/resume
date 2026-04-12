@@ -17,12 +17,6 @@ const Contact = () => {
     window.location.href = `mailto:storytotech@gmail.com?subject=${subject}&body=${body}`;
   };
 
-  const quickPills = [
-    "DevOps portfolio reviews",
-    "Resume/project discussion",
-    "Interview prep collaboration",
-  ];
-
   return (
     <section
       id="contact"
@@ -31,26 +25,14 @@ const Contact = () => {
       <div className="absolute -top-24 -left-16 w-72 h-72 rounded-full bg-cyan-500/15 blur-[110px]" />
       <div className="absolute -bottom-24 -right-16 w-72 h-72 rounded-full bg-indigo-500/15 blur-[110px]" />
 
-      <div className="relative max-w-6xl mx-auto grid lg:grid-cols-[1fr_1.2fr] gap-8 animate-fade-up">
+      <div className="relative max-w-5xl mx-auto grid lg:grid-cols-[0.9fr_1.1fr] gap-8 animate-fade-up">
         <div className="rounded-3xl border border-white/10 bg-[#101628]/85 p-7 project-card-surface">
           <p className="text-xs tracking-[0.2em] uppercase text-cyan-300 mb-3">Let us connect</p>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 hero-title">Contact</h2>
           <p className="text-gray-300 leading-relaxed mb-6">
             If you are building infrastructure, improving deployment reliability, or setting
-            up DevOps workflows, feel free to reach out. I am always open to meaningful
-            technical collaboration.
+            up DevOps workflows, feel free to reach out.
           </p>
-
-          <div className="flex flex-wrap gap-2 mb-6">
-            {quickPills.map((pill) => (
-              <span
-                key={pill}
-                className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-gray-300 float-note"
-              >
-                {pill}
-              </span>
-            ))}
-          </div>
 
           <div className="space-y-3 mb-6">
             <a
@@ -80,17 +62,6 @@ const Contact = () => {
               <p className="text-xs uppercase tracking-wider text-cyan-200">LinkedIn</p>
               <p className="text-white text-sm mt-1">linkedin.com/in/devops-hasnain</p>
             </a>
-          </div>
-
-          <div className="grid grid-cols-2 gap-3 text-sm">
-            <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
-              <p className="text-cyan-200">Response</p>
-              <p className="text-gray-300 mt-1">Within 24 hrs</p>
-            </div>
-            <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
-              <p className="text-cyan-200">Focus</p>
-              <p className="text-gray-300 mt-1">DevOps / Cloud</p>
-            </div>
           </div>
         </div>
 
