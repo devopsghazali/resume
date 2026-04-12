@@ -20,13 +20,6 @@ const ThemeIcon = ({ theme }) => (theme === "dark" ? <SunIcon className="w-3.5 h
 export default function Navbar({ theme = "dark", onToggleTheme }) {
   const [scrolled, setScrolled] = useState(false);
 
-  const scrollToId = (id) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 30);
@@ -54,8 +47,8 @@ export default function Navbar({ theme = "dark", onToggleTheme }) {
         </Link>
 
         <nav className="flex items-center gap-3 md:gap-4 text-sm">
-          <button type="button" onClick={() => scrollToId("projects")} className="nav-orbit">Projects</button>
-          <button type="button" onClick={() => scrollToId("about")} className="nav-orbit">About</button>
+          <Link to="/#projects" className="nav-orbit">Projects</Link>
+          <Link to="/about" className="nav-orbit">About</Link>
           <Link to="/contact" className="nav-orbit">Contact</Link>
 
           <button

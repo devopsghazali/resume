@@ -28,6 +28,7 @@ def make_pdf(output: Path) -> None:
         ("F1", 10, 40, 522, "Kubernetes Canary Rollout - stable and canary deployments with metrics-based promotion and rollback."),
         ("F1", 10, 40, 508, "Terraform Multi-Environment AWS Baseline - reusable modules for dev, staging, and prod."),
         ("F1", 10, 40, 494, "Kubernetes Observability Stack - Prometheus, Grafana, and alerting for cluster visibility."),
+        ("F1", 10, 40, 480, "Docker Build, Scan, and Publish Pipeline - container build, scan, and trusted publish flow."),
         ("F2", 12, 40, 466, "Education"),
         ("F1", 10, 40, 450, "Bachelor's in Humanities"),
         ("F1", 10, 40, 436, "Focus shifted to real-world DevOps and systems work through hands-on projects."),

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ProjectsSection from "./ProjectsSection.jsx";
 import DevOpsInfinity from "./DevOpsInfinity.jsx";
@@ -47,21 +48,12 @@ const Hero = () => {
             </div>
 
             <div className="mt-8 flex flex-wrap gap-4">
-              <button
-                type="button"
-                onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
+              <Link
+                to="/about"
                 className="px-6 py-3 bg-cyan-500 text-black font-medium rounded-md hover:bg-cyan-400 transition inline-flex items-center"
               >
-                View Projects
-              </button>
-
-              <button
-                type="button"
-                onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
-                className="px-6 py-3 border border-white/20 text-white rounded-md hover:bg-white/10 transition inline-flex items-center"
-              >
-                About Me
-              </button>
+                About
+              </Link>
 
               <a
                 href="/cv/devops-ghazali-cv.pdf"
@@ -72,21 +64,6 @@ const Hero = () => {
               </a>
             </div>
 
-            <div
-              id="about"
-              className="mt-8 rounded-3xl border border-white/10 bg-[#101628]/85 p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.02)] project-card-surface"
-            >
-              <p className="text-xs uppercase tracking-[0.2em] text-cyan-300 mb-3">
-                About Me
-              </p>
-              <p className="text-gray-300 leading-relaxed">
-                I do not come from a traditional computer science background. I completed my
-                bachelor&apos;s in Humanities, but I always had a strong curiosity for technology and software. After getting my first laptop, that curiosity slowly turned into a habit of building, breaking, and understanding things on my own.
-              </p>
-              <p className="text-gray-300 leading-relaxed mt-4">
-                Around February 2025, I started learning tech more actively as a hobby and explored data science, quantum computing, robotics, web development, app development, DSA, product design, GenAI, agentic AI, and cybersecurity testing. Over time I shifted toward DevOps and system engineering because I wanted to build real-world systems, not just follow tutorials.
-              </p>
-            </div>
           </div>
 
           <div className="flex justify-center md:justify-end mt-16">

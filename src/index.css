@@ -178,6 +178,17 @@ html.theme-light .theme-switch-track {
   }
 }
 
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes soft-glow {
   0%, 100% {
     box-shadow: 0 0 0 rgba(34, 211, 238, 0);
@@ -193,6 +204,18 @@ html.theme-light .theme-switch-track {
   }
   50% {
     transform: translateY(-4px);
+  }
+}
+
+@keyframes shimmer-glow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
@@ -222,6 +245,10 @@ button.nav-orbit {
 
 .project-card-surface {
   animation: soft-glow 6s ease-in-out infinite;
+}
+
+.animate-fade-up {
+  animation: fade-up 700ms ease-out both;
 }
 
 .stagger-card:nth-child(1) {

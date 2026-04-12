@@ -69,7 +69,7 @@ const ProjectsSection = () => {
               aria-label="Scroll projects left"
               type="button"
             >
-              ‹
+              {"<"}
             </button>
 
             <button
@@ -84,7 +84,7 @@ const ProjectsSection = () => {
               aria-label="Scroll projects right"
               type="button"
             >
-              ›
+              {">"}
             </button>
           </div>
         </div>

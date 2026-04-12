@@ -30,6 +30,7 @@ const ProjectCard = ({ project }) => {
           hover:-translate-y-2 hover:scale-[1.01]
           hover:border-cyan-400/40
           hover:shadow-[0_22px_50px_rgba(34,211,238,0.14)]
+          active:scale-[0.99]
         "
       >
         <div className="relative h-[180px] bg-black/20 flex items-center justify-center border-b border-white/10 overflow-hidden rounded-t-2xl">
@@ -42,22 +43,20 @@ const ProjectCard = ({ project }) => {
         </div>
 
         <div className="p-4 space-y-4">
-          <div className="flex items-center justify-between gap-2">
-            <span className="inline-flex rounded-full border border-cyan-400/20 bg-cyan-500/10 px-2.5 py-1 text-[11px] font-medium text-cyan-200">
-              {project.stack[0]}
-            </span>
-            <span className="text-[11px] text-gray-400">
+          <div className="flex items-start justify-between gap-3">
+            <div className="space-y-3">
+              <h3 className="text-white font-semibold leading-snug transition-colors group-hover:text-cyan-100">
+                {project.title}
+              </h3>
+              <p className="text-sm text-gray-400 leading-relaxed">{project.description}</p>
+            </div>
+            <span className="text-[11px] text-gray-400 shrink-0 pt-1">
               {project.links.length} repo link{project.links.length > 1 ? "s" : ""}
             </span>
           </div>
 
-          <h3 className="text-white font-semibold leading-snug transition-colors group-hover:text-cyan-100">
-            {project.title}
-          </h3>
-          <p className="text-sm text-gray-400 leading-relaxed">{project.description}</p>
-
           <div className="flex flex-wrap gap-2">
-            {project.stack.slice(0, 6).map((item) => (
+            {project.stack.slice(0, 5).map((item) => (
               <span
                 key={item}
                 className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-gray-300 transition-transform duration-300 group-hover:-translate-y-[1px]"
@@ -65,6 +64,11 @@ const ProjectCard = ({ project }) => {
                 {item}
               </span>
             ))}
+            {project.stack.length > 5 && (
+              <span className="rounded-full border border-cyan-400/20 bg-cyan-500/10 px-2.5 py-1 text-[11px] text-cyan-200">
+                +{project.stack.length - 5} more
+              </span>
+            )}
           </div>
         </div>
       </button>
@@ -78,7 +82,7 @@ const ProjectCard = ({ project }) => {
               aria-label="Close project options"
               type="button"
             >
-              ×
+              x
             </button>
 
             <p className="text-xs uppercase tracking-[0.2em] text-cyan-300 mb-2">Project Brief</p>

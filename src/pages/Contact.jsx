@@ -1,22 +1,4 @@
-import { useState } from "react";
-
 const Contact = () => {
-  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
-
-  const onChange = (event) => {
-    const { name, value } = event.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const onSubmit = (event) => {
-    event.preventDefault();
-    const subject = encodeURIComponent(form.subject || "Collaboration Inquiry");
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`
-    );
-    window.location.href = `mailto:storytotech@gmail.com?subject=${subject}&body=${body}`;
-  };
-
   return (
     <section
       id="contact"
@@ -25,22 +7,25 @@ const Contact = () => {
       <div className="absolute -top-24 -left-16 w-72 h-72 rounded-full bg-cyan-500/15 blur-[110px]" />
       <div className="absolute -bottom-24 -right-16 w-72 h-72 rounded-full bg-indigo-500/15 blur-[110px]" />
 
-      <div className="relative max-w-5xl mx-auto grid lg:grid-cols-[0.9fr_1.1fr] gap-8 animate-fade-up">
-        <div className="rounded-3xl border border-white/10 bg-[#101628]/85 p-7 project-card-surface">
-          <p className="text-xs tracking-[0.2em] uppercase text-cyan-300 mb-3">Let us connect</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 hero-title">Contact</h2>
-          <p className="text-gray-300 leading-relaxed mb-6">
-            If you are building infrastructure, improving deployment reliability, or setting
-            up DevOps workflows, feel free to reach out.
+      <div className="relative max-w-3xl mx-auto animate-fade-up">
+        <div className="rounded-[2rem] border border-white/10 bg-[#101628]/85 p-7 md:p-8 project-card-surface">
+          <p className="text-xs tracking-[0.2em] uppercase text-cyan-300 mb-3">
+            Contact
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 hero-title">
+            Keep it simple
+          </h2>
+          <p className="text-gray-300 leading-relaxed mb-8">
+            If you want to discuss DevOps, cloud, or project ideas, the fastest way to reach me is through these three links.
           </p>
 
-          <div className="space-y-3 mb-6">
+          <div className="space-y-3">
             <a
-              href="mailto:storytotech@gmail.com"
+              href="mailto:devopsghazali@gmail.com"
               className="block rounded-2xl border border-cyan-400/25 bg-cyan-500/10 p-4 hover:border-cyan-300/60 hover:-translate-y-0.5 transition"
             >
               <p className="text-xs uppercase tracking-wider text-cyan-200">Email</p>
-              <p className="text-white text-sm mt-1">storytotech@gmail.com</p>
+              <p className="text-white text-sm mt-1">devopsghazali@gmail.com</p>
             </a>
 
             <a
@@ -64,78 +49,6 @@ const Contact = () => {
             </a>
           </div>
         </div>
-
-        <form
-          onSubmit={onSubmit}
-          className="rounded-3xl border border-white/10 bg-[#101628]/85 p-7 project-card-surface"
-        >
-          <p className="text-xs tracking-[0.2em] uppercase text-cyan-300 mb-3">Message</p>
-          <h3 className="text-2xl font-semibold text-white mb-2">Send a message</h3>
-          <p className="text-gray-400 text-sm mb-6">
-            Share your requirement and I will reply with a practical approach.
-          </p>
-
-          <div className="grid sm:grid-cols-2 gap-4 mb-4">
-            <label className="block">
-              <span className="text-xs uppercase tracking-wider text-cyan-200">Name</span>
-              <input
-                type="text"
-                name="name"
-                value={form.name}
-                onChange={onChange}
-                required
-                className="mt-2 w-full rounded-xl border border-white/15 bg-black/20 px-3 py-3 text-sm text-white outline-none focus:border-cyan-300 transition"
-                placeholder="Your name"
-              />
-            </label>
-
-            <label className="block">
-              <span className="text-xs uppercase tracking-wider text-cyan-200">Email</span>
-              <input
-                type="email"
-                name="email"
-                value={form.email}
-                onChange={onChange}
-                required
-                className="mt-2 w-full rounded-xl border border-white/15 bg-black/20 px-3 py-3 text-sm text-white outline-none focus:border-cyan-300 transition"
-                placeholder="you@example.com"
-              />
-            </label>
-          </div>
-
-          <label className="block mb-4">
-            <span className="text-xs uppercase tracking-wider text-cyan-200">Subject</span>
-            <input
-              type="text"
-              name="subject"
-              value={form.subject}
-              onChange={onChange}
-              required
-              className="mt-2 w-full rounded-xl border border-white/15 bg-black/20 px-3 py-3 text-sm text-white outline-none focus:border-cyan-300 transition"
-              placeholder="Project discussion / collaboration"
-            />
-          </label>
-
-          <label className="block mb-6">
-            <span className="text-xs uppercase tracking-wider text-cyan-200">Message</span>
-            <textarea
-              name="message"
-              value={form.message}
-              onChange={onChange}
-              required
-              rows={8}
-              className="mt-2 w-full rounded-xl border border-white/15 bg-black/20 px-3 py-3 text-sm text-white outline-none focus:border-cyan-300 transition resize-y"
-              placeholder="Briefly describe what you are building, where you are blocked, and your timeline."
-            />
-          </label>
-
-          <button
-            type="submit"
-            className="inline-flex items-center justify-center rounded-xl bg-cyan-500 px-5 py-3 text-sm font-semibold text-black hover:bg-cyan-400 transition"
-          >
-            Send via Email
-          </button>
-        </form>
       </div>
     </section>
   );
