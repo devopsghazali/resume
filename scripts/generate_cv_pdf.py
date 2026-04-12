@@ -102,6 +102,7 @@ def make_pdf(output: Path) -> None:
         "Security: Kyverno, OPA Gatekeeper, Sealed Secrets, Trivy",
         "Systems: Linux, Networking, Git, Bash, Shell Scripting",
         "Languages: Python (Basic), Go (Basic)",
+        "Backend: Node.js, Express",
         "AI: GenAI, Agentic AI",
     ]
     for skill in skills:
