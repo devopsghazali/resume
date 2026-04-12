@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ProjectsSection from "./ProjectsSection.jsx";
+import About from "../pages/About.jsx";
 import DevOpsInfinity from "./DevOpsInfinity.jsx";
 
 const Hero = () => {
@@ -26,11 +27,11 @@ const Hero = () => {
         <div className="absolute bottom-[-120px] right-[-120px] w-[400px] h-[400px] bg-indigo-500/20 rounded-full blur-[120px] animate-pulse" />
 
         <div className="relative max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="max-w-xl">
+          <div className="max-w-xl hero-copy">
             <p className="text-xs uppercase tracking-[0.2em] text-cyan-300 mb-4">
               DevOps showcase
             </p>
-            <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
+            <h1 className="hero-title text-4xl md:text-6xl font-bold text-white leading-tight">
               Practical DevOps <br />
               <span className="text-cyan-400">projects with real repo links</span>
             </h1>
@@ -56,10 +57,10 @@ const Hero = () => {
               </Link>
 
               <Link
-                to="/contact"
+                to="/#about"
                 className="px-6 py-3 border border-white/20 text-white rounded-md hover:bg-white/10 transition inline-flex items-center"
               >
-                Contact Me
+                About Me
               </Link>
             </div>
           </div>
@@ -70,6 +71,7 @@ const Hero = () => {
         </div>
       </section>
       <ProjectsSection />
+      <About />
     </>
   );
 };

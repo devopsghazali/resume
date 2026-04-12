@@ -137,6 +137,20 @@ html.theme-light .bg-\[\#0b0f1a\]\/70 {
   background-color: rgba(248, 250, 252, 0.88) !important;
 }
 
+html.theme-light .bg-\[\#101628\]\/80 {
+  background-color: rgba(255, 255, 255, 0.82) !important;
+}
+
+html.theme-light .hero-title,
+html.theme-light .hero-copy,
+html.theme-light .section-title {
+  color: #0f172a !important;
+}
+
+html.theme-light .project-card-surface {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
 html.theme-light .nav-orbit,
 html.theme-light .name-orbit-h {
   color: #0f172a !important;
@@ -153,12 +167,82 @@ html.theme-light .theme-switch-track {
   background: linear-gradient(135deg, rgba(219, 234, 254, 0.75), rgba(255, 255, 255, 0.95));
 }
 
+@keyframes soft-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes soft-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 rgba(34, 211, 238, 0);
+  }
+  50% {
+    box-shadow: 0 0 32px rgba(34, 211, 238, 0.1);
+  }
+}
+
+@keyframes gentle-float-y {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.hero-title {
+  animation: soft-rise 700ms ease-out both;
+}
+
+.hero-copy {
+  animation: soft-rise 700ms ease-out both;
+}
+
+.project-card-surface {
+  animation: soft-glow 6s ease-in-out infinite;
+}
+
+.stagger-card:nth-child(1) {
+  animation-delay: 0ms;
+}
+
+.stagger-card:nth-child(2) {
+  animation-delay: 90ms;
+}
+
+.stagger-card:nth-child(3) {
+  animation-delay: 180ms;
+}
+
+.stagger-card:nth-child(4) {
+  animation-delay: 270ms;
+}
+
+.stagger-card:nth-child(5) {
+  animation-delay: 360ms;
+}
+
+.float-note {
+  animation: gentle-float-y 5s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html.theme-anim,
   html.theme-anim *,
   html.theme-anim *::before,
   html.theme-anim *::after,
-  .theme-switch-thumb {
+  .theme-switch-thumb,
+  .hero-title,
+  .hero-copy,
+  .project-card-surface,
+  .float-note {
     transition: none !important;
+    animation: none !important;
   }
 }

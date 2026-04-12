@@ -16,25 +16,27 @@ const ProjectCard = ({ project }) => {
 
   return (
     <>
-      <div
+      <button
+        type="button"
         onClick={() => setOpen(true)}
         className="
-          group min-w-[320px] w-[320px] h-[390px]
+          group project-card-surface min-w-[320px] w-[320px] h-[390px]
           rounded-2xl
           bg-[#0e1322]/95
           border border-white/10
           cursor-pointer
+          text-left
           transition-all duration-300
-          hover:-translate-y-1
+          hover:-translate-y-2
           hover:border-cyan-400/40
-          hover:shadow-[0_18px_40px_rgba(34,211,238,0.12)]
+          hover:shadow-[0_22px_50px_rgba(34,211,238,0.14)]
         "
       >
-        <div className="relative h-[190px] bg-black/20 flex items-center justify-center border-b border-white/10 overflow-hidden">
+        <div className="relative h-[190px] bg-black/20 flex items-center justify-center border-b border-white/10 overflow-hidden rounded-t-2xl">
           <img
             src={project.image}
             alt={project.title}
-            className="h-full w-full object-contain p-3 transition-transform duration-500 group-hover:scale-[1.03]"
+            className="h-full w-full object-contain p-3 transition-transform duration-500 group-hover:scale-[1.05]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0b0f1a]/40 via-transparent to-transparent" />
         </div>
@@ -49,21 +51,23 @@ const ProjectCard = ({ project }) => {
             </span>
           </div>
 
-          <h3 className="text-white font-semibold leading-snug">{project.title}</h3>
+          <h3 className="text-white font-semibold leading-snug transition-colors group-hover:text-cyan-100">
+            {project.title}
+          </h3>
           <p className="text-sm text-gray-400 leading-relaxed">{project.description}</p>
 
           <div className="flex flex-wrap gap-2 pt-1">
             {project.stack.slice(0, 4).map((item) => (
               <span
                 key={item}
-                className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-gray-300"
+                className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-gray-300 transition-transform duration-300 group-hover:-translate-y-[1px]"
               >
                 {item}
               </span>
             ))}
           </div>
         </div>
-      </div>
+      </button>
 
       {open && (
         <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
@@ -72,6 +76,7 @@ const ProjectCard = ({ project }) => {
               onClick={closeModal}
               className="absolute top-3 right-3 text-gray-400 hover:text-white"
               aria-label="Close project options"
+              type="button"
             >
               ×
             </button>
@@ -85,7 +90,8 @@ const ProjectCard = ({ project }) => {
             <div className="grid gap-3 sm:grid-cols-2 mb-5">
               <button
                 onClick={openNotes}
-                className="rounded-xl border border-cyan-300/40 bg-cyan-500/15 px-4 py-3 text-left hover:border-cyan-300/70 transition"
+                className="rounded-xl border border-cyan-300/40 bg-cyan-500/15 px-4 py-3 text-left hover:border-cyan-300/70 hover:-translate-y-0.5 transition"
+                type="button"
               >
                 <p className="text-cyan-200 font-semibold text-sm">Open Explanation</p>
                 <p className="text-gray-300 text-xs mt-1">
@@ -95,7 +101,8 @@ const ProjectCard = ({ project }) => {
 
               <button
                 onClick={() => window.open(project.links[0].url, "_blank", "noreferrer")}
-                className="rounded-xl border border-indigo-300/40 bg-indigo-500/15 px-4 py-3 text-left hover:border-indigo-300/70 transition"
+                className="rounded-xl border border-indigo-300/40 bg-indigo-500/15 px-4 py-3 text-left hover:border-indigo-300/70 hover:-translate-y-0.5 transition"
+                type="button"
               >
                 <p className="text-indigo-200 font-semibold text-sm">Open Repository</p>
                 <p className="text-gray-300 text-xs mt-1">
@@ -122,7 +129,7 @@ const ProjectCard = ({ project }) => {
                   href={link.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="block rounded-xl border border-cyan-400/30 bg-cyan-500/10 p-4 hover:border-cyan-300/60 transition"
+                  className="block rounded-xl border border-cyan-400/30 bg-cyan-500/10 p-4 hover:border-cyan-300/60 hover:translate-x-0.5 transition"
                 >
                   <p className="text-sm font-semibold text-cyan-200">{link.label}</p>
                   <p className="text-xs text-gray-300 mt-1">{link.note}</p>

@@ -15,14 +15,7 @@ const MoonIcon = ({ className = "w-4 h-4" }) => (
   </svg>
 );
 
-const ThemeIcon = ({ theme }) => {
-  if (theme === "dark") {
-    return <SunIcon className="w-3.5 h-3.5" />;
-  }
-  return (
-    <MoonIcon className="w-3.5 h-3.5" />
-  );
-};
+const ThemeIcon = ({ theme }) => (theme === "dark" ? <SunIcon className="w-3.5 h-3.5" /> : <MoonIcon className="w-3.5 h-3.5" />);
 
 export default function Navbar({ theme = "dark", onToggleTheme }) {
   const [scrolled, setScrolled] = useState(false);
@@ -41,14 +34,10 @@ export default function Navbar({ theme = "dark", onToggleTheme }) {
       className={`
         fixed top-0 left-0 w-full z-50
         transition-all duration-300
-        ${
-          scrolled
-            ? "bg-[#0b0f1a]/70 backdrop-blur-md border-b border-white/10"
-            : "bg-transparent"
-        }
+        ${scrolled ? "bg-[#0b0f1a]/75 backdrop-blur-md border-b border-white/10" : "bg-transparent"}
       `}
     >
-      <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between gap-4">
         <Link
           to="/"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -57,11 +46,10 @@ export default function Navbar({ theme = "dark", onToggleTheme }) {
           Hasnain Ghazali
         </Link>
 
-        <nav className="flex items-center gap-6 text-sm">
+        <nav className="flex items-center gap-3 md:gap-4 text-sm">
           <Link to="/#projects" className="nav-orbit">Projects</Link>
-          <Link to="/articles" className="nav-orbit">Articles</Link>
-          <Link to="/problems" className="nav-orbit">Problems & Solutions</Link>
-          <Link to="/saved" className="nav-orbit">Saved</Link>
+          <Link to="/#about" className="nav-orbit">About</Link>
+          <Link to="/contact" className="nav-orbit">Contact</Link>
 
           <button
             type="button"

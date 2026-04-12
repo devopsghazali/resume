@@ -28,10 +28,10 @@ const ProjectsSection = () => {
           <p className="text-xs uppercase tracking-[0.2em] text-cyan-300 mb-3">
             Showcase
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 hero-title">
             Interview-ready DevOps projects
           </h2>
-          <p className="text-gray-400">
+          <p className="text-gray-400 leading-relaxed">
             Practical builds around AWS, Docker, Terraform, GitOps, and Kubernetes.
             Each card opens a short explanation plus the GitHub repository link.
           </p>
@@ -67,6 +67,7 @@ const ProjectsSection = () => {
                 transition
               "
               aria-label="Scroll projects left"
+              type="button"
             >
               ‹
             </button>
@@ -81,6 +82,7 @@ const ProjectsSection = () => {
                 transition
               "
               aria-label="Scroll projects right"
+              type="button"
             >
               ›
             </button>
