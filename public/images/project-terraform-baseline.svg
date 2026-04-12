@@ -1,0 +1,38 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="Terraform multi environment automation">
+  <defs>
+    <linearGradient id="tfBg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1f2430"/>
+      <stop offset="100%" stop-color="#2b3548"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" fill="url(#tfBg)"/>
+  <text x="60" y="68" fill="#f3f7ff" font-family="Arial" font-size="32" font-weight="700">Terraform AWS Multi-Environment Automation</text>
+  <text x="60" y="98" fill="#c0d1ef" font-family="Arial" font-size="16">Reusable modules for dev, staging, and production</text>
+
+  <rect x="70" y="145" width="260" height="100" rx="12" fill="#2e3a50" stroke="#8db4ff"/>
+  <text x="200" y="188" text-anchor="middle" fill="#f0f5ff" font-family="Arial" font-size="22">Terraform Modules</text>
+  <text x="200" y="212" text-anchor="middle" fill="#cddcff" font-family="Arial" font-size="14">EC2, S3, DynamoDB</text>
+
+  <rect x="360" y="145" width="250" height="100" rx="12" fill="#334765" stroke="#9cc2ff"/>
+  <text x="485" y="190" text-anchor="middle" fill="#f0f5ff" font-family="Arial" font-size="22">Plan and Apply</text>
+
+  <rect x="640" y="145" width="250" height="100" rx="12" fill="#3a4f72" stroke="#aacdff"/>
+  <text x="765" y="190" text-anchor="middle" fill="#f0f5ff" font-family="Arial" font-size="22">AWS Resources</text>
+
+  <rect x="120" y="305" width="200" height="90" rx="12" fill="#2f3a53" stroke="#9bbcff"/>
+  <text x="220" y="358" text-anchor="middle" fill="#eef5ff" font-family="Arial" font-size="22">Dev</text>
+
+  <rect x="380" y="305" width="200" height="90" rx="12" fill="#2f3a53" stroke="#9bbcff"/>
+  <text x="480" y="358" text-anchor="middle" fill="#eef5ff" font-family="Arial" font-size="22">Staging</text>
+
+  <rect x="640" y="305" width="200" height="90" rx="12" fill="#2f3a53" stroke="#9bbcff"/>
+  <text x="740" y="358" text-anchor="middle" fill="#eef5ff" font-family="Arial" font-size="22">Production</text>
+
+  <line x1="330" y1="195" x2="360" y2="195" stroke="#b7d1ff" stroke-width="4"/>
+  <line x1="610" y1="195" x2="640" y2="195" stroke="#b7d1ff" stroke-width="4"/>
+  <line x1="485" y1="245" x2="220" y2="305" stroke="#b7d1ff" stroke-width="3"/>
+  <line x1="485" y1="245" x2="480" y2="305" stroke="#b7d1ff" stroke-width="3"/>
+  <line x1="485" y1="245" x2="740" y2="305" stroke="#b7d1ff" stroke-width="3"/>
+
+  <text x="480" y="475" text-anchor="middle" fill="#d8e5ff" font-family="Arial" font-size="18">Single codebase, environment-wise variables, safe infrastructure lifecycle</text>
+</svg>

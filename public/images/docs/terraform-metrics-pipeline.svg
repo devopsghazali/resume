@@ -1,0 +1,11 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320">
+  <rect width="900" height="320" fill="#232d40"/>
+  <text x="30" y="42" fill="#edf3ff" font-family="Arial" font-size="24" font-weight="700">Terraform: Change and Validation Pipeline</text>
+  <rect x="50" y="100" width="190" height="80" rx="10" fill="#33425c" stroke="#9cb7ff"/><text x="145" y="148" text-anchor="middle" fill="#f3f7ff" font-family="Arial" font-size="18">Terraform Init</text>
+  <rect x="280" y="100" width="190" height="80" rx="10" fill="#3b4f6f" stroke="#a9c2ff"/><text x="375" y="148" text-anchor="middle" fill="#f3f7ff" font-family="Arial" font-size="18">Terraform Plan</text>
+  <rect x="510" y="100" width="190" height="80" rx="10" fill="#445c82" stroke="#b8d0ff"/><text x="605" y="148" text-anchor="middle" fill="#f3f7ff" font-family="Arial" font-size="18">Terraform Apply</text>
+  <rect x="740" y="100" width="120" height="80" rx="10" fill="#4c6790" stroke="#c6dbff"/><text x="800" y="148" text-anchor="middle" fill="#f3f7ff" font-family="Arial" font-size="18">State</text>
+  <line x1="240" y1="140" x2="280" y2="140" stroke="#cadbff" stroke-width="4"/>
+  <line x1="470" y1="140" x2="510" y2="140" stroke="#cadbff" stroke-width="4"/>
+  <line x1="700" y1="140" x2="740" y2="140" stroke="#cadbff" stroke-width="4"/>
+</svg>

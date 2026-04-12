@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" role="img" aria-label="Incident response flow diagram">
+  <rect width="960" height="400" fill="#102016"/>
+  <text x="480" y="48" fill="#86efac" text-anchor="middle" font-family="Arial" font-size="24">Incident Response Lifecycle</text>
+  <rect x="50" y="150" width="130" height="70" rx="10" fill="#173327" stroke="#4ade80"/><text x="115" y="192" fill="#dcfce7" text-anchor="middle" font-family="Arial" font-size="14">Detect</text>
+  <rect x="210" y="150" width="130" height="70" rx="10" fill="#173327" stroke="#4ade80"/><text x="275" y="192" fill="#dcfce7" text-anchor="middle" font-family="Arial" font-size="14">Triage</text>
+  <rect x="370" y="150" width="130" height="70" rx="10" fill="#173327" stroke="#4ade80"/><text x="435" y="192" fill="#dcfce7" text-anchor="middle" font-family="Arial" font-size="14">Mitigate</text>
+  <rect x="530" y="150" width="130" height="70" rx="10" fill="#173327" stroke="#4ade80"/><text x="595" y="192" fill="#dcfce7" text-anchor="middle" font-family="Arial" font-size="14">Recover</text>
+  <rect x="690" y="150" width="130" height="70" rx="10" fill="#173327" stroke="#4ade80"/><text x="755" y="192" fill="#dcfce7" text-anchor="middle" font-family="Arial" font-size="14">Validate</text>
+  <rect x="380" y="280" width="200" height="70" rx="10" fill="#173327" stroke="#4ade80"/><text x="480" y="322" fill="#dcfce7" text-anchor="middle" font-family="Arial" font-size="14">Postmortem</text>
+  <line x1="180" y1="185" x2="210" y2="185" stroke="#4ade80" stroke-width="3"/>
+  <line x1="340" y1="185" x2="370" y2="185" stroke="#4ade80" stroke-width="3"/>
+  <line x1="500" y1="185" x2="530" y2="185" stroke="#4ade80" stroke-width="3"/>
+  <line x1="660" y1="185" x2="690" y2="185" stroke="#4ade80" stroke-width="3"/>
+  <line x1="755" y1="220" x2="560" y2="280" stroke="#4ade80" stroke-width="3"/>
+</svg>

@@ -1,78 +1,133 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ProjectCard = ({ project }) => {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const closeModal = () => {
+    setOpen(false);
+  };
+
+  const openNotes = () => {
+    closeModal();
+    navigate(`/projects/${project.id}/notes`);
+  };
 
   return (
     <>
-      {/* CARD */}
       <div
         onClick={() => setOpen(true)}
         className="
-          min-w-[300px] h-[360px]
-          rounded-xl
-          bg-[#0e1322]
+          group min-w-[320px] w-[320px] h-[390px]
+          rounded-2xl
+          bg-[#0e1322]/95
           border border-white/10
           cursor-pointer
-          transition-all
-
+          transition-all duration-300
+          hover:-translate-y-1
           hover:border-cyan-400/40
-          hover:shadow-[0_0_25px_rgba(34,211,238,0.12)]
+          hover:shadow-[0_18px_40px_rgba(34,211,238,0.12)]
         "
       >
-        <div className="h-[160px] bg-black/30 flex items-center justify-center">
+        <div className="relative h-[190px] bg-black/20 flex items-center justify-center border-b border-white/10 overflow-hidden">
           <img
             src={project.image}
             alt={project.title}
-            className="h-full object-contain p-3"
+            className="h-full w-full object-contain p-3 transition-transform duration-500 group-hover:scale-[1.03]"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0b0f1a]/40 via-transparent to-transparent" />
         </div>
 
-        <div className="p-4 space-y-2">
-          <h3 className="text-white font-semibold">{project.title}</h3>
-          <p className="text-sm text-gray-400">{project.description}</p>
+        <div className="p-4 space-y-3">
+          <div className="flex items-center justify-between gap-2">
+            <span className="inline-flex rounded-full border border-cyan-400/20 bg-cyan-500/10 px-2.5 py-1 text-[11px] font-medium text-cyan-200">
+              {project.stack[0]}
+            </span>
+            <span className="text-[11px] text-gray-400">
+              {project.links.length} repo link{project.links.length > 1 ? "s" : ""}
+            </span>
+          </div>
+
+          <h3 className="text-white font-semibold leading-snug">{project.title}</h3>
+          <p className="text-sm text-gray-400 leading-relaxed">{project.description}</p>
+
+          <div className="flex flex-wrap gap-2 pt-1">
+            {project.stack.slice(0, 4).map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-gray-300"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* MODAL */}
       {open && (
-        <div className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center">
-          <div className="bg-[#0e1322] rounded-xl p-6 max-w-lg w-full relative">
+        <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-[#0e1322] rounded-2xl p-6 max-w-2xl w-full relative border border-white/10 shadow-2xl shadow-cyan-900/20">
             <button
-              onClick={() => setOpen(false)}
+              onClick={closeModal}
               className="absolute top-3 right-3 text-gray-400 hover:text-white"
+              aria-label="Close project options"
             >
-              ✕
+              ×
             </button>
 
-            <h3 className="text-xl font-semibold text-white mb-3">
-              {project.title}
-            </h3>
-
-            <p className="text-gray-400 mb-5">
-              This project demonstrates a complete DevSecOps + GitOps workflow:
-              code commit → Jenkins CI → security scans → Docker image → GitOps
-              update → ArgoCD → Kubernetes.
+            <p className="text-xs uppercase tracking-[0.2em] text-cyan-300 mb-2">Project Brief</p>
+            <h3 className="text-2xl font-semibold text-white mb-2">{project.title}</h3>
+            <p className="text-sm text-gray-400 mb-5 max-w-2xl">
+              Clean summary, repo link, and interview-ready notes are attached below.
             </p>
 
-            <div className="flex gap-4">
-              <a
-                href={project.links.ci}
-                target="_blank"
-                rel="noreferrer"
-                className="px-4 py-2 rounded bg-cyan-500 text-black text-sm font-semibold"
+            <div className="grid gap-3 sm:grid-cols-2 mb-5">
+              <button
+                onClick={openNotes}
+                className="rounded-xl border border-cyan-300/40 bg-cyan-500/15 px-4 py-3 text-left hover:border-cyan-300/70 transition"
               >
-                CI Repo
-              </a>
+                <p className="text-cyan-200 font-semibold text-sm">Open Explanation</p>
+                <p className="text-gray-300 text-xs mt-1">
+                  View the long-form build, architecture, and deployment notes.
+                </p>
+              </button>
 
-              <a
-                href={project.links.gitops}
-                target="_blank"
-                rel="noreferrer"
-                className="px-4 py-2 rounded bg-indigo-500 text-black text-sm font-semibold"
+              <button
+                onClick={() => window.open(project.links[0].url, "_blank", "noreferrer")}
+                className="rounded-xl border border-indigo-300/40 bg-indigo-500/15 px-4 py-3 text-left hover:border-indigo-300/70 transition"
               >
-                GitOps Repo
-              </a>
+                <p className="text-indigo-200 font-semibold text-sm">Open Repository</p>
+                <p className="text-gray-300 text-xs mt-1">
+                  Jump straight to the GitHub repo linked with this project.
+                </p>
+              </button>
+            </div>
+
+            <div className="flex flex-wrap gap-2 mb-5">
+              {project.stack.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-gray-300"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+
+            <div className="space-y-3 max-h-[320px] overflow-y-auto pr-1">
+              {project.links.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block rounded-xl border border-cyan-400/30 bg-cyan-500/10 p-4 hover:border-cyan-300/60 transition"
+                >
+                  <p className="text-sm font-semibold text-cyan-200">{link.label}</p>
+                  <p className="text-xs text-gray-300 mt-1">{link.note}</p>
+                </a>
+              ))}
             </div>
           </div>
         </div>

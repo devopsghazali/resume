@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" role="img" aria-label="Metrics pipeline diagram">
+  <rect width="960" height="360" fill="#0c1a2a"/>
+  <rect x="40" y="130" width="170" height="80" rx="10" fill="#1e293b" stroke="#22d3ee"/><text x="125" y="178" fill="#e2e8f0" text-anchor="middle" font-family="Arial" font-size="16">Apps & Nodes</text>
+  <rect x="260" y="130" width="170" height="80" rx="10" fill="#1e293b" stroke="#22d3ee"/><text x="345" y="178" fill="#e2e8f0" text-anchor="middle" font-family="Arial" font-size="16">Prometheus</text>
+  <rect x="480" y="130" width="170" height="80" rx="10" fill="#1e293b" stroke="#22d3ee"/><text x="565" y="178" fill="#e2e8f0" text-anchor="middle" font-family="Arial" font-size="16">Recording Rules</text>
+  <rect x="700" y="130" width="200" height="80" rx="10" fill="#1e293b" stroke="#22d3ee"/><text x="800" y="178" fill="#e2e8f0" text-anchor="middle" font-family="Arial" font-size="16">Grafana Dashboards</text>
+  <line x1="210" y1="170" x2="260" y2="170" stroke="#22d3ee" stroke-width="3"/>
+  <line x1="430" y1="170" x2="480" y2="170" stroke="#22d3ee" stroke-width="3"/>
+  <line x1="650" y1="170" x2="700" y2="170" stroke="#22d3ee" stroke-width="3"/>
+  <text x="480" y="50" fill="#67e8f9" text-anchor="middle" font-family="Arial" font-size="24">Metrics Pipeline</text>
+</svg>

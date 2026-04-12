@@ -1,0 +1,11 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340">
+  <rect width="900" height="340" fill="#122739"/>
+  <text x="30" y="42" fill="#def5ff" font-family="Arial" font-size="24" font-weight="700">Observability: Incident Response Flow</text>
+  <rect x="70" y="120" width="150" height="70" rx="10" fill="#1d3f58" stroke="#74d7ff"/><text x="145" y="162" text-anchor="middle" fill="#eefcff" font-family="Arial" font-size="16">Detect</text>
+  <rect x="250" y="120" width="150" height="70" rx="10" fill="#214a64" stroke="#83e4ff"/><text x="325" y="162" text-anchor="middle" fill="#eefcff" font-family="Arial" font-size="16">Triage</text>
+  <rect x="430" y="120" width="150" height="70" rx="10" fill="#25536f" stroke="#92f0ff"/><text x="505" y="162" text-anchor="middle" fill="#eefcff" font-family="Arial" font-size="16">Mitigate</text>
+  <rect x="610" y="120" width="150" height="70" rx="10" fill="#295d7a" stroke="#9ff9ff"/><text x="685" y="162" text-anchor="middle" fill="#eefcff" font-family="Arial" font-size="16">Recover</text>
+  <line x1="220" y1="155" x2="250" y2="155" stroke="#9de8ff" stroke-width="4"/>
+  <line x1="400" y1="155" x2="430" y2="155" stroke="#9de8ff" stroke-width="4"/>
+  <line x1="580" y1="155" x2="610" y2="155" stroke="#9de8ff" stroke-width="4"/>
+</svg>

@@ -1,0 +1,35 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="Kubernetes observability stack">
+  <defs>
+    <linearGradient id="obsBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f1d2b"/>
+      <stop offset="100%" stop-color="#1a2f45"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" fill="url(#obsBg)"/>
+  <text x="60" y="68" fill="#d9f3ff" font-family="Arial" font-size="32" font-weight="700">Kubernetes Observability Stack</text>
+  <text x="60" y="98" fill="#a7d6ea" font-family="Arial" font-size="16">Prometheus, Grafana, Alertmanager, Node Exporter</text>
+
+  <rect x="70" y="150" width="250" height="90" rx="12" fill="#163248" stroke="#67c6ff"/>
+  <text x="195" y="200" text-anchor="middle" fill="#e8f9ff" font-family="Arial" font-size="22">K8s Cluster</text>
+
+  <rect x="360" y="150" width="250" height="90" rx="12" fill="#17405a" stroke="#6de0ff"/>
+  <text x="485" y="188" text-anchor="middle" fill="#e8f9ff" font-family="Arial" font-size="22">Prometheus</text>
+  <text x="485" y="212" text-anchor="middle" fill="#bfeaff" font-family="Arial" font-size="14">scrape + rules</text>
+
+  <rect x="650" y="150" width="240" height="90" rx="12" fill="#174a60" stroke="#6de0ff"/>
+  <text x="770" y="200" text-anchor="middle" fill="#e8f9ff" font-family="Arial" font-size="22">Grafana</text>
+
+  <rect x="360" y="290" width="250" height="90" rx="12" fill="#194860" stroke="#7cf0b8"/>
+  <text x="485" y="340" text-anchor="middle" fill="#ebfff7" font-family="Arial" font-size="22">Alertmanager</text>
+
+  <rect x="70" y="290" width="250" height="90" rx="12" fill="#143448" stroke="#73c8ff"/>
+  <text x="195" y="340" text-anchor="middle" fill="#e8f9ff" font-family="Arial" font-size="22">Node Exporter</text>
+
+  <line x1="320" y1="195" x2="360" y2="195" stroke="#85dcff" stroke-width="4"/>
+  <line x1="610" y1="195" x2="650" y2="195" stroke="#85dcff" stroke-width="4"/>
+  <line x1="195" y1="240" x2="195" y2="290" stroke="#85dcff" stroke-width="4"/>
+  <line x1="485" y1="240" x2="485" y2="290" stroke="#9ef5c9" stroke-width="4"/>
+
+  <rect x="70" y="425" width="820" height="70" rx="10" fill="#102535" stroke="#68c8ff"/>
+  <text x="480" y="468" text-anchor="middle" fill="#d7f3ff" font-family="Arial" font-size="18">Monitor CPU, memory, network, pod health and trigger actionable alerts</text>
+</svg>

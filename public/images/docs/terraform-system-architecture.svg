@@ -1,0 +1,15 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420">
+  <rect width="900" height="420" fill="#252f42"/>
+  <text x="30" y="40" fill="#eef3ff" font-family="Arial" font-size="24" font-weight="700">Terraform: System Architecture</text>
+  <rect x="40" y="90" width="230" height="90" rx="10" fill="#33405a" stroke="#9fb9ff"/>
+  <text x="155" y="143" text-anchor="middle" fill="#f4f7ff" font-family="Arial" font-size="20">Terraform Code</text>
+  <rect x="335" y="90" width="230" height="90" rx="10" fill="#3a4c6c" stroke="#adc6ff"/>
+  <text x="450" y="143" text-anchor="middle" fill="#f4f7ff" font-family="Arial" font-size="20">Plan and Apply</text>
+  <rect x="630" y="90" width="230" height="90" rx="10" fill="#42597c" stroke="#bad1ff"/>
+  <text x="745" y="143" text-anchor="middle" fill="#f4f7ff" font-family="Arial" font-size="20">AWS APIs</text>
+  <rect x="180" y="250" width="540" height="100" rx="12" fill="#2f3f5d" stroke="#9db9ff"/>
+  <text x="450" y="308" text-anchor="middle" fill="#f2f7ff" font-family="Arial" font-size="20">Dev, Staging, and Production Infrastructure</text>
+  <line x1="270" y1="135" x2="335" y2="135" stroke="#bfd3ff" stroke-width="4"/>
+  <line x1="565" y1="135" x2="630" y2="135" stroke="#bfd3ff" stroke-width="4"/>
+  <line x1="450" y1="180" x2="450" y2="250" stroke="#bfd3ff" stroke-width="4"/>
+</svg>

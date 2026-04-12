@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" role="img" aria-label="DevSecOps GitOps project illustration">
+  <defs>
+    <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#081225"/>
+      <stop offset="100%" stop-color="#16233d"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="480" fill="url(#bg1)"/>
+  <rect x="70" y="120" width="150" height="70" rx="12" fill="#1f3a5f" stroke="#58d0ff"/>
+  <text x="145" y="162" fill="#d7f6ff" text-anchor="middle" font-family="Arial" font-size="18">Code</text>
+  <rect x="260" y="120" width="150" height="70" rx="12" fill="#1f3a5f" stroke="#58d0ff"/>
+  <text x="335" y="162" fill="#d7f6ff" text-anchor="middle" font-family="Arial" font-size="18">CI + Scan</text>
+  <rect x="450" y="120" width="150" height="70" rx="12" fill="#1f3a5f" stroke="#58d0ff"/>
+  <text x="525" y="162" fill="#d7f6ff" text-anchor="middle" font-family="Arial" font-size="18">GitOps</text>
+  <rect x="640" y="120" width="110" height="70" rx="12" fill="#1f3a5f" stroke="#58d0ff"/>
+  <text x="695" y="162" fill="#d7f6ff" text-anchor="middle" font-family="Arial" font-size="18">Argo</text>
+  <rect x="120" y="280" width="560" height="120" rx="14" fill="#0f1a2f" stroke="#7de7ff"/>
+  <text x="400" y="325" fill="#9eeeff" text-anchor="middle" font-family="Arial" font-size="22">Kubernetes: dev | stage | prod namespaces</text>
+  <text x="400" y="360" fill="#cdefff" text-anchor="middle" font-family="Arial" font-size="16">RBAC, quotas, policies, and controlled promotion</text>
+  <line x1="220" y1="155" x2="260" y2="155" stroke="#67dcff" stroke-width="3"/>
+  <line x1="410" y1="155" x2="450" y2="155" stroke="#67dcff" stroke-width="3"/>
+  <line x1="600" y1="155" x2="640" y2="155" stroke="#67dcff" stroke-width="3"/>
+  <line x1="695" y1="190" x2="400" y2="280" stroke="#67dcff" stroke-width="3"/>
+</svg>

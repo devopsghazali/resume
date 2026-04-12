@@ -1,0 +1,12 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320">
+  <rect width="900" height="320" fill="#13293c"/>
+  <text x="30" y="42" fill="#def5ff" font-family="Arial" font-size="24" font-weight="700">Observability: Logs and Correlation</text>
+  <rect x="60" y="100" width="220" height="90" rx="10" fill="#1d3f57" stroke="#76d8ff"/>
+  <text x="170" y="152" text-anchor="middle" fill="#effbff" font-family="Arial" font-size="20">Application Logs</text>
+  <rect x="340" y="100" width="220" height="90" rx="10" fill="#214a64" stroke="#83e4ff"/>
+  <text x="450" y="152" text-anchor="middle" fill="#effbff" font-family="Arial" font-size="20">Labeled Stream</text>
+  <rect x="620" y="100" width="220" height="90" rx="10" fill="#25546f" stroke="#91f0ff"/>
+  <text x="730" y="152" text-anchor="middle" fill="#effbff" font-family="Arial" font-size="20">Incident Triage</text>
+  <line x1="280" y1="145" x2="340" y2="145" stroke="#9ce9ff" stroke-width="4"/>
+  <line x1="560" y1="145" x2="620" y2="145" stroke="#9ce9ff" stroke-width="4"/>
+</svg>

@@ -1,1 +1,164 @@
 @import "tailwindcss";
+
+:root,
+html,
+body,
+#root {
+  background: #0b0f1a;
+  color: #f8fafc;
+}
+
+.theme-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.25rem 0.35rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #f8fafc;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.theme-switch:hover {
+  border-color: rgba(34, 211, 238, 0.55);
+}
+
+.theme-switch:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.2);
+}
+
+.theme-switch-track {
+  width: 52px;
+  height: 28px;
+  position: relative;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, rgba(8, 26, 35, 0.95), rgba(17, 24, 39, 0.85));
+}
+
+.theme-switch-rail-icon {
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.8;
+}
+
+.theme-switch-rail-sun {
+  left: 7px;
+  color: #fde68a;
+}
+
+.theme-switch-rail-moon {
+  right: 7px;
+  color: #c7d2fe;
+}
+
+.theme-switch-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0f172a;
+  background: linear-gradient(135deg, #67e8f9, #22d3ee);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+  transition: transform 280ms ease, background 280ms ease, color 280ms ease;
+}
+
+.theme-switch.is-light .theme-switch-thumb {
+  transform: translateX(24px);
+  background: linear-gradient(135deg, #f8fafc, #dbeafe);
+  color: #334155;
+}
+
+html.theme-anim,
+html.theme-anim *,
+html.theme-anim *::before,
+html.theme-anim *::after {
+  transition:
+    background-color 260ms ease,
+    color 260ms ease,
+    border-color 260ms ease,
+    box-shadow 260ms ease,
+    fill 260ms ease,
+    stroke 260ms ease !important;
+}
+
+html.theme-light,
+html.theme-light body,
+html.theme-light #root {
+  background: #eff4ff;
+  color: #0f172a;
+}
+
+html.theme-light .bg-\[\#0b0f1a\],
+html.theme-light .bg-\[\#0e1322\],
+html.theme-light .bg-\[\#101628\] {
+  background-color: #ffffff !important;
+}
+
+html.theme-light .text-white {
+  color: #0f172a !important;
+}
+
+html.theme-light .text-gray-400,
+html.theme-light .text-gray-500,
+html.theme-light .text-gray-300 {
+  color: #334155 !important;
+}
+
+html.theme-light .border-white\/10,
+html.theme-light .border-white\/15,
+html.theme-light .border-white\/20,
+html.theme-light .border-white\/5 {
+  border-color: rgba(15, 23, 42, 0.14) !important;
+}
+
+html.theme-light .bg-black\/10,
+html.theme-light .bg-black\/20,
+html.theme-light .bg-black\/30,
+html.theme-light .bg-black\/40 {
+  background-color: rgba(226, 232, 240, 0.45) !important;
+}
+
+html.theme-light .bg-white\/10,
+html.theme-light .bg-white\/5 {
+  background-color: rgba(15, 23, 42, 0.06) !important;
+}
+
+html.theme-light .bg-\[\#0b0f1a\]\/70 {
+  background-color: rgba(248, 250, 252, 0.88) !important;
+}
+
+html.theme-light .nav-orbit,
+html.theme-light .name-orbit-h {
+  color: #0f172a !important;
+}
+
+html.theme-light .theme-switch {
+  color: #0f172a;
+  border-color: rgba(15, 23, 42, 0.18);
+  background: rgba(15, 23, 42, 0.03);
+}
+
+html.theme-light .theme-switch-track {
+  border-color: rgba(15, 23, 42, 0.15);
+  background: linear-gradient(135deg, rgba(219, 234, 254, 0.75), rgba(255, 255, 255, 0.95));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.theme-anim,
+  html.theme-anim *,
+  html.theme-anim *::before,
+  html.theme-anim *::after,
+  .theme-switch-thumb {
+    transition: none !important;
+  }
+}

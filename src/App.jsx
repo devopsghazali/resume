@@ -7,14 +7,20 @@ import About from "./pages/About.jsx";
 import Articles from "./pages/Articles.jsx";
 import Problems from "./pages/Problems.jsx";
 import Contact from "./pages/Contact.jsx";
-import ProjectSection from "./components/ProjectsSection.jsx"
+import ProjectNotes from "./pages/ProjectNotes.jsx";
+import ArticleDetails from "./pages/ArticleDetails.jsx";
+import ProblemDetails from "./pages/ProblemDetails.jsx";
+import Saved from "./pages/Saved.jsx";
+import MouseAura from "./components/MouseAura.jsx";
+import BackToTopButton from "./components/BackToTopButton.jsx";
+import useTheme from "./hooks/useTheme";
+
 function ScrollToHash() {
   const location = useLocation();
 
   useEffect(() => {
     if (location.hash) {
       const id = location.hash.replace("#", "");
-      // small timeout to allow DOM to render when navigating to home
       setTimeout(() => {
         const el = document.getElementById(id);
         if (el) {
@@ -28,23 +34,29 @@ function ScrollToHash() {
 }
 
 function App() {
+  const { theme, toggleTheme } = useTheme();
+
   return (
-     <>
-    <BrowserRouter>
-      <Navbar />
-      <ScrollToHash />
+    <>
+      <BrowserRouter>
+        <MouseAura />
+        <BackToTopButton />
+        <Navbar theme={theme} onToggleTheme={toggleTheme} />
+        <ScrollToHash />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/articles" element={<Articles />} />
-        <Route path="/problems" element={<Problems />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-
-    </BrowserRouter>
-  
-   </>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/articles" element={<Articles />} />
+          <Route path="/articles/:slug" element={<ArticleDetails />} />
+          <Route path="/problems" element={<Problems />} />
+          <Route path="/problems/:slug" element={<ProblemDetails />} />
+          <Route path="/saved" element={<Saved />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/projects/:id/notes" element={<ProjectNotes />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

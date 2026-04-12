@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" role="img">
+  <rect width="960" height="400" fill="#0f172a"/>
+  <text x="480" y="42" fill="#93c5fd" text-anchor="middle" font-family="Arial" font-size="24">K8s Hardening - Incident Response</text>
+  <rect x="40" y="140" width="160" height="80" rx="10" fill="#1e293b" stroke="#93c5fd"/>
+  <text x="120" y="188" fill="#e2e8f0" text-anchor="middle" font-family="Arial" font-size="14">Detect</text>
+  <rect x="230" y="140" width="160" height="80" rx="10" fill="#1e293b" stroke="#93c5fd"/>
+  <text x="310" y="188" fill="#e2e8f0" text-anchor="middle" font-family="Arial" font-size="14">Triage</text>
+  <rect x="420" y="140" width="160" height="80" rx="10" fill="#1e293b" stroke="#93c5fd"/>
+  <text x="500" y="188" fill="#e2e8f0" text-anchor="middle" font-family="Arial" font-size="14">Stabilize</text>
+  <rect x="610" y="140" width="160" height="80" rx="10" fill="#1e293b" stroke="#93c5fd"/>
+  <text x="690" y="188" fill="#e2e8f0" text-anchor="middle" font-family="Arial" font-size="14">Recover</text>
+  <rect x="800" y="140" width="120" height="80" rx="10" fill="#1e293b" stroke="#93c5fd"/>
+  <text x="860" y="188" fill="#e2e8f0" text-anchor="middle" font-family="Arial" font-size="14">Postmortem</text>
+  <line x1="200" y1="180" x2="230" y2="180" stroke="#3b82f6" stroke-width="3"/>
+  <line x1="390" y1="180" x2="420" y2="180" stroke="#3b82f6" stroke-width="3"/>
+  <line x1="580" y1="180" x2="610" y2="180" stroke="#3b82f6" stroke-width="3"/>
+  <line x1="770" y1="180" x2="800" y2="180" stroke="#3b82f6" stroke-width="3"/>
+</svg>

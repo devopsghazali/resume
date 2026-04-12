@@ -1,0 +1,11 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320">
+  <rect width="900" height="320" fill="#252f43"/>
+  <text x="30" y="42" fill="#edf3ff" font-family="Arial" font-size="24" font-weight="700">Terraform: Failure Alert Lifecycle</text>
+  <rect x="40" y="110" width="160" height="70" rx="10" fill="#35445f" stroke="#9db8ff"/><text x="120" y="153" text-anchor="middle" fill="#f4f8ff" font-family="Arial" font-size="16">Apply Fails</text>
+  <rect x="225" y="110" width="160" height="70" rx="10" fill="#3d5072" stroke="#aac4ff"/><text x="305" y="153" text-anchor="middle" fill="#f4f8ff" font-family="Arial" font-size="16">Notify Owner</text>
+  <rect x="410" y="110" width="160" height="70" rx="10" fill="#466085" stroke="#b7d0ff"/><text x="490" y="153" text-anchor="middle" fill="#f4f8ff" font-family="Arial" font-size="16">Inspect Plan</text>
+  <rect x="595" y="110" width="160" height="70" rx="10" fill="#4f6f97" stroke="#c5dcff"/><text x="675" y="153" text-anchor="middle" fill="#f4f8ff" font-family="Arial" font-size="16">Fix and Re-run</text>
+  <line x1="200" y1="145" x2="225" y2="145" stroke="#c8d9ff" stroke-width="4"/>
+  <line x1="385" y1="145" x2="410" y2="145" stroke="#c8d9ff" stroke-width="4"/>
+  <line x1="570" y1="145" x2="595" y2="145" stroke="#c8d9ff" stroke-width="4"/>
+</svg>

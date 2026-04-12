@@ -1,0 +1,15 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420">
+  <rect width="900" height="420" fill="#112437"/>
+  <text x="30" y="40" fill="#d9f2ff" font-family="Arial" font-size="24" font-weight="700">Observability: System Architecture</text>
+  <rect x="40" y="90" width="210" height="90" rx="10" fill="#1a3954" stroke="#6bd6ff"/>
+  <text x="145" y="143" text-anchor="middle" fill="#ecfbff" font-family="Arial" font-size="20">Kubernetes Apps</text>
+  <rect x="330" y="90" width="240" height="90" rx="10" fill="#1d4461" stroke="#79e8ff"/>
+  <text x="450" y="143" text-anchor="middle" fill="#ecfbff" font-family="Arial" font-size="20">Prometheus</text>
+  <rect x="650" y="90" width="210" height="90" rx="10" fill="#1d4a5f" stroke="#7cf0b8"/>
+  <text x="755" y="143" text-anchor="middle" fill="#eefff7" font-family="Arial" font-size="20">Grafana</text>
+  <rect x="330" y="250" width="240" height="90" rx="10" fill="#20455e" stroke="#8ff5c9"/>
+  <text x="450" y="303" text-anchor="middle" fill="#eefff8" font-family="Arial" font-size="20">Alertmanager</text>
+  <line x1="250" y1="135" x2="330" y2="135" stroke="#8be0ff" stroke-width="4"/>
+  <line x1="570" y1="135" x2="650" y2="135" stroke="#8be0ff" stroke-width="4"/>
+  <line x1="450" y1="180" x2="450" y2="250" stroke="#9ef5c9" stroke-width="4"/>
+</svg>

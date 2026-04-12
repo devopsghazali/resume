@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 
 const DevOpsInfinity = () => {
@@ -6,32 +5,19 @@ const DevOpsInfinity = () => {
   const [hoveredStage, setHoveredStage] = useState(null);
 
   const stages = [
-    { id: "code", label: "Code", top: "59%", left: "17%", rotate: "-35deg", color: "#fbbf24",size: "lg"},
+    { id: "code", label: "Code", top: "58%", left: "17%", rotate: "-35deg", color: "#fbbf24", size: "lg" },
     { id: "build", label: "Build", top: "35%", left: "40%", rotate: "-20deg", color: "#fbbf24", size: "lg" },
     { id: "plan", label: "Plan", top: "63%", left: "40%", rotate: "0deg", color: "#fbbf24", size: "lg" },
     { id: "test", label: "Test", top: "42%", left: "15%", rotate: "15deg", color: "#fbbf24", size: "lg" },
-
     { id: "release", label: "Release", top: "50%", left: "50%", rotate: "0deg", color: "#22d3ee", size: "lg" },
-
     { id: "deploy", label: "Deploy", top: "65%", left: "72%", rotate: "20deg", color: "#3b82f6", size: "lg" },
     { id: "operate", label: "Operate", top: "35%", left: "78%", rotate: "20deg", color: "#3b82f6", size: "lg" },
-    { id: "monitor", label: "Monitor", top: "50%", left: "85%", rotate: "-15deg", color: "#3b82f6" , size: "lg"}
+    { id: "monitor", label: "Monitor", top: "50%", left: "85%", rotate: "-15deg", color: "#3b82f6", size: "lg" },
   ];
 
   return (
-    <div className="
-  relative w-full 
-  h-[420px] md:h-[600px]
-  overflow-hidden 
-  flex items-center justify-center
-">
-
-      {/* ♾️ BIGGER DEVOPS INFINITY LINE */}
-      <svg
-        className="absolute inset-0 w-full h-full"
-        viewBox="0 0 100 60"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+    <div className="relative w-full h-[420px] md:h-[600px] overflow-hidden flex items-center justify-center">
+      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
         <path
           d="
             M 15 30
@@ -42,16 +28,15 @@ const DevOpsInfinity = () => {
           "
           fill="none"
           stroke="white"
-          strokeWidth="1.2"     /* 🔥 thicker line */
+          strokeWidth="1.2"
           strokeLinecap="round"
-          strokeDasharray="8 8" /* 🔥 bigger dashes */
+          strokeDasharray="8 8"
           opacity="0.55"
           className="animate-flow"
         />
       </svg>
 
-      {/* Buttons on Path */}
-      {stages.map(stage => {
+      {stages.map((stage) => {
         const active = activeStage === stage.id || hoveredStage === stage.id;
 
         return (
@@ -62,6 +47,7 @@ const DevOpsInfinity = () => {
             onClick={() => setActiveStage(stage.id)}
             onMouseEnter={() => setHoveredStage(stage.id)}
             onMouseLeave={() => setHoveredStage(null)}
+            type="button"
           >
             <div
               className={`
@@ -73,10 +59,7 @@ const DevOpsInfinity = () => {
                 color: active ? "#000" : "#fff",
                 border: `1.5px solid ${stage.color}`,
                 boxShadow: active ? `0 0 18px ${stage.color}` : "none",
-                transform: `
-                  scale(${active ? 1.15 : 1})
-                  rotate(${stage.rotate})
-                `
+                transform: `scale(${active ? 1.15 : 1}) rotate(${stage.rotate})`,
               }}
             >
               {stage.label}
@@ -85,7 +68,6 @@ const DevOpsInfinity = () => {
         );
       })}
 
-      {/* 🔤 BIGGER CENTER TEXT */}
       <div className="absolute flex gap-3 text-6xl font-black pointer-events-none">
         <span className="text-yellow-400">DEV</span>
         <span className="text-cyan-400">∞</span>
@@ -106,5 +88,3 @@ const DevOpsInfinity = () => {
 };
 
 export default DevOpsInfinity;
-
-
