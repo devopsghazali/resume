@@ -105,23 +105,23 @@ export const projectDocs = {
   2: {
     summary: {
       what: "A simple container delivery project that teaches how to build a Docker image, scan it, and publish only trusted releases.",
-      why: "To practice a safe release flow where vulnerable images are blocked before they are published.",
+      why: "The focus is on practicing a safe release flow where vulnerable images are blocked before publish.",
       how: "A Python demo app is containerized, GitHub Actions builds the image, Trivy checks it, and only approved releases are pushed.",
       internalWorking: "Code changes trigger the workflow, the image is built, the scan step validates the artifact, and the publish step only runs when the gate passes.",
-      bestPractices: ["Keep the app small so the pipeline stays easy to understand.", "Scan before publish so vulnerable images never become release artifacts.", "Pin base images and avoid mutable tags like latest."],
-      commonMistakes: ["Publishing the image before the scan gate passes.", "Using mutable tags instead of versioned release tags.", "Making the demo app too complex for a teaching repo."]
+      bestPractices: ["Keep the app small.", "Scan before publish.", "Pin base images and avoid mutable tags."],
+      commonMistakes: ["Publishing before the scan gate passes.", "Using mutable tags instead of versioned tags.", "Making the demo app too complex."]
     },
-    architectureOverview: "The repo is intentionally small: a Python demo service, a Dockerfile, a GitHub Actions workflow, and a scan script. That keeps the pipeline easy to explain in interviews and easy to practice locally.",
+    architectureOverview: "The repo is intentionally small: a Python demo service, a Dockerfile, a GitHub Actions workflow, and a scan script.",
     components: [
-      { name: "GitHub Actions", role: "Build and release orchestrator.", internalWorking: "Workflow checks out the code, builds the image, runs the gate, and publishes only approved output." },
+      { name: "GitHub Actions", role: "Build and release orchestrator.", internalWorking: "Checks out the code, builds the image, runs the gate, and publishes only approved output." },
       { name: "Dockerfile", role: "Image recipe.", internalWorking: "Packages the Python demo app into a runnable container image." },
       { name: "Trivy Scan Step", role: "Security gate before publish.", internalWorking: "Checks the image for known vulnerabilities before release." },
       { name: "Container Registry", role: "Release storage.", internalWorking: "Holds the trusted image tag after the publish step completes." }
     ],
     deploymentSteps: [
       { step: "Run the Demo App", what: "Keep a tiny Python service as the example workload.", why: "A small app makes the container workflow easier to follow.", how: "Start the service locally and verify the health endpoints.", internalWorking: "The app gives the Docker build something real to package.", bestPractices: "Keep the example service simple and readable.", commonMistakes: "Overbuilding the demo app before the pipeline is clear." },
-      { step: "Build and Scan the Image", what: "Create the Docker image and run a vulnerability scan.", why: "Images should be checked before they are treated as trusted releases.", how: "The workflow builds the image and calls the scan script.", internalWorking: "The scan step blocks the publish path if the image fails security checks.", bestPractices: "Fail fast on scan results and keep base images updated.", commonMistakes: "Skipping the scan or treating it as optional." },
-      { step: "Publish the Approved Release", what: "Push only the trusted tag to the registry.", why: "The published artifact should match what passed the gates.", how: "GitHub Actions pushes the approved image tag after the checks pass.", internalWorking: "Registry push happens only after the build and scan stages succeed.", bestPractices: "Use versioned image tags and keep release metadata clear.", commonMistakes: "Publishing mutable tags without traceability." }
+      { step: "Build and Scan the Image", what: "Create the Docker image and run a vulnerability scan.", why: "Images should be checked before they are trusted releases.", how: "The workflow builds the image and calls the scan script.", internalWorking: "The scan step blocks the publish path if the image fails security checks.", bestPractices: "Fail fast on scan results and keep base images updated.", commonMistakes: "Skipping the scan or treating it as optional." },
+      { step: "Publish the Approved Release", what: "Push only the trusted tag to the registry.", why: "The published artifact should match what passed the gates.", how: "GitHub Actions pushes the approved image tag after checks pass.", internalWorking: "Registry push happens only after build and scan succeed.", bestPractices: "Use versioned image tags and keep release metadata clear.", commonMistakes: "Publishing mutable tags without traceability." }
     ],
     observability: {
       metrics: "Workflow success rate, build duration, and scan result trends show whether the release path stays healthy.",
@@ -131,7 +131,7 @@ export const projectDocs = {
       incidentLifecycle: "Detect failure -> identify stage -> patch Dockerfile or workflow -> rerun pipeline -> confirm trusted release is published."
     },
     failureScenarios: [
-      { scenario: "Docker build fails", symptoms: "Image does not build or container start command exits early", response: "Fix the Dockerfile or app entrypoint, then rebuild", prevention: "Keep the service and Dockerfile minimal and test locally first" },
+      { scenario: "Docker build fails", symptoms: "Image does not build or container start exits early.", response: "Fix the Dockerfile or app entrypoint, then rebuild.", prevention: "Keep the service and Dockerfile minimal and test locally first." },
       { scenario: "Vulnerability scan blocks publish", symptoms: "Trivy reports issues and the pipeline stops before push", response: "Update the base image or dependency and rerun the scan", prevention: "Scan every build and keep base images patched" }
     ],
     scaling: ["Keep Docker layers small to speed up builds.", "Use cached layers when the app changes often.", "Split build and scan logic so the workflow stays easy to maintain."],
@@ -156,50 +156,51 @@ export const projectDocs = {
   },
   3: {
     summary: {
-      what: "Ye ek practical Kubernetes observability project hai jisme Prometheus, Grafana, Alertmanager aur exporters ko end-to-end setup kiya gaya.",
-      why: "Simple reason: app chal rahi hai ya fail ho rahi hai, CPU/memory kaha spike ho raha hai, ye sab instantly dikhna chahiye.",
-      how: "Cluster banaya, Helm se kube-prometheus-stack install kiya, dashboards import kiye, PromQL run ki, fir traffic dekar alerts validate kiye.",
-      internalWorking: "Prometheus cluster se metrics scrape karta hai, rules evaluate karta hai, Grafana un metrics ko charts me dikhata hai aur Alertmanager issue aate hi notify karta hai.",
-      bestPractices: ["Monitoring ke liye alag namespace rakho.", "Warning aur critical alerts alag rakho.", "Load dekar dashboards aur alert dono test karo."],
-      commonMistakes: ["App aur Grafana me same NodePort rakh dena.", "Targets check kiye bina dashboards pe trust kar lena.", "Bahut noisy alerts laga dena jisse signal lose ho jaye."]
+      what: "A Kubernetes observability project with Prometheus, Grafana, Loki, and Promtail.",
+      why: "The goal is to understand monitoring in a simple, practical way.",
+      how: "Run a small app in Kubernetes, collect metrics, visualize them, and view logs in one place.",
+      internalWorking: "Prometheus collects metrics, Grafana displays them, Loki stores logs, and Promtail ships log data into Loki.",
+      bestPractices: ["Keep the stack simple.", "Use dashboards that answer a real question.", "Send logs and metrics to the right place."],
+      commonMistakes: ["Adding too many tools before the basic flow is clear.", "Trusting dashboards without checking source data.", "Creating alerts that are too noisy."]
     },
-    architectureOverview: "Flow seedha hai: Kubernetes app + nodes se metrics aate hain, Prometheus unhe scrape karta hai, Grafana me visual dashboards bante hain, aur threshold cross hote hi Alertmanager action trigger karta hai.",
+    architectureOverview: "The repo is about monitoring a Kubernetes workload with metrics, dashboards, and logs. The stack stays intentionally small so the main observability flow is easy to understand.",
     components: [
-      { name: "Prometheus", role: "Metrics collect + alert evaluate", internalWorking: "Kubernetes endpoints scrape karke time-series store karta hai aur rules evaluate karta hai." },
-      { name: "Grafana", role: "Visualization layer", internalWorking: "Prometheus datasource se query run karke dashboards me live trends show karta hai." },
-      { name: "Alertmanager", role: "Alert handling", internalWorking: "Prometheus se fire huye alerts receive karke group/routing ke saath response flow chalata hai." },
-      { name: "Node Exporter", role: "Node telemetry source", internalWorking: "Node level CPU, memory, disk, network stats expose karta hai jise Prometheus scrape karta hai." }
+      { name: "Prometheus", role: "Metrics collection", internalWorking: "Scrapes the Kubernetes targets and stores time-series data." },
+      { name: "Grafana", role: "Dashboarding", internalWorking: "Reads Prometheus data and shows it in dashboards." },
+      { name: "Loki", role: "Log storage", internalWorking: "Stores logs for search and correlation." },
+      { name: "Promtail", role: "Log shipping", internalWorking: "Collects logs and sends them into Loki." }
     ],
     deploymentSteps: [
-      { step: "Cluster Ready Karo", what: "Kind ya Kubernetes cluster banake sample app deploy karo.", why: "Jab tak workloads run nahi karenge tab tak useful metrics nahi milenge.", how: "Control-plane + workers setup karo aur app pods/services verify karo.", internalWorking: "Service discovery ke through monitoring stack targets auto-detect karta hai.", bestPractices: "App aur monitoring namespaces alag rakho.", commonMistakes: "Pods ready hone se pehle hi dashboards judge kar lena." },
-      { step: "Helm Se Monitoring Install Karo", what: "kube-prometheus-stack install karo.", why: "Ek command flow me Prometheus, Grafana, Alertmanager setup ho jata hai.", how: "Monitoring namespace create karke Helm repo add + install command chalao.", internalWorking: "Helm manifests generate karta hai aur Prometheus targets scrape start kar deta hai.", bestPractices: "Values file ko version control me rakho.", commonMistakes: "Default ports blindly use karke port clash kara dena." },
-      { step: "Dashboard + Alert Real Test", what: "PromQL run karo, dashboard import karo, traffic spike test karo.", why: "Production type confidence tabhi aata hai jab monitoring ko real load par validate karo.", how: "Voting app par requests bhejo aur Grafana/Prometheus me spike observe karo.", internalWorking: "Rule condition meet hote hi alert firing state me jata hai aur Alertmanager route karta hai.", bestPractices: "Har important metric ka ek actionable alert banao.", commonMistakes: "Noisy alert set karke fatigue create kar dena." }
+      { step: "Run the App", what: "Deploy a small service in Kubernetes.", why: "Monitoring needs something real to watch.", how: "Create the namespace and deploy the sample app.", internalWorking: "The app becomes the source of metrics and logs.", bestPractices: "Keep the workload simple.", commonMistakes: "Testing monitoring before the app is running." },
+      { step: "Add Metrics and Logs", what: "Connect Prometheus, Grafana, Loki, and Promtail.", why: "You need both metrics and logs to understand workload behavior.", how: "Set up scraping and log shipping for the cluster.", internalWorking: "Prometheus reads metrics while Promtail sends logs to Loki.", bestPractices: "Keep the dashboards and log queries useful.", commonMistakes: "Adding tools without a clear use case." },
+      { step: "Check the Signals", what: "Use the dashboards and logs to observe the app.", why: "The point is to see what is happening and why.", how: "Generate a little traffic and watch the data change.", internalWorking: "Grafana shows the metric trend, and Loki helps inspect log lines.", bestPractices: "Make each panel answer a question.", commonMistakes: "Making dashboards that only look busy." }
     ],
     observability: {
-      metrics: "Node CPU, pod memory, restarts, service health aur network traffic ke trend continuously track hote hain.",
-      logs: "Metrics ke saath logs correlate karke root cause jaldi pakda jata hai.",
-      alerts: "Prometheus rules warning/critical alert fire karte hain aur Alertmanager unko route karta hai.",
-      alertLifecycle: "Threshold cross -> rule fire -> alert route -> acknowledge -> fix -> close.",
-      incidentLifecycle: "Detect -> confirm -> triage -> mitigate -> recover -> verify."
+      metrics: "Prometheus shows the metric trends.",
+      logs: "Promtail sends logs into Loki for search and correlation.",
+      alerts: "Use useful alerts, not noisy ones.",
+      alertLifecycle: "Threshold hit -> inspect dashboard -> check logs -> fix -> verify.",
+      incidentLifecycle: "Detect issue -> identify source -> correct config or workload -> confirm recovery."
     },
     failureScenarios: [
-      { scenario: "Prometheus target down", symptoms: "Grafana me panel blank aur target Down dikhe", response: "Service endpoint, labels aur target status page check karo", prevention: "Exporter uptime aur scrape health ke alerts bhi rakho" },
-      { scenario: "Alert spam", symptoms: "Har thodi der me same alert aana", response: "Threshold aur evaluation window tune karo", prevention: "Warning/critical separation aur practical load testing karo" }
+      { scenario: "Prometheus target down", symptoms: "Metrics stop appearing in Grafana.", response: "Check the scrape target and service endpoint.", prevention: "Keep target labels and endpoints correct." },
+      { scenario: "Logs not showing in Loki", symptoms: "Log search returns nothing useful.", response: "Check Promtail configuration and log path.", prevention: "Validate log shipping before relying on dashboards." }
     ],
-    scaling: ["Heavy queries ke liye recording rules use karo.", "Cluster-wise/service-wise dashboards split karo.", "Load badhe to Prometheus resources aur retention tune karo."],
-    security: ["Grafana admin access minimum users ko do.", "RBAC se monitoring namespace restrict rakho.", "Monitoring ports public expose karne se pehle controls lagao."],
+    scaling: ["Keep dashboards focused.", "Tune Prometheus retention only if needed.", "Split log views by service when data grows."],
+    security: ["Limit admin access to Grafana.", "Keep the monitoring namespace controlled.", "Do not expose monitoring endpoints without a reason."],
     designDecisions: [
-      { decision: "Helm-based install", rationale: "Fast setup aur repeatable deployment", tradeoff: "Production use case ke liye values tuning karni padti hai" },
-      { decision: "Prometheus + Grafana combo", rationale: "Battle-tested monitoring stack", tradeoff: "Initial stage me alert noise tuning effort lagta hai" }
+      { decision: "Small monitoring stack", rationale: "Keeps the project easy to understand and practice.", tradeoff: "Does not cover every observability tool." },
+      { decision: "Metrics plus logs", rationale: "Shows both what happened and what the app said.", tradeoff: "Needs basic setup for two data sources." }
     ],
     runbooks: [
-      { title: "High CPU Usage Alert", objective: "CPU spike ka source pakadna aur workload stable state me lana.", commands: ["kubectl get pods -A", "kubectl top pods -A", "kubectl top nodes", "kubectl port-forward svc/kube-prometheus-stack-prometheus 9090:9090 -n monitoring"], verification: ["Grafana panel me CPU trend normal range me aaye.", "Critical CPU alert clear ho.", "App response time stable ho." ] }
+      { title: "Check Metrics", objective: "Verify that Prometheus and Grafana are receiving data.", commands: ["kubectl get pods -A", "kubectl port-forward svc/prometheus 9090:9090 -n monitoring", "kubectl port-forward svc/grafana 3000:3000 -n monitoring"], verification: ["Targets appear healthy.", "Dashboards show live data.", "The app metrics change when traffic changes."] },
+      { title: "Check Logs", objective: "Confirm that Loki and Promtail are working.", commands: ["kubectl get pods -A", "kubectl logs -n monitoring deploy/promtail", "kubectl port-forward svc/loki 3100:3100 -n monitoring"], verification: ["Logs are searchable in Loki.", "Promtail is shipping records.", "You can correlate logs with metric spikes."] }
     ],
     troubleshooting: [
-      { issue: "Grafana me data nahi aa raha", checks: ["Grafana datasource me Prometheus URL check karo", "Prometheus targets page verify karo", "Prometheus UI me direct PromQL run karo"], fix: "Datasource ya scrape connectivity sahi karo aur dashboard refresh karo." }
+      { issue: "Grafana me data nahi aa raha", checks: ["Check the Prometheus datasource", "Verify the scrape target", "Refresh the dashboard"], fix: "Fix the datasource or scrape connection and try again." },
+      { issue: "Loki me logs nahi mil rahe", checks: ["Check Promtail config", "Verify the app logs path", "Confirm Loki endpoint"], fix: "Correct the log shipping setup and retry." }
     ],
-    alertMatrix: sharedAlertMatrix,
-    diagrams: projectDiagrams[3]
+    alertMatrix: sharedAlertMatrix
   },
   4: {
     summary: {
