@@ -104,46 +104,48 @@ export const projects = [
     id: 3,
     title: "Kubernetes Observability Stack",
     description:
-      "Kubernetes observability stack with Prometheus, Grafana, Loki, and Promtail.",
+      "Kubernetes observability stack with Prometheus, Grafana, and Alertmanager.",
     image: "/images/project-observability-stack.svg",
     stack: [
+      "Kubernetes",
+      "Kind",
+      "Helm",
       "Prometheus",
       "Grafana",
-      "Loki",
-      "Promtail",
+      "Alertmanager",
     ],
     codeSummary:
-      "Small Kubernetes monitoring stack focused on metrics, dashboards, and logs.",
+      "Kind cluster par monitoring stack install ki, dashboards import kiye, aur load test se alerts validate kiye.",
     details:
-      "This project keeps observability simple on purpose. The repo focuses on Prometheus for metrics, Grafana for dashboards, Loki for logs, and Promtail for shipping logs into Loki. The idea is to show how the monitoring flow works without adding extra noise.",
+      "This repo teaches how to observe a Kubernetes workload with metrics, dashboards, and alerts. The workflow is simple: create the namespace, deploy the app, add Prometheus rules, import the Grafana dashboard, and run the load test to watch alerts fire.",
     highlights: [
-      "Simple metrics, dashboard, and log flow.",
-      "Easy to explain in an interview.",
-      "Focus on the core observability path only.",
+      "Metrics, dashboards, and alerts in one small stack.",
+      "Prometheus rules and Grafana dashboard keep the flow visible.",
+      "Load test shows how alerts react to real traffic.",
     ],
     links: [
       {
         label: "GitHub Repository",
         url: "https://github.com/devopsghazali/kubernetes-observability-stack",
-        note: "Prometheus, Grafana, Loki, and Promtail setup.",
+        note: "Prometheus rules, Grafana dashboard, and Alertmanager flow.",
       },
     ],
     notes: {
       goal:
-        "Keep Kubernetes observability simple enough to understand and practice quickly.",
+        "Teach how to observe a Kubernetes workload with metrics, dashboards, and alerts.",
       architecture:
-        "Prometheus collects metrics, Grafana shows dashboards, Loki stores logs, and Promtail ships logs into Loki.",
+        "Kubernetes app -> Prometheus scrape -> Grafana dashboard -> Alertmanager routes alerts after threshold hit.",
       buildAndDeploy: [
-        "Deployed a small app in Kubernetes so there was something real to monitor.",
-        "Connected Prometheus for metrics collection.",
-        "Used Grafana to view dashboards.",
-        "Used Loki for logs and Promtail to ship log data into Loki.",
-        "Kept the stack compact so the flow stays easy to explain.",
+        "Created the namespace and deployed the small app.",
+        "Applied Prometheus rules to collect and evaluate metrics.",
+        "Imported the Grafana dashboard to visualize the workload.",
+        "Ran the load test to generate traffic and confirm alerts.",
+        "Kept the app small so the monitoring flow stayed easy to explain.",
       ],
       devopsFocus: [
-        "Keep the monitoring stack simple.",
-        "Metrics and logs should answer real questions.",
-        "Use dashboards that stay easy to explain.",
+        "Metrics answer what is happening.",
+        "Logs answer why it happened.",
+        "Alerts answer when action is needed.",
       ],
     },
   },

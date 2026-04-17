@@ -156,49 +156,49 @@ export const projectDocs = {
   },
   3: {
     summary: {
-      what: "A Kubernetes observability project with Prometheus, Grafana, Loki, and Promtail.",
-      why: "The goal is to understand monitoring in a simple, practical way.",
-      how: "Run a small app in Kubernetes, collect metrics, visualize them, and view logs in one place.",
-      internalWorking: "Prometheus collects metrics, Grafana displays them, Loki stores logs, and Promtail ships log data into Loki.",
-      bestPractices: ["Keep the stack simple.", "Use dashboards that answer a real question.", "Send logs and metrics to the right place."],
-      commonMistakes: ["Adding too many tools before the basic flow is clear.", "Trusting dashboards without checking source data.", "Creating alerts that are too noisy."]
+      what: "This repo teaches how to observe a Kubernetes workload with metrics, dashboards, and alerts.",
+      why: "The goal is to show the full observability flow clearly.",
+      how: "Deploy a tiny app, add Prometheus rules, import a Grafana dashboard, and run the load test.",
+      internalWorking: "Prometheus scrapes the workload, Grafana visualizes the data, and Alertmanager routes alerts when thresholds are hit.",
+      bestPractices: ["Metrics answer what is happening.", "Logs answer why it happened.", "Alerts answer when action is needed."],
+      commonMistakes: ["Trusting dashboards without checking targets.", "Adding alerts without a clear action.", "Making the setup more complex than needed."]
     },
-    architectureOverview: "The repo is about monitoring a Kubernetes workload with metrics, dashboards, and logs. The stack stays intentionally small so the main observability flow is easy to understand.",
+    architectureOverview: "The repo keeps the monitoring flow simple: app, Prometheus rules, Grafana dashboard, and a load test to validate the signals.",
     components: [
-      { name: "Prometheus", role: "Metrics collection", internalWorking: "Scrapes the Kubernetes targets and stores time-series data." },
-      { name: "Grafana", role: "Dashboarding", internalWorking: "Reads Prometheus data and shows it in dashboards." },
-      { name: "Loki", role: "Log storage", internalWorking: "Stores logs for search and correlation." },
-      { name: "Promtail", role: "Log shipping", internalWorking: "Collects logs and sends them into Loki." }
+      { name: "Prometheus", role: "Metrics collection", internalWorking: "Scrapes the workload and stores time-series data." },
+      { name: "Grafana", role: "Dashboarding", internalWorking: "Reads the metrics and shows them in dashboards." },
+      { name: "Alertmanager", role: "Alert routing", internalWorking: "Receives fired alerts and routes them to the right response path." },
+      { name: "Kubernetes", role: "Runtime", internalWorking: "Runs the tiny sample app that the monitoring stack observes." }
     ],
     deploymentSteps: [
-      { step: "Run the App", what: "Deploy a small service in Kubernetes.", why: "Monitoring needs something real to watch.", how: "Create the namespace and deploy the sample app.", internalWorking: "The app becomes the source of metrics and logs.", bestPractices: "Keep the workload simple.", commonMistakes: "Testing monitoring before the app is running." },
-      { step: "Add Metrics and Logs", what: "Connect Prometheus, Grafana, Loki, and Promtail.", why: "You need both metrics and logs to understand workload behavior.", how: "Set up scraping and log shipping for the cluster.", internalWorking: "Prometheus reads metrics while Promtail sends logs to Loki.", bestPractices: "Keep the dashboards and log queries useful.", commonMistakes: "Adding tools without a clear use case." },
-      { step: "Check the Signals", what: "Use the dashboards and logs to observe the app.", why: "The point is to see what is happening and why.", how: "Generate a little traffic and watch the data change.", internalWorking: "Grafana shows the metric trend, and Loki helps inspect log lines.", bestPractices: "Make each panel answer a question.", commonMistakes: "Making dashboards that only look busy." }
+      { step: "Run the App", what: "Deploy a tiny service in Kubernetes.", why: "Monitoring needs something real to watch.", how: "Create the namespace and deploy the sample app.", internalWorking: "The app becomes the source of metrics.", bestPractices: "Keep the workload simple.", commonMistakes: "Testing monitoring before the app is running." },
+      { step: "Add Prometheus Rules and Grafana", what: "Connect the metrics and dashboard layer.", why: "You need visible signals before alerts make sense.", how: "Apply the monitoring manifests and import the dashboard.", internalWorking: "Prometheus scrapes the app and Grafana displays the data.", bestPractices: "Keep the dashboard focused.", commonMistakes: "Adding tools without a clear use case." },
+      { step: "Run the Load Test", what: "Generate traffic and watch the alerts.", why: "The stack should be validated with real activity.", how: "Run the load test and watch the metrics change.", internalWorking: "Prometheus rules fire when thresholds are crossed and Alertmanager routes the alert.", bestPractices: "Make every alert actionable.", commonMistakes: "Creating alerts that do not tell you what to do." }
     ],
     observability: {
-      metrics: "Prometheus shows the metric trends.",
-      logs: "Promtail sends logs into Loki for search and correlation.",
-      alerts: "Use useful alerts, not noisy ones.",
-      alertLifecycle: "Threshold hit -> inspect dashboard -> check logs -> fix -> verify.",
-      incidentLifecycle: "Detect issue -> identify source -> correct config or workload -> confirm recovery."
+      metrics: "Prometheus shows the workload metrics.",
+      logs: "Application logs help explain metric spikes.",
+      alerts: "Alertmanager routes alerts when Prometheus rules fire.",
+      alertLifecycle: "Threshold hit -> alert fires -> inspect dashboard -> fix -> verify.",
+      incidentLifecycle: "Detect issue -> identify source -> correct workload or rule -> confirm recovery."
     },
     failureScenarios: [
       { scenario: "Prometheus target down", symptoms: "Metrics stop appearing in Grafana.", response: "Check the scrape target and service endpoint.", prevention: "Keep target labels and endpoints correct." },
-      { scenario: "Logs not showing in Loki", symptoms: "Log search returns nothing useful.", response: "Check Promtail configuration and log path.", prevention: "Validate log shipping before relying on dashboards." }
+      { scenario: "Alert does not fire", symptoms: "Traffic increases but the alert stays quiet.", response: "Check the rule file and thresholds.", prevention: "Test the Prometheus rules with the load script." }
     ],
-    scaling: ["Keep dashboards focused.", "Tune Prometheus retention only if needed.", "Split log views by service when data grows."],
+    scaling: ["Keep dashboards focused.", "Tune Prometheus retention only if needed.", "Add more alerts only when they are useful."],
     security: ["Limit admin access to Grafana.", "Keep the monitoring namespace controlled.", "Do not expose monitoring endpoints without a reason."],
     designDecisions: [
-      { decision: "Small monitoring stack", rationale: "Keeps the project easy to understand and practice.", tradeoff: "Does not cover every observability tool." },
-      { decision: "Metrics plus logs", rationale: "Shows both what happened and what the app said.", tradeoff: "Needs basic setup for two data sources." }
+      { decision: "Prometheus, Grafana, Alertmanager", rationale: "Matches the core observability flow from the repo.", tradeoff: "Does not cover a larger logging stack." },
+      { decision: "Tiny sample app", rationale: "Keeps the project easy to explain and test.", tradeoff: "The app itself is intentionally simple." }
     ],
     runbooks: [
-      { title: "Check Metrics", objective: "Verify that Prometheus and Grafana are receiving data.", commands: ["kubectl get pods -A", "kubectl port-forward svc/prometheus 9090:9090 -n monitoring", "kubectl port-forward svc/grafana 3000:3000 -n monitoring"], verification: ["Targets appear healthy.", "Dashboards show live data.", "The app metrics change when traffic changes."] },
-      { title: "Check Logs", objective: "Confirm that Loki and Promtail are working.", commands: ["kubectl get pods -A", "kubectl logs -n monitoring deploy/promtail", "kubectl port-forward svc/loki 3100:3100 -n monitoring"], verification: ["Logs are searchable in Loki.", "Promtail is shipping records.", "You can correlate logs with metric spikes."] }
+      { title: "Apply Monitoring Manifests", objective: "Set up the namespace, app, service, and Prometheus rules.", commands: ["kubectl apply -f k8s/namespace.yaml", "kubectl apply -f k8s/deployment.yaml", "kubectl apply -f k8s/service.yaml", "kubectl apply -f monitoring/prometheus-rules.yaml"], verification: ["The namespace exists.", "The app is running.", "Prometheus rules are loaded."] },
+      { title: "Run the Load Test", objective: "Generate traffic and confirm the stack responds.", commands: ["scripts/load-test.sh", "kubectl get pods -A", "kubectl get events -A"], verification: ["Metrics change during the test.", "Dashboard panels update.", "Alerts fire when thresholds are crossed."] }
     ],
     troubleshooting: [
       { issue: "Grafana me data nahi aa raha", checks: ["Check the Prometheus datasource", "Verify the scrape target", "Refresh the dashboard"], fix: "Fix the datasource or scrape connection and try again." },
-      { issue: "Loki me logs nahi mil rahe", checks: ["Check Promtail config", "Verify the app logs path", "Confirm Loki endpoint"], fix: "Correct the log shipping setup and retry." }
+      { issue: "Alertmanager not receiving alerts", checks: ["Check the Prometheus rule file", "Verify the alert name and threshold", "Confirm Alertmanager service is running"], fix: "Correct the rule or routing config and test again." }
     ],
     alertMatrix: sharedAlertMatrix
   },
