@@ -140,9 +140,9 @@ def make_pdf(output: Path) -> None:
             "https://github.com/devopsghazali/docker-build-scan-publish",
         ),
         (
-            "Kubernetes Observability Stack",
-            "Prometheus, Grafana, and Alertmanager for cluster visibility, dashboards, and alert validation.",
-            "https://github.com/devopsghazali/kubernetes-observability-stack",
+            "Three-Tier Web Application",
+            "Frontend, API, and PostgreSQL stack",
+            "https://github.com/devopsghazali/three-tier-web-application",
         ),
         (
             "Terraform Multi-Environment AWS Baseline",

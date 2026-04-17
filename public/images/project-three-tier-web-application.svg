@@ -1,0 +1,41 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" rx="36" fill="#09111F"/>
+  <rect x="52" y="52" width="1096" height="696" rx="28" fill="#10182B" stroke="rgba(255,255,255,0.08)"/>
+  <circle cx="944" cy="128" r="92" fill="#22D3EE" fill-opacity="0.08"/>
+  <circle cx="274" cy="678" r="120" fill="#60A5FA" fill-opacity="0.08"/>
+  <text x="78" y="122" fill="#E5E7EB" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="700">Three-Tier Web Application</text>
+  <text x="78" y="160" fill="#9CA3AF" font-family="Inter, Arial, sans-serif" font-size="22">Frontend, API, and PostgreSQL in one practical demo</text>
+
+  <rect x="96" y="225" width="300" height="120" rx="22" fill="#13233F" stroke="rgba(34,211,238,0.4)"/>
+  <text x="134" y="273" fill="#22D3EE" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Frontend</text>
+  <text x="134" y="306" fill="#CBD5E1" font-family="Inter, Arial, sans-serif" font-size="20">Nginx + HTML UI</text>
+
+  <rect x="450" y="225" width="300" height="120" rx="22" fill="#17263F" stroke="rgba(96,165,250,0.4)"/>
+  <text x="488" y="273" fill="#7DD3FC" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">API</text>
+  <text x="488" y="306" fill="#CBD5E1" font-family="Inter, Arial, sans-serif" font-size="20">Flask backend</text>
+
+  <rect x="804" y="225" width="300" height="120" rx="22" fill="#1A2433" stroke="rgba(255,255,255,0.1)"/>
+  <text x="842" y="273" fill="#FCA5A5" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Database</text>
+  <text x="842" y="306" fill="#CBD5E1" font-family="Inter, Arial, sans-serif" font-size="20">PostgreSQL</text>
+
+  <path d="M396 285H450" stroke="#22D3EE" stroke-width="6" stroke-linecap="round"/>
+  <path d="M750 285H804" stroke="#60A5FA" stroke-width="6" stroke-linecap="round"/>
+  <path d="M428 285L446 276V294L428 285Z" fill="#22D3EE"/>
+  <path d="M782 285L800 276V294L782 285Z" fill="#60A5FA"/>
+
+  <rect x="165" y="438" width="872" height="156" rx="28" fill="#0F172A" stroke="rgba(255,255,255,0.08)"/>
+  <text x="198" y="487" fill="#E5E7EB" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Request Flow</text>
+  <text x="198" y="530" fill="#CBD5E1" font-family="Inter, Arial, sans-serif" font-size="21">Browser hits the frontend, frontend talks to the API, and the API reads/writes PostgreSQL.</text>
+  <text x="198" y="565" fill="#CBD5E1" font-family="Inter, Arial, sans-serif" font-size="21">Docker Compose and Kubernetes manifests let you run the same structure locally or in a cluster.</text>
+
+  <rect x="96" y="636" width="166" height="40" rx="20" fill="rgba(34,211,238,0.14)"/>
+  <text x="124" y="662" fill="#A5F3FC" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700">Docker Compose</text>
+  <rect x="280" y="636" width="146" height="40" rx="20" fill="rgba(96,165,250,0.14)"/>
+  <text x="320" y="662" fill="#BFDBFE" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700">Kubernetes</text>
+  <rect x="444" y="636" width="118" height="40" rx="20" fill="rgba(255,255,255,0.06)"/>
+  <text x="470" y="662" fill="#E5E7EB" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700">Flask</text>
+  <rect x="580" y="636" width="138" height="40" rx="20" fill="rgba(255,255,255,0.06)"/>
+  <text x="606" y="662" fill="#E5E7EB" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700">Nginx</text>
+  <rect x="736" y="636" width="150" height="40" rx="20" fill="rgba(255,255,255,0.06)"/>
+  <text x="764" y="662" fill="#E5E7EB" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700">PostgreSQL</text>
+</svg>

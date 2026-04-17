@@ -156,49 +156,49 @@ export const projectDocs = {
   },
   3: {
     summary: {
-      what: "This repo teaches how to observe a Kubernetes workload with metrics, dashboards, and alerts.",
-      why: "The goal is to show the full observability flow clearly.",
-      how: "Deploy a tiny app, add Prometheus rules, import a Grafana dashboard, and run the load test.",
-      internalWorking: "Prometheus scrapes the workload, Grafana visualizes the data, and Alertmanager routes alerts when thresholds are hit.",
-      bestPractices: ["Metrics answer what is happening.", "Logs answer why it happened.", "Alerts answer when action is needed."],
-      commonMistakes: ["Trusting dashboards without checking targets.", "Adding alerts without a clear action.", "Making the setup more complex than needed."]
+      what: "This repo shows a simple three-tier web application with a frontend, backend, and database.",
+      why: "The goal is to make the layering easy to understand and explain.",
+      how: "Serve the frontend with Nginx, run the backend with Flask, and store visits in PostgreSQL.",
+      internalWorking: "The browser talks to the frontend, the frontend proxies API calls to the backend, and the backend writes to the database.",
+      bestPractices: ["Keep each tier small and focused.", "Separate user interface from business logic.", "Use the database for durable state."],
+      commonMistakes: ["Mixing frontend and backend responsibilities.", "Hardcoding everything into one container.", "Skipping the database layer entirely."]
     },
-    architectureOverview: "The repo keeps the monitoring flow simple: app, Prometheus rules, Grafana dashboard, and a load test to validate the signals.",
+    architectureOverview: "The repo keeps the three-tier flow simple: frontend, API, and PostgreSQL, with Docker Compose and Kubernetes manifests for each layer.",
     components: [
-      { name: "Prometheus", role: "Metrics collection", internalWorking: "Scrapes the workload and stores time-series data." },
-      { name: "Grafana", role: "Dashboarding", internalWorking: "Reads the metrics and shows them in dashboards." },
-      { name: "Alertmanager", role: "Alert routing", internalWorking: "Receives fired alerts and routes them to the right response path." },
-      { name: "Kubernetes", role: "Runtime", internalWorking: "Runs the tiny sample app that the monitoring stack observes." }
+      { name: "Frontend", role: "User interface", internalWorking: "Served by Nginx and proxies API requests." },
+      { name: "Backend", role: "Application logic", internalWorking: "Flask API reads and updates the visit counter." },
+      { name: "Database", role: "Data tier", internalWorking: "PostgreSQL stores the durable visit records." },
+      { name: "Kubernetes", role: "Runtime", internalWorking: "Runs the same three tiers as separate workloads." }
     ],
     deploymentSteps: [
-      { step: "Run the App", what: "Deploy a tiny service in Kubernetes.", why: "Monitoring needs something real to watch.", how: "Create the namespace and deploy the sample app.", internalWorking: "The app becomes the source of metrics.", bestPractices: "Keep the workload simple.", commonMistakes: "Testing monitoring before the app is running." },
-      { step: "Add Prometheus Rules and Grafana", what: "Connect the metrics and dashboard layer.", why: "You need visible signals before alerts make sense.", how: "Apply the monitoring manifests and import the dashboard.", internalWorking: "Prometheus scrapes the app and Grafana displays the data.", bestPractices: "Keep the dashboard focused.", commonMistakes: "Adding tools without a clear use case." },
-      { step: "Run the Load Test", what: "Generate traffic and watch the alerts.", why: "The stack should be validated with real activity.", how: "Run the load test and watch the metrics change.", internalWorking: "Prometheus rules fire when thresholds are crossed and Alertmanager routes the alert.", bestPractices: "Make every alert actionable.", commonMistakes: "Creating alerts that do not tell you what to do." }
+      { step: "Run Locally", what: "Start the backend and open the frontend.", why: "The three-tier flow should be easy to see on your machine.", how: "Run the Flask API and open the browser page.", internalWorking: "The frontend calls the backend and displays the visit count.", bestPractices: "Keep the first test local and simple.", commonMistakes: "Jumping to Kubernetes before the app flow works." },
+      { step: "Use Docker Compose", what: "Run all three tiers together.", why: "Compose makes it easy to test the full stack.", how: "Start frontend, backend, and database with one command.", internalWorking: "The frontend proxies API requests, the backend writes to PostgreSQL, and the DB stores data.", bestPractices: "Keep the compose file readable.", commonMistakes: "Packing unrelated services into the same container." },
+      { step: "Deploy to Kubernetes", what: "Split the same app into Kubernetes manifests.", why: "Kubernetes should mirror the same three layers.", how: "Apply namespace, database, backend, and frontend manifests.", internalWorking: "Each tier runs as a separate workload and talks through services.", bestPractices: "Keep the manifests aligned with the local compose flow.", commonMistakes: "Changing the architecture between local and cluster setups." }
     ],
     observability: {
-      metrics: "Prometheus shows the workload metrics.",
-      logs: "Application logs help explain metric spikes.",
-      alerts: "Alertmanager routes alerts when Prometheus rules fire.",
-      alertLifecycle: "Threshold hit -> alert fires -> inspect dashboard -> fix -> verify.",
-      incidentLifecycle: "Detect issue -> identify source -> correct workload or rule -> confirm recovery."
+      metrics: "Visit count and API health are easy to inspect.",
+      logs: "Backend logs show API and database activity.",
+      alerts: "A failing API or unavailable database should stop the release.",
+      alertLifecycle: "Request fails -> inspect backend -> check database -> fix -> verify.",
+      incidentLifecycle: "Detect issue -> identify tier -> correct the broken layer -> confirm recovery."
     },
     failureScenarios: [
-      { scenario: "Prometheus target down", symptoms: "Metrics stop appearing in Grafana.", response: "Check the scrape target and service endpoint.", prevention: "Keep target labels and endpoints correct." },
-      { scenario: "Alert does not fire", symptoms: "Traffic increases but the alert stays quiet.", response: "Check the rule file and thresholds.", prevention: "Test the Prometheus rules with the load script." }
+      { scenario: "Frontend cannot reach backend", symptoms: "The page loads but the status call fails.", response: "Check the proxy and backend service name.", prevention: "Keep service names and ports aligned." },
+      { scenario: "Database connection fails", symptoms: "API health shows the database as unavailable.", response: "Check credentials, service, and deployment order.", prevention: "Test the database connection in compose and Kubernetes." }
     ],
-    scaling: ["Keep dashboards focused.", "Tune Prometheus retention only if needed.", "Add more alerts only when they are useful."],
-    security: ["Limit admin access to Grafana.", "Keep the monitoring namespace controlled.", "Do not expose monitoring endpoints without a reason."],
+    scaling: ["Keep each tier small and focused.", "Scale frontend and backend independently if needed.", "Use the database only for durable state."],
+    security: ["Limit access to the database credentials.", "Do not expose the database directly.", "Keep the frontend proxy and backend endpoints controlled."],
     designDecisions: [
-      { decision: "Prometheus, Grafana, Alertmanager", rationale: "Matches the core observability flow from the repo.", tradeoff: "Does not cover a larger logging stack." },
-      { decision: "Tiny sample app", rationale: "Keeps the project easy to explain and test.", tradeoff: "The app itself is intentionally simple." }
+      { decision: "Three-tier split", rationale: "Keeps UI, logic, and data separate.", tradeoff: "Adds more moving parts to manage." },
+      { decision: "Same app in Compose and Kubernetes", rationale: "Makes the local and cluster flow easy to compare.", tradeoff: "Requires keeping two deployment styles in sync." }
     ],
     runbooks: [
-      { title: "Apply Monitoring Manifests", objective: "Set up the namespace, app, service, and Prometheus rules.", commands: ["kubectl apply -f k8s/namespace.yaml", "kubectl apply -f k8s/deployment.yaml", "kubectl apply -f k8s/service.yaml", "kubectl apply -f monitoring/prometheus-rules.yaml"], verification: ["The namespace exists.", "The app is running.", "Prometheus rules are loaded."] },
-      { title: "Run the Load Test", objective: "Generate traffic and confirm the stack responds.", commands: ["scripts/load-test.sh", "kubectl get pods -A", "kubectl get events -A"], verification: ["Metrics change during the test.", "Dashboard panels update.", "Alerts fire when thresholds are crossed."] }
+      { title: "Run the Full Stack", objective: "Start frontend, backend, and database together.", commands: ["docker compose up --build", "curl http://localhost:8080/api/status", "curl -X POST http://localhost:8080/api/visit"], verification: ["The frontend loads.", "The API responds.", "Visit count increases after the POST request."] },
+      { title: "Deploy to Kubernetes", objective: "Bring up the same three tiers inside the cluster.", commands: ["kubectl apply -f k8s/namespace.yaml", "kubectl apply -f k8s/postgres-deployment.yaml", "kubectl apply -f k8s/backend-deployment.yaml", "kubectl apply -f k8s/frontend-deployment.yaml"], verification: ["All tiers are running.", "Frontend can reach the backend.", "Backend can reach PostgreSQL."] }
     ],
     troubleshooting: [
-      { issue: "Grafana me data nahi aa raha", checks: ["Check the Prometheus datasource", "Verify the scrape target", "Refresh the dashboard"], fix: "Fix the datasource or scrape connection and try again." },
-      { issue: "Alertmanager not receiving alerts", checks: ["Check the Prometheus rule file", "Verify the alert name and threshold", "Confirm Alertmanager service is running"], fix: "Correct the rule or routing config and test again." }
+      { issue: "Frontend status shows backend error", checks: ["Check nginx.conf proxy_pass", "Verify backend service name", "Confirm backend container is running"], fix: "Correct the proxy target and redeploy." },
+      { issue: "Database visit count stays at zero", checks: ["Check POST /api/visit", "Inspect PostgreSQL credentials", "Verify the init SQL and table creation"], fix: "Fix the database connection or initialization and try again." }
     ],
     alertMatrix: sharedAlertMatrix
   },
