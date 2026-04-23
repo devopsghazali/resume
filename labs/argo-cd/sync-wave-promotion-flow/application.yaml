@@ -1,0 +1,11 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sync-wave-promotion-flow
+spec:
+  source:
+    repoURL: https://github.com/devopsghazali/resume
+    path: labs/argo-cd/sync-wave-promotion-flow
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default

@@ -1,0 +1,15 @@
+pipeline {
+  agent any
+  stages {
+    stage('Build') {
+      steps {
+        echo 'Building Multi-branch Approval Pipeline'
+      }
+    }
+    stage('Test') {
+      steps {
+        echo 'Testing release flow'
+      }
+    }
+  }
+}

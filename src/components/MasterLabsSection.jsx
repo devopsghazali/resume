@@ -31,16 +31,14 @@ const MasterLabsSection = () => {
         className={`relative max-w-7xl mx-auto ${visible ? "animate-fade-up" : "opacity-0"}`}
       >
         <div className="mb-10 max-w-3xl">
-          <p className="text-xs uppercase tracking-[0.24em] text-cyan-300 mb-3">
-            Master Lab
-          </p>
+          <p className="text-xs uppercase tracking-[0.24em] text-cyan-300 mb-3">Master Lab</p>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 hero-title">
             33 practical DevOps projects with interview questions
           </h2>
           <p className="text-gray-400 leading-relaxed max-w-2xl">
             I grouped related tools so the set stays focused instead of turning into filler.
-            Each track keeps three practical projects and ten questions, and each track links
-            back to a GitHub README inside this same portfolio repo.
+            Each track keeps three practical projects and ten questions, and each project now
+            points to a real code folder with starter files and YAML where it makes sense.
           </p>
 
           <div className="mt-5 flex flex-wrap gap-3 text-sm">
@@ -91,7 +89,7 @@ const MasterLabsSection = () => {
                       <p className="text-sm text-gray-400 leading-relaxed">{track.focus}</p>
                     </div>
 
-                    <span className="text-cyan-200 text-lg mt-1">{isOpen ? "−" : "+"}</span>
+                    <span className="text-cyan-200 text-lg mt-1">{isOpen ? "-" : "+"}</span>
                   </div>
                 </button>
 
@@ -99,8 +97,8 @@ const MasterLabsSection = () => {
                   <div className="px-5 md:px-6 pb-6 space-y-5">
                     <div className="grid gap-3">
                       {track.projects.map((project) => {
-                        const projectAnchor = slugify(project.title);
-                        const projectUrl = `${repoUrl}/blob/main/README.md#${projectAnchor}`;
+                        const projectSlug = slugify(project.title);
+                        const projectUrl = `https://github.com/devopsghazali/resume/tree/main/labs/${track.slug}/${projectSlug}`;
 
                         return (
                           <a
@@ -118,7 +116,7 @@ const MasterLabsSection = () => {
                                 </p>
                               </div>
                               <span className="shrink-0 rounded-full border border-cyan-400/20 bg-cyan-500/10 px-3 py-1 text-[11px] text-cyan-100">
-                                Repo
+                                Code
                               </span>
                             </div>
 

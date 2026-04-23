@@ -13,21 +13,21 @@ This track keeps 3 practical projects and 10 interview questions around Argo CD.
 Manage multiple apps from a single parent Argo CD app.
 
 - Stack: Argo CD, GitOps, Kubernetes, YAML
-- Resume link: https://github.com/devopsghazali/resume/blob/main/labs/argo-cd/README.md#app-of-apps-gitops-controller
+- Repo: https://github.com/devopsghazali/resume/tree/main/labs/argo-cd/app-of-apps-gitops-controller
 
 ### Project 2: Drift Self-Healing Lab
 
 Let Argo CD detect drift and restore desired state automatically.
 
 - Stack: Argo CD, Self-heal, Sync, Health
-- Resume link: https://github.com/devopsghazali/resume/blob/main/labs/argo-cd/README.md#drift-self-healing-lab
+- Repo: https://github.com/devopsghazali/resume/tree/main/labs/argo-cd/drift-self-healing-lab
 
 ### Project 3: Sync Wave Promotion Flow
 
 Apply manifests in a controlled order for safer promotion.
 
 - Stack: Argo CD, Sync Waves, Kustomize, Promotion
-- Resume link: https://github.com/devopsghazali/resume/blob/main/labs/argo-cd/README.md#sync-wave-promotion-flow
+- Repo: https://github.com/devopsghazali/resume/tree/main/labs/argo-cd/sync-wave-promotion-flow
 
 ## Interview Questions
 
@@ -42,6 +42,6 @@ Apply manifests in a controlled order for safer promotion.
 9. What is the difference between desired and live state?
 10. How do you debug an OutOfSync application?
 
-## Repo Link
+## Track Repo
 
 https://github.com/devopsghazali/resume/tree/main/labs/argo-cd

@@ -13,21 +13,21 @@ This track keeps 3 practical projects and 10 interview questions around Jenkins.
 Build, test, scan, and block releases until quality checks pass.
 
 - Stack: Jenkins, SonarQube, Trivy, Docker
-- Resume link: https://github.com/devopsghazali/resume/blob/main/labs/jenkins/README.md#ci-quality-gate-pipeline
+- Repo: https://github.com/devopsghazali/resume/tree/main/labs/jenkins/ci-quality-gate-pipeline
 
 ### Project 2: Blue-Green Release Pipeline
 
 Deploy to inactive color, validate, switch traffic, and rollback if needed.
 
 - Stack: Jenkins, Blue-Green, Kubernetes, Ingress
-- Resume link: https://github.com/devopsghazali/resume/blob/main/labs/jenkins/README.md#blue-green-release-pipeline
+- Repo: https://github.com/devopsghazali/resume/tree/main/labs/jenkins/blue-green-release-pipeline
 
 ### Project 3: Multi-branch Approval Pipeline
 
 Run branch-aware pipelines with approvals before production promotion.
 
 - Stack: Jenkins, Multibranch, Git, Approvals
-- Resume link: https://github.com/devopsghazali/resume/blob/main/labs/jenkins/README.md#multi-branch-approval-pipeline
+- Repo: https://github.com/devopsghazali/resume/tree/main/labs/jenkins/multi-branch-approval-pipeline
 
 ## Interview Questions
 
@@ -42,6 +42,6 @@ Run branch-aware pipelines with approvals before production promotion.
 9. How do you handle approval steps without blocking everything?
 10. How do you troubleshoot a failed pipeline stage?
 
-## Repo Link
+## Track Repo
 
 https://github.com/devopsghazali/resume/tree/main/labs/jenkins

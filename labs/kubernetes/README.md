@@ -13,21 +13,21 @@ This track keeps 3 practical projects and 10 interview questions around Kubernet
 Deploy frontend, API, and PostgreSQL as separate Kubernetes workloads.
 
 - Stack: Kubernetes, Flask, Nginx, PostgreSQL
-- Resume link: https://github.com/devopsghazali/resume/blob/main/labs/kubernetes/README.md#three-tier-application-platform
+- Repo: https://github.com/devopsghazali/resume/tree/main/labs/kubernetes/three-tier-application-platform
 
 ### Project 2: Canary Rollout Controller
 
 Shift traffic gradually and rollback fast if metrics regress.
 
 - Stack: Kubernetes, Canary, Ingress, Prometheus
-- Resume link: https://github.com/devopsghazali/resume/blob/main/labs/kubernetes/README.md#canary-rollout-controller
+- Repo: https://github.com/devopsghazali/resume/tree/main/labs/kubernetes/canary-rollout-controller
 
 ### Project 3: Config and Secret Delivery Lab
 
 Manage ConfigMaps, Secrets, probes, and resource limits in one app.
 
 - Stack: Kubernetes, ConfigMap, Secret, Probes
-- Resume link: https://github.com/devopsghazali/resume/blob/main/labs/kubernetes/README.md#config-and-secret-delivery-lab
+- Repo: https://github.com/devopsghazali/resume/tree/main/labs/kubernetes/config-and-secret-delivery-lab
 
 ## Interview Questions
 
@@ -42,6 +42,6 @@ Manage ConfigMaps, Secrets, probes, and resource limits in one app.
 9. How do you keep namespaces isolated?
 10. How do you decide if a canary is healthy?
 
-## Repo Link
+## Track Repo
 
 https://github.com/devopsghazali/resume/tree/main/labs/kubernetes

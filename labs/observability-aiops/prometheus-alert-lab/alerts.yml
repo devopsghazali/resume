@@ -1,0 +1,6 @@
+groups:
+  - name: demo
+    rules:
+      - alert: HighErrorRate
+        expr: demo_errors_total > 10
+        for: 5m

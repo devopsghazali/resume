@@ -13,21 +13,21 @@ This track keeps 3 practical projects and 10 interview questions around Linux.
 Review systemd services, ownership, and permissions for safer runtime.
 
 - Stack: Linux, systemd, users, permissions
-- Resume link: https://github.com/devopsghazali/resume/blob/main/labs/linux/README.md#service-hardening-checklist
+- Repo: https://github.com/devopsghazali/resume/tree/main/labs/linux/service-hardening-checklist
 
 ### Project 2: Process and Resource Watchdog
 
 Watch CPU, memory, and process health and warn on abnormal usage.
 
 - Stack: Linux, ps, top, journalctl
-- Resume link: https://github.com/devopsghazali/resume/blob/main/labs/linux/README.md#process-and-resource-watchdog
+- Repo: https://github.com/devopsghazali/resume/tree/main/labs/linux/process-and-resource-watchdog
 
 ### Project 3: Package Patch Runbook
 
 Keep package updates and kernel patching predictable with a repeatable runbook.
 
 - Stack: Linux, apt, yum, bash
-- Resume link: https://github.com/devopsghazali/resume/blob/main/labs/linux/README.md#package-patch-runbook
+- Repo: https://github.com/devopsghazali/resume/tree/main/labs/linux/package-patch-runbook
 
 ## Interview Questions
 
@@ -42,6 +42,6 @@ Keep package updates and kernel patching predictable with a repeatable runbook.
 9. How do you update packages safely on a server?
 10. How do you trace a failing service start?
 
-## Repo Link
+## Track Repo
 
 https://github.com/devopsghazali/resume/tree/main/labs/linux

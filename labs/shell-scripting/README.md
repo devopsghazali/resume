@@ -13,21 +13,21 @@ This track keeps 3 practical projects and 10 interview questions around Shell Sc
 Check backup folders, rotate old archives, and report missing snapshots.
 
 - Stack: Bash, cron, tar, find
-- Resume link: https://github.com/devopsghazali/resume/blob/main/labs/shell-scripting/README.md#backup-and-rotation-guard
+- Repo: https://github.com/devopsghazali/resume/tree/main/labs/shell-scripting/backup-and-rotation-guard
 
 ### Project 2: Release Smoke Test Runner
 
 Run curl-based smoke tests against health endpoints before promoting a release.
 
 - Stack: Bash, curl, jq, awk
-- Resume link: https://github.com/devopsghazali/resume/blob/main/labs/shell-scripting/README.md#release-smoke-test-runner
+- Repo: https://github.com/devopsghazali/resume/tree/main/labs/shell-scripting/release-smoke-test-runner
 
 ### Project 3: Drift Audit Cron Toolkit
 
 Compare expected files, services, and ports against the actual server state.
 
 - Stack: Bash, diff, systemctl, grep
-- Resume link: https://github.com/devopsghazali/resume/blob/main/labs/shell-scripting/README.md#drift-audit-cron-toolkit
+- Repo: https://github.com/devopsghazali/resume/tree/main/labs/shell-scripting/drift-audit-cron-toolkit
 
 ## Interview Questions
 
@@ -42,6 +42,6 @@ Compare expected files, services, and ports against the actual server state.
 9. How do you debug a Bash script step by step?
 10. How do you log script output for later troubleshooting?
 
-## Repo Link
+## Track Repo
 
 https://github.com/devopsghazali/resume/tree/main/labs/shell-scripting

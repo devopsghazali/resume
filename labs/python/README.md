@@ -13,21 +13,21 @@ This track keeps 3 practical projects and 10 interview questions around Python.
 Parse application logs and highlight error bursts, spikes, and first-failure timestamps.
 
 - Stack: Python, argparse, regex, json
-- Resume link: https://github.com/devopsghazali/resume/blob/main/labs/python/README.md#log-anomaly-triage-cli
+- Repo: https://github.com/devopsghazali/resume/tree/main/labs/python/log-anomaly-triage-cli
 
 ### Project 2: Deployment Health Reporter
 
 Collect health endpoints from services and print a rollout-ready status report.
 
 - Stack: Python, requests, yaml, csv
-- Resume link: https://github.com/devopsghazali/resume/blob/main/labs/python/README.md#deployment-health-reporter
+- Repo: https://github.com/devopsghazali/resume/tree/main/labs/python/deployment-health-reporter
 
 ### Project 3: Inventory Enricher
 
 Read host inventory and enrich it with environment, owner, and last deploy data.
 
 - Stack: Python, pandas, json, csv
-- Resume link: https://github.com/devopsghazali/resume/blob/main/labs/python/README.md#inventory-enricher
+- Repo: https://github.com/devopsghazali/resume/tree/main/labs/python/inventory-enricher
 
 ## Interview Questions
 
@@ -42,6 +42,6 @@ Read host inventory and enrich it with environment, owner, and last deploy data.
 9. How do you package a script so another engineer can run it?
 10. How do you test a small automation script quickly?
 
-## Repo Link
+## Track Repo
 
 https://github.com/devopsghazali/resume/tree/main/labs/python

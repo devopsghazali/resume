@@ -13,21 +13,21 @@ This track keeps 3 practical projects and 10 interview questions around Terrafor
 Provision the first safe AWS baseline with core networking and compute blocks.
 
 - Stack: Terraform, AWS, IAM, EC2
-- Resume link: https://github.com/devopsghazali/resume/blob/main/labs/terraform/README.md#aws-baseline-foundation
+- Repo: https://github.com/devopsghazali/resume/tree/main/labs/terraform/aws-baseline-foundation
 
 ### Project 2: Multi-Environment Module Stack
 
 Reuse the same module for dev, staging, and prod with different inputs.
 
 - Stack: Terraform, modules, variables, state
-- Resume link: https://github.com/devopsghazali/resume/blob/main/labs/terraform/README.md#multi-environment-module-stack
+- Repo: https://github.com/devopsghazali/resume/tree/main/labs/terraform/multi-environment-module-stack
 
 ### Project 3: Remote State and Networking Guardrails
 
 Protect state and keep networking rules repeatable and controlled.
 
 - Stack: Terraform, S3, DynamoDB, VPC
-- Resume link: https://github.com/devopsghazali/resume/blob/main/labs/terraform/README.md#remote-state-and-networking-guardrails
+- Repo: https://github.com/devopsghazali/resume/tree/main/labs/terraform/remote-state-and-networking-guardrails
 
 ## Interview Questions
 
@@ -42,6 +42,6 @@ Protect state and keep networking rules repeatable and controlled.
 9. How do you manage secrets in Terraform workflows?
 10. How do you review a risky plan before apply?
 
-## Repo Link
+## Track Repo
 
 https://github.com/devopsghazali/resume/tree/main/labs/terraform

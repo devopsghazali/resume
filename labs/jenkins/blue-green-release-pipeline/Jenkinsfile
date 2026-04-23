@@ -1,0 +1,15 @@
+pipeline {
+  agent any
+  stages {
+    stage('Build') {
+      steps {
+        echo 'Building Blue-Green Release Pipeline'
+      }
+    }
+    stage('Test') {
+      steps {
+        echo 'Testing release flow'
+      }
+    }
+  }
+}

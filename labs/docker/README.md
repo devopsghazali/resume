@@ -13,21 +13,21 @@ This track keeps 3 practical projects and 10 interview questions around Docker.
 Shrink container images with a clean multi-stage build and minimal runtime layers.
 
 - Stack: Docker, multi-stage, alpine, Nginx
-- Resume link: https://github.com/devopsghazali/resume/blob/main/labs/docker/README.md#multi-stage-build-optimizer
+- Repo: https://github.com/devopsghazali/resume/tree/main/labs/docker/multi-stage-build-optimizer
 
 ### Project 2: Scan Before Publish Gate
 
 Build an image, scan it, and stop the release if the scan fails.
 
 - Stack: Docker, Trivy, GitHub Actions, registry
-- Resume link: https://github.com/devopsghazali/resume/blob/main/labs/docker/README.md#scan-before-publish-gate
+- Repo: https://github.com/devopsghazali/resume/tree/main/labs/docker/scan-before-publish-gate
 
 ### Project 3: Compose Delivery Stack
 
 Run frontend, backend, and database locally with Docker Compose.
 
 - Stack: Docker, Compose, PostgreSQL, Nginx
-- Resume link: https://github.com/devopsghazali/resume/blob/main/labs/docker/README.md#compose-delivery-stack
+- Repo: https://github.com/devopsghazali/resume/tree/main/labs/docker/compose-delivery-stack
 
 ## Interview Questions
 
@@ -42,6 +42,6 @@ Run frontend, backend, and database locally with Docker Compose.
 9. How do you tag images for traceability?
 10. How do you scan an image before push?
 
-## Repo Link
+## Track Repo
 
 https://github.com/devopsghazali/resume/tree/main/labs/docker

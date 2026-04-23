@@ -13,21 +13,21 @@ This track keeps 3 practical projects and 10 interview questions around Observab
 Define useful alert rules and validate them with controlled load.
 
 - Stack: Prometheus, Alertmanager, Grafana, Metrics
-- Resume link: https://github.com/devopsghazali/resume/blob/main/labs/observability-aiops/README.md#prometheus-alert-lab
+- Repo: https://github.com/devopsghazali/resume/tree/main/labs/observability-aiops/prometheus-alert-lab
 
 ### Project 2: Loki Log Correlation Lab
 
 Ship logs to Loki and correlate them with dashboard spikes.
 
 - Stack: Loki, Promtail, Grafana, Logs
-- Resume link: https://github.com/devopsghazali/resume/blob/main/labs/observability-aiops/README.md#loki-log-correlation-lab
+- Repo: https://github.com/devopsghazali/resume/tree/main/labs/observability-aiops/loki-log-correlation-lab
 
 ### Project 3: Incident Summary Assistant
 
 Summarize incidents from metrics and logs into a short operational report.
 
 - Stack: AIOps, Python, Logs, Reports
-- Resume link: https://github.com/devopsghazali/resume/blob/main/labs/observability-aiops/README.md#incident-summary-assistant
+- Repo: https://github.com/devopsghazali/resume/tree/main/labs/observability-aiops/incident-summary-assistant
 
 ## Interview Questions
 
@@ -42,6 +42,6 @@ Summarize incidents from metrics and logs into a short operational report.
 9. What is the value of incident summaries?
 10. How do you know an observability stack is too complex?
 
-## Repo Link
+## Track Repo
 
 https://github.com/devopsghazali/resume/tree/main/labs/observability-aiops

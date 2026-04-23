@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: canary-rollout-controller
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: canary-rollout-controller
+  template:
+    metadata:
+      labels:
+        app: canary-rollout-controller
+    spec:
+      containers:
+        - name: app
+          image: devopsghazali/canary-rollout-controller:latest
+          ports:
+            - containerPort: 8080

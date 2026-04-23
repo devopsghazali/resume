@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: config-and-secret-delivery-lab
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: config-and-secret-delivery-lab
+  template:
+    metadata:
+      labels:
+        app: config-and-secret-delivery-lab
+    spec:
+      containers:
+        - name: app
+          image: devopsghazali/config-and-secret-delivery-lab:latest
+          ports:
+            - containerPort: 8080
