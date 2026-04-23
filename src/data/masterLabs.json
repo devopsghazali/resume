@@ -1,0 +1,378 @@
+{
+  "tracks": [
+    {
+      "slug": "python",
+      "title": "Python",
+      "focus": "Automation, parsing, and small DevOps utilities.",
+      "projects": [
+        {
+          "title": "Log Anomaly Triage CLI",
+          "summary": "Parse application logs and highlight error bursts, spikes, and first-failure timestamps.",
+          "stack": ["Python", "argparse", "regex", "json"]
+        },
+        {
+          "title": "Deployment Health Reporter",
+          "summary": "Collect health endpoints from services and print a rollout-ready status report.",
+          "stack": ["Python", "requests", "yaml", "csv"]
+        },
+        {
+          "title": "Inventory Enricher",
+          "summary": "Read host inventory and enrich it with environment, owner, and last deploy data.",
+          "stack": ["Python", "pandas", "json", "csv"]
+        }
+      ],
+      "questions": [
+        "How do you parse nested log lines safely in Python?",
+        "When should you use argparse instead of hardcoded values?",
+        "How do you handle missing keys in JSON input?",
+        "What is the difference between list and generator processing?",
+        "How do you retry an HTTP call without hiding failures?",
+        "How do you validate CSV input before enrichment?",
+        "When would you use dataclasses in a DevOps script?",
+        "How do you keep a Python utility idempotent?",
+        "How do you package a script so another engineer can run it?",
+        "How do you test a small automation script quickly?"
+      ]
+    },
+    {
+      "slug": "shell-scripting",
+      "title": "Shell Scripting",
+      "focus": "Fast operational automation for Linux and releases.",
+      "projects": [
+        {
+          "title": "Backup and Rotation Guard",
+          "summary": "Check backup folders, rotate old archives, and report missing snapshots.",
+          "stack": ["Bash", "cron", "tar", "find"]
+        },
+        {
+          "title": "Release Smoke Test Runner",
+          "summary": "Run curl-based smoke tests against health endpoints before promoting a release.",
+          "stack": ["Bash", "curl", "jq", "awk"]
+        },
+        {
+          "title": "Drift Audit Cron Toolkit",
+          "summary": "Compare expected files, services, and ports against the actual server state.",
+          "stack": ["Bash", "diff", "systemctl", "grep"]
+        }
+      ],
+      "questions": [
+        "How do you make a shell script fail fast?",
+        "Why are quotes important in Bash variables?",
+        "How do you check exit codes correctly?",
+        "How do you schedule and audit a cron job?",
+        "How do you process command output safely with awk or jq?",
+        "What is the difference between set -e and manual error handling?",
+        "How do you make a script idempotent?",
+        "How do you pass arguments cleanly to a script?",
+        "How do you debug a Bash script step by step?",
+        "How do you log script output for later troubleshooting?"
+      ]
+    },
+    {
+      "slug": "docker",
+      "title": "Docker",
+      "focus": "Container build, scan, and delivery flow.",
+      "projects": [
+        {
+          "title": "Multi-stage Build Optimizer",
+          "summary": "Shrink container images with a clean multi-stage build and minimal runtime layers.",
+          "stack": ["Docker", "multi-stage", "alpine", "Nginx"]
+        },
+        {
+          "title": "Scan Before Publish Gate",
+          "summary": "Build an image, scan it, and stop the release if the scan fails.",
+          "stack": ["Docker", "Trivy", "GitHub Actions", "registry"]
+        },
+        {
+          "title": "Compose Delivery Stack",
+          "summary": "Run frontend, backend, and database locally with Docker Compose.",
+          "stack": ["Docker", "Compose", "PostgreSQL", "Nginx"]
+        }
+      ],
+      "questions": [
+        "Why is a multi-stage Dockerfile useful?",
+        "How do you reduce image size without breaking the app?",
+        "What should go in CMD and what should go in ENTRYPOINT?",
+        "How do you cache layers effectively?",
+        "How do you pass secrets into a container safely?",
+        "Why should you avoid running as root in containers?",
+        "How do you troubleshoot a container that exits immediately?",
+        "What is the difference between bind mounts and volumes?",
+        "How do you tag images for traceability?",
+        "How do you scan an image before push?"
+      ]
+    },
+    {
+      "slug": "kubernetes",
+      "title": "Kubernetes",
+      "focus": "Workload deployment, rollout safety, and platform patterns.",
+      "projects": [
+        {
+          "title": "Three-Tier Application Platform",
+          "summary": "Deploy frontend, API, and PostgreSQL as separate Kubernetes workloads.",
+          "stack": ["Kubernetes", "Flask", "Nginx", "PostgreSQL"]
+        },
+        {
+          "title": "Canary Rollout Controller",
+          "summary": "Shift traffic gradually and rollback fast if metrics regress.",
+          "stack": ["Kubernetes", "Canary", "Ingress", "Prometheus"]
+        },
+        {
+          "title": "Config and Secret Delivery Lab",
+          "summary": "Manage ConfigMaps, Secrets, probes, and resource limits in one app.",
+          "stack": ["Kubernetes", "ConfigMap", "Secret", "Probes"]
+        }
+      ],
+      "questions": [
+        "When do you use a Deployment instead of a StatefulSet?",
+        "Why are readiness and liveness probes different?",
+        "How do Services select the right pods?",
+        "What is the safest way to roll back a bad release?",
+        "How do you separate config from code in Kubernetes?",
+        "Why are resource requests and limits important?",
+        "How do you debug CrashLoopBackOff quickly?",
+        "What is the role of ingress in a service architecture?",
+        "How do you keep namespaces isolated?",
+        "How do you decide if a canary is healthy?"
+      ]
+    },
+    {
+      "slug": "terraform",
+      "title": "Terraform",
+      "focus": "Infrastructure as Code for repeatable cloud setup.",
+      "projects": [
+        {
+          "title": "AWS Baseline Foundation",
+          "summary": "Provision the first safe AWS baseline with core networking and compute blocks.",
+          "stack": ["Terraform", "AWS", "IAM", "EC2"]
+        },
+        {
+          "title": "Multi-Environment Module Stack",
+          "summary": "Reuse the same module for dev, staging, and prod with different inputs.",
+          "stack": ["Terraform", "modules", "variables", "state"]
+        },
+        {
+          "title": "Remote State and Networking Guardrails",
+          "summary": "Protect state and keep networking rules repeatable and controlled.",
+          "stack": ["Terraform", "S3", "DynamoDB", "VPC"]
+        }
+      ],
+      "questions": [
+        "Why is remote state important?",
+        "How do you structure reusable Terraform modules?",
+        "What is the difference between plan and apply?",
+        "How do you prevent manual drift in AWS?",
+        "Why do you lock state with DynamoDB?",
+        "How do variables and outputs improve module reuse?",
+        "When would you use count versus for_each?",
+        "How do you safely destroy test infrastructure?",
+        "How do you manage secrets in Terraform workflows?",
+        "How do you review a risky plan before apply?"
+      ]
+    },
+    {
+      "slug": "jenkins",
+      "title": "Jenkins",
+      "focus": "Pipeline automation, gates, and controlled release flow.",
+      "projects": [
+        {
+          "title": "CI Quality Gate Pipeline",
+          "summary": "Build, test, scan, and block releases until quality checks pass.",
+          "stack": ["Jenkins", "SonarQube", "Trivy", "Docker"]
+        },
+        {
+          "title": "Blue-Green Release Pipeline",
+          "summary": "Deploy to inactive color, validate, switch traffic, and rollback if needed.",
+          "stack": ["Jenkins", "Blue-Green", "Kubernetes", "Ingress"]
+        },
+        {
+          "title": "Multi-branch Approval Pipeline",
+          "summary": "Run branch-aware pipelines with approvals before production promotion.",
+          "stack": ["Jenkins", "Multibranch", "Git", "Approvals"]
+        }
+      ],
+      "questions": [
+        "How do you write a Declarative Pipeline?",
+        "What should be a stage gate in Jenkins?",
+        "How do you keep credentials safe in Jenkins?",
+        "How do you trigger pipelines from Git events?",
+        "Why is a shared library useful?",
+        "How do you make a pipeline restart-safe?",
+        "How do you publish Docker images from Jenkins?",
+        "How do you store build metadata for traceability?",
+        "How do you handle approval steps without blocking everything?",
+        "How do you troubleshoot a failed pipeline stage?"
+      ]
+    },
+    {
+      "slug": "git-github",
+      "title": "Git and GitHub",
+      "focus": "Source control discipline, PR flow, releases, and repo hygiene.",
+      "projects": [
+        {
+          "title": "Branch Protection Workflow",
+          "summary": "Use protected branches, PR reviews, and clean merge history.",
+          "stack": ["Git", "GitHub", "PRs", "Branch Protection"]
+        },
+        {
+          "title": "Release Tag and Changelog Bot",
+          "summary": "Create release tags, draft changelog notes, and keep history readable.",
+          "stack": ["Git", "GitHub", "Tags", "Release Notes"]
+        },
+        {
+          "title": "Repository Bootstrap Template",
+          "summary": "Generate a new repo structure with standard files and starter checks.",
+          "stack": ["GitHub", "Templates", "README", "Issues"]
+        }
+      ],
+      "questions": [
+        "What is the difference between merge and rebase?",
+        "Why do branch protections matter in production repos?",
+        "How do you keep commits readable?",
+        "When should you squash a PR?",
+        "How do tags help with deployment traceability?",
+        "How do you recover from a bad commit safely?",
+        "What should go in a strong README?",
+        "How do you use GitHub Issues for project tracking?",
+        "How do you handle secrets in GitHub repositories?",
+        "How do you keep a repo easy to review for others?"
+      ]
+    },
+    {
+      "slug": "argo-cd",
+      "title": "Argo CD",
+      "focus": "GitOps delivery, drift control, and progressive sync.",
+      "projects": [
+        {
+          "title": "App-of-Apps GitOps Controller",
+          "summary": "Manage multiple apps from a single parent Argo CD app.",
+          "stack": ["Argo CD", "GitOps", "Kubernetes", "YAML"]
+        },
+        {
+          "title": "Drift Self-Healing Lab",
+          "summary": "Let Argo CD detect drift and restore desired state automatically.",
+          "stack": ["Argo CD", "Self-heal", "Sync", "Health"]
+        },
+        {
+          "title": "Sync Wave Promotion Flow",
+          "summary": "Apply manifests in a controlled order for safer promotion.",
+          "stack": ["Argo CD", "Sync Waves", "Kustomize", "Promotion"]
+        }
+      ],
+      "questions": [
+        "What problem does GitOps solve?",
+        "How does Argo CD know the cluster is drifting?",
+        "What is the app-of-apps pattern?",
+        "How do sync waves control rollout order?",
+        "Why is self-heal useful in production?",
+        "How do you structure an Argo CD repository?",
+        "When should you disable auto-sync?",
+        "How do you manage secrets with GitOps safely?",
+        "What is the difference between desired and live state?",
+        "How do you debug an OutOfSync application?"
+      ]
+    },
+    {
+      "slug": "linux",
+      "title": "Linux",
+      "focus": "Server basics, systemd, users, processes, and patching.",
+      "projects": [
+        {
+          "title": "Service Hardening Checklist",
+          "summary": "Review systemd services, ownership, and permissions for safer runtime.",
+          "stack": ["Linux", "systemd", "users", "permissions"]
+        },
+        {
+          "title": "Process and Resource Watchdog",
+          "summary": "Watch CPU, memory, and process health and warn on abnormal usage.",
+          "stack": ["Linux", "ps", "top", "journalctl"]
+        },
+        {
+          "title": "Package Patch Runbook",
+          "summary": "Keep package updates and kernel patching predictable with a repeatable runbook.",
+          "stack": ["Linux", "apt", "yum", "bash"]
+        }
+      ],
+      "questions": [
+        "How do you inspect a systemd service?",
+        "How do you find the process using the most memory?",
+        "What is the difference between users and groups?",
+        "How do you check open ports on a Linux host?",
+        "How do you read logs from journalctl?",
+        "Why is file permission hygiene important?",
+        "How do you schedule maintenance with cron?",
+        "How do you check disk and inode pressure?",
+        "How do you update packages safely on a server?",
+        "How do you trace a failing service start?"
+      ]
+    },
+    {
+      "slug": "networking-ssl-domain",
+      "title": "Networking, SSL, and Domain",
+      "focus": "DNS, routing, TLS, proxies, and traffic basics.",
+      "projects": [
+        {
+          "title": "DNS and Reverse Proxy Map",
+          "summary": "Map a domain to an application through Nginx reverse proxy routing.",
+          "stack": ["DNS", "Nginx", "Reverse Proxy", "HTTP"]
+        },
+        {
+          "title": "TLS Certificate Renewal Lab",
+          "summary": "Issue and renew certificates and verify secure browser access.",
+          "stack": ["SSL", "TLS", "certbot", "HTTPS"]
+        },
+        {
+          "title": "Firewall and Port Troubleshooter",
+          "summary": "Diagnose blocked traffic, wrong ports, and service reachability issues.",
+          "stack": ["Networking", "firewall", "netstat", "curl"]
+        }
+      ],
+      "questions": [
+        "What happens when a domain resolves to an IP?",
+        "Why is a reverse proxy useful?",
+        "How do you verify TLS certificates?",
+        "What is the difference between HTTP and HTTPS?",
+        "How do you check whether a port is open?",
+        "How do you diagnose DNS propagation delays?",
+        "Why is certificate renewal automation important?",
+        "How do you troubleshoot 502 or 504 errors?",
+        "What is the role of a firewall in application delivery?",
+        "How do you confirm traffic is reaching the correct service?"
+      ]
+    },
+    {
+      "slug": "observability-aiops",
+      "title": "Observability and AIOps",
+      "focus": "Metrics, logs, alerting, and automated incident summaries.",
+      "projects": [
+        {
+          "title": "Prometheus Alert Lab",
+          "summary": "Define useful alert rules and validate them with controlled load.",
+          "stack": ["Prometheus", "Alertmanager", "Grafana", "Metrics"]
+        },
+        {
+          "title": "Loki Log Correlation Lab",
+          "summary": "Ship logs to Loki and correlate them with dashboard spikes.",
+          "stack": ["Loki", "Promtail", "Grafana", "Logs"]
+        },
+        {
+          "title": "Incident Summary Assistant",
+          "summary": "Summarize incidents from metrics and logs into a short operational report.",
+          "stack": ["AIOps", "Python", "Logs", "Reports"]
+        }
+      ],
+      "questions": [
+        "What should metrics tell you that logs cannot?",
+        "What should logs tell you that metrics cannot?",
+        "How do you make an alert actionable?",
+        "Why is alert noise harmful?",
+        "How do you correlate a spike with a deploy?",
+        "What makes a useful dashboard?",
+        "How do you reduce false positives?",
+        "How do you pick an SLO for a small service?",
+        "What is the value of incident summaries?",
+        "How do you know an observability stack is too complex?"
+      ]
+    }
+  ]
+}

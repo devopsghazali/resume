@@ -74,6 +74,15 @@ def make_pdf(output: Path) -> None:
         "Hands-on learner building real-world DevOps projects with practical delivery, observability, and security workflows.",
         color=(0.82, 0.89, 0.95),
     )
+    add_text(
+        lines,
+        "F1",
+        8.4,
+        margin,
+        712,
+        "Master Labs: 33 projects across 11 tracks with repo links and 10 questions each.",
+        color=(0.78, 0.88, 0.95),
+    )
 
     y = 690
 

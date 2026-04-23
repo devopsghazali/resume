@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import About from "../pages/About.jsx";
 import ProjectsSection from "./ProjectsSection.jsx";
+import MasterLabsSection from "./MasterLabsSection.jsx";
 import DevOpsInfinity from "./DevOpsInfinity.jsx";
 
 const Hero = () => {
@@ -87,6 +88,7 @@ const Hero = () => {
       </section>
       <About />
       <ProjectsSection />
+      <MasterLabsSection />
     </>
   );
 };
