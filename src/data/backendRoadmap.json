@@ -1,0 +1,53 @@
+{
+  "title": "First Principles Backend Roadmap",
+  "subtitle": "Three Node.js backends that repeat the same 21 concepts until they stick.",
+  "projects": [
+    {
+      "slug": "personal-finance-tracker",
+      "title": "Personal Finance Tracker API",
+      "purpose": "The foundation project with simple CRUD and very clear request flow.",
+      "stack": ["Node.js", "Express", "PostgreSQL", "Zod", "JWT"],
+      "repoUrl": "https://github.com/devopsghazali/resume/blob/main/backend/personal-finance-tracker/README.md",
+      "repoLabel": "Backend README"
+    },
+    {
+      "slug": "ride-sharing-matching-service",
+      "title": "Real-time Ride-Sharing Matching Service",
+      "purpose": "The scale project with state handling, concurrency, and faster decisions.",
+      "stack": ["Node.js", "WebSocket", "Redis", "PostgreSQL", "Rate limiting"],
+      "repoUrl": "https://github.com/devopsghazali/resume/blob/main/backend/ride-sharing-matching-service/README.md",
+      "repoLabel": "Backend README"
+    },
+    {
+      "slug": "multi-tenant-saas-subscription-engine",
+      "title": "Multi-tenant SaaS Subscription Engine",
+      "purpose": "The professional project with tenancy, billing logic, and production controls.",
+      "stack": ["Node.js", "Express", "PostgreSQL", "RBAC", "Observability"],
+      "repoUrl": "https://github.com/devopsghazali/resume/blob/main/backend/multi-tenant-saas-subscription-engine/README.md",
+      "repoLabel": "Backend README"
+    }
+  ],
+  "checklist": [
+    "Roadmap and planning with an architecture diagram first.",
+    "HTTP fundamentals using the native http module before Express.",
+    "Custom routing for request path and method handling.",
+    "Serialization and deserialization beyond plain JSON when useful.",
+    "Authentication with JWT and refresh tokens.",
+    "Authorization with role-based access control.",
+    "Validation with Zod or Joi for incoming payloads.",
+    "Transformation from request data to domain models.",
+    "Custom middleware for logging, auth, and rate limiting.",
+    "Request context using request-id and AsyncLocalStorage.",
+    "Controller and handler separation from business logic.",
+    "Service layer for core business rules.",
+    "CRUD with transactions and locking where needed.",
+    "REST best practices with clear resource naming and idempotency.",
+    "Repository pattern for database access.",
+    "Global error handling for operational and programmer errors.",
+    "Retry and circuit-breaker thinking for faults.",
+    "Config management with required env validation.",
+    "Graceful shutdown for SIGTERM and in-flight requests.",
+    "Structured logging and basic metrics.",
+    "Security with Helmet, CORS, and sanitization."
+  ]
+}

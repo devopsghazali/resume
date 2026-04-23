@@ -49,6 +49,7 @@ export default function Navbar({ theme = "dark", onToggleTheme }) {
         <nav className="flex items-center gap-3 md:gap-4 text-sm">
           <Link to="/#projects" className="nav-orbit">Projects</Link>
           <Link to="/#labs" className="nav-orbit">Labs</Link>
+          <Link to="/backend" className="nav-orbit">Backend</Link>
           <Link to="/#about" className="nav-orbit">About</Link>
           <Link to="/contact" className="nav-orbit">Contact</Link>
 

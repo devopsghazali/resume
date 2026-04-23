@@ -7,6 +7,7 @@ import Articles from "./pages/Articles.jsx";
 import Problems from "./pages/Problems.jsx";
 import Contact from "./pages/Contact.jsx";
 import ProjectNotes from "./pages/ProjectNotes.jsx";
+import BackendRoadmap from "./pages/BackendRoadmap.jsx";
 import ArticleDetails from "./pages/ArticleDetails.jsx";
 import ProblemDetails from "./pages/ProblemDetails.jsx";
 import Saved from "./pages/Saved.jsx";
@@ -52,6 +53,7 @@ function App() {
           <Route path="/problems/:slug" element={<ProblemDetails />} />
           <Route path="/saved" element={<Saved />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/backend" element={<BackendRoadmap />} />
           <Route path="/projects/:id/notes" element={<ProjectNotes />} />
         </Routes>
       </BrowserRouter>
